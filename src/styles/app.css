@@ -16,7 +16,6 @@ header {
 }
 .menu--toggle {
   position: absolute;
-  top: 20px;
   right: 20px;
   z-index: 20;
 }
@@ -36,7 +35,7 @@ header {
   font-weight: 400;
   font-style: normal;
   font-size: 22px;
-  color: #FFF;
+  color: #FFFFFF;
   padding: 46.5px;
 }
 .menu__el a {
@@ -59,6 +58,12 @@ header {
 .nav--desktop {
   display: none;
 }
+.nav--mobile {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  justify-content: space-between;
+}
 
 .menu--toggle {
   display: flex;
@@ -68,12 +73,13 @@ header {
   background-color: transparent;
   outline: none;
   box-shadow: none;
+  z-index: 30;
 }
 
 .bar {
   width: 30px;
   height: 3px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   margin: 3px 0;
   transition: transform 0.3s, opacity 0.3s;
   border-radius: 3px;
@@ -133,13 +139,13 @@ header {
     font-weight: 400;
     font-style: normal;
     font-size: 22px;
-    color: #ffffff;
+    color: #FFFFFF;
     margin: 0;
     display: flex;
     margin-left: 69px;
   }
   .nav__el a {
-    color: rgb(255, 255, 255);
+    color: #FFFFFF;
     text-decoration: none;
   }
   .nav__logo {

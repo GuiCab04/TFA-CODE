@@ -1,3 +1,6 @@
-body {
-    background-color: rgb(221, 221, 45);
-}
+@import 'utils/variables';
+
+@import 'components/footer';
+@import 'components/nav';
+@import 'components/home';
+@import 'components/type';

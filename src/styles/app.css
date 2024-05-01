@@ -6,7 +6,6 @@
 }
 .contact__h2 {
   font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
   font-style: normal;
   color: #FFFFFF;
   margin-top: 20px;
@@ -285,7 +284,6 @@ header {
 }
 .home__title {
   font-family: "Manrope", sans-serif;
-  font-optical-sizing: auto;
   font-style: normal;
   margin: 0;
   margin-top: 152px;
@@ -404,7 +402,6 @@ header {
 }
 .propos__h2 {
   font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
   font-style: normal;
   color: #FFFFFF;
   margin-top: 20px;
@@ -473,7 +470,6 @@ header {
 }
 .projets__h2 {
   font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
   font-style: normal;
   color: #FFFFFF;
   margin-top: 20px;

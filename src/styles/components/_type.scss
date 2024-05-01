@@ -3,4 +3,19 @@ body {
   padding: 0;
   top: 0;
   left: 0;
+  background-color: $c-bg;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 1200px) {
+  main {
+    padding-left: 69px;
+    padding-right: 69px;
+  }
 }

@@ -56,57 +56,154 @@
   </header>
 
   <main>
-    <section>
-      <h1><span>Web Student</span> <span>Guillaume Cabaraux</span></h1>
-      <p>Hello tout le monde, moi c’est Guillaume et je suis étudiant en <span>web</span></p>
-      <p>Sur mon portfolio tu pourras y trouver mes différents projets étudiants et peut-être plus encore...</p>
+    <section class="home">
+      <h1 class="home__title"><span class="home__title--extralight">Web Student</span><br><span
+          class="home__title--extrabold">Guillaume Cabaraux</span></h1>
+
+      <div class="home__text">
+
+        <p class="home__text--moi">Hello tout le monde, moi c’est Guillaume et je suis étudiant en <span
+            class="home__text--cyan">web</span></p>
+        <p class="home__text--portfolio">Sur mon portfolio tu pourras y trouver mes différents projets étudiants et
+          peut-être
+          plus encore...</p>
+      </div>
+      <div class="scroll-downs">
+        <div class="mousey">
+          <div class="scroller"></div>
+        </div>
+      </div>
     </section>
-    <section>
-      <div></div>
-      <h2>À propos</h2>
-      <p>Comme mentionné plus haut, je m’appelle <span>Guillaume Cabaraux</span>, j’ai <span>19 ans</span> et je suis
-        étudiant en <span>Web Design et
-          transmédia</span> à la <span>Haute-École Albert Jacquard</span> à Namur.
-        A coté de l’école, je suis <span>animateur responsable</span> dans une unité scouts.</p>
-      <!--<div>
-        <div></div>
-        <img src="assets/images/image-perso.png"
+
+    <section class="propos">
+      <div class="propos__border"></div>
+      <h2 class="propos__h2">À propos</h2>
+      <div class="propos__container">
+        <p class="propos__text">Comme mentionné plus haut, je m’appelle <span class="propos__text--cyan">Guillaume
+            Cabaraux</span>, j’ai <span class="propos__text--cyan">19 ans</span> et je suis
+          étudiant en <span class="propos__text--cyan">Web Design et
+            transmédia</span> à la <span class="propos__text--underlineDots">Haute-École Albert Jacquard</span> à Namur.
+          A coté de l’école, je suis <span class="propos__text--cyan">animateur responsable</span> dans une unité
+          scouts.
+        </p>
+        <img class="propos__img" src="assets/images/perso2.png"
           alt="personnage généré avec Copilot qui port un sweat a capuche bleu ciel, des lunettes bleues et des cheveux châtain">
       </div>
     </section>
-    <section>
-      <div></div>
-      <h2>Projets</h2>
-      <a href="#"><img src="assets/images/img-dataplay.png" alt="image du projet décembre"></a>
-      <p></p>
-      <a href="#"><img src="assets/images/img-dataplay.png" alt="image du projet rux"></a>
-      <p></p>
-      <a href="#"><img src="assets/images/img-dataplay.png" alt="image du projet dataplay"></a>
-      <p></p>-->
+
+
+    <section class="projets__mobile">
+      <div class="projets__border"></div>
+      <h2 class="projets__h2">Projets</h2>
+      <div class="projets__affiche">
+        <div class="projets__container">
+          <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png" alt="image du projet décembre"></a>
+          <p class="projets__description">Décembre - Janvier 2024</p>
+        </div>
+        <div class="projets__container">
+          <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png" alt="image du projet rux"></a>
+          <p class="projets__description">Rethinking UX - Février 2024</p>
+        </div>
+        <div class="projets__container">
+          <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png" alt="image du projet dataplay"></a>
+          <p class="projets__description">Dataplay - Mars 2024</p>
+        </div>
+      </div>
     </section>
-    <footer>
-      <div></div>
-      <h2>Contacts</h2>
-      <ul>
-        <li>cabaraux.guillaume@gmail.com</li>
-        <li>+32 472 33 08 26</li>
+
+    <section class="projets__desktop">
+      <div class="projets__border"></div>
+      <h2 class="projets__h2">Projets</h2>
+      <nav>
+        <ul class="projets__linktab">
+          <li><button href="#projets01" class="linktab linktab--active">Décembre</button></li>
+          <li><button href="#projets02" class="linktab">RUX</button></li>
+          <li><button href="#projets03" class="linktab">Dataplay</button></li>
+        </ul>
+      </nav>
+      <div class="content">
+        <section id="projets01">
+          <div class="projets__container">
+            <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png"
+                alt="image du projet décembre"></a>
+            <p class="projets__description">Décembre - Janvier 2024</p>
+          </div>
+        </section>
+        <section class="hidden" id="projets02">
+          <div class="projets__container">
+            <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png" alt="image du projet rux"></a>
+            <p class="projets__description">Rethinking UX - Février 2024</p>
+          </div>
+        </section>
+        <section class="hidden" id="projets03">
+          <div class="projets__container">
+            <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png"
+                alt="image du projet dataplay"></a>
+            <p class="projets__description">Dataplay - Mars 2024</p>
+          </div>
+      </div>
+    </section>
+
+    <footer class="contact-mobile">
+      <div class="contact__border"></div>
+      <h2 class="contact__h2">Contacts</h2>
+      <ul class="contact__list">
+        <li class="contact__mail">cabaraux.guillaume@gmail.com</li>
+        <li class="contact__phone">+32 472 33 08 26</li>
+        <li class="contact__name">Guillaume Cabaraux</li>
+        <li class="contact__adresse">Namur, Belgique</li>
+        <li>
+          <ul class="contact__reseau">
+            <li><a href="#"><img class="contact__img" src="assets/images/github.svg" alt="logo de github"></a></li>
+            <li><a href="#"><img class="contact__img" src="assets/images/dribbble.svg" alt="logo de dribbble"></a>
+            </li>
+            <li><a href="#"><img class="contact__img" src="assets/images/behance.svg" alt="logo de behance"></a></li>
+            <li><a href="#"><img class="contact__img" src="assets/images/instagram.svg" alt="logo de instagram"></a>
+            </li>
+          </ul>
+        </li>
+        <li class="contact__copyright"><a href="#">Crédits</a> © 2024</li>
       </ul>
-      <ul>
-        <li>
-          <ul>
-            <li>Guillaume Cabaraux</li>
-            <li>Namur, Belgique</li>
-          </ul>
-        </li>
-        <li>Crédits © 2024</li>
-        <li>
-          <ul>
-            <li><a href="#"><img src="assets/images/github.svg" alt="logo de github"></a></li>
-            <li><a href="#"><img src="assets/images/dribbble.svg" alt="logo de dribbble"></a></li>
-            <li><a href="#"><img src="assets/images/behance.svg" alt="logo de behance"></a></li>
-            <li><a href="#"><img src="assets/images/instagram.svg" alt="logo de instagram"></a></li>
-          </ul>
-        </li>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="contact-desktop">
+      <div class="contact__border"></div>
+      <h2 class="contact__h2">Contacts</h2>
+
+      <ul class="contact__list contact__list--top">
+        <li class="contact__mail">cabaraux.guillaume@gmail.com</li>
+        <li class="contact__phone">+32 472 33 08 26</li>
+      </ul>
+
+      <ul class="contact__list--bottom">
+
+        <ul class="contact__list">
+          <li class="contact__name">Guillaume Cabaraux</li>
+          <li class="contact__adresse">Namur, Belgique</li>
+        </ul>
+        <li class="contact__copyright"><a href="#">Crédits</a> © 2024</li>
+        <ul class="contact__reseau">
+          <li><a href="#"><img class="contact__img" src="assets/images/github.svg" alt="logo de github"></a></li>
+          <li><a href="#"><img class="contact__img" src="assets/images/dribbble.svg" alt="logo de dribbble"></a></li>
+          <li><a href="#"><img class="contact__img" src="assets/images/behance.svg" alt="logo de behance"></a></li>
+          <li><a href="#"><img class="contact__img" src="assets/images/instagram.svg" alt="logo de instagram"></a></li>
+        </ul>
       </ul>
     </footer>
   </main>

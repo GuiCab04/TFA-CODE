@@ -4,7 +4,11 @@ body {
   top: 0;
   left: 0;
   background-color: $c-bg;
+
 }
+
+
+
 
 main {
   margin: 0;
@@ -13,9 +17,53 @@ main {
   padding-right: 20px;
 }
 
+.Bar {
+  position: fixed;
+  height: 5px;
+  background-color: $c-bg;
+  width: 100%;
+  bottom: 0;
+}
+
+.progressBar {
+  width: 0%;
+  height: 5px;
+  background-color: $c-text;
+}
+
 @media (min-width: 1200px) {
   main {
     padding-left: 69px;
     padding-right: 69px;
   }
+
+  html {
+    scroll-behavior: smooth;
+    cursor: none;
+  }
+
+  a,
+  button {
+    cursor: none;
+  }
+
+  .circle {
+    z-index: 1001;
+    --circle-size: 40px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 1px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    transition: width 0.3s ease, height 0.3s ease;
+    /* Ajout de la transition */
+  }
+
+  .circle.hover {
+    --circle-size: 60px;
+  }
+
 }

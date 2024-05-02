@@ -25,6 +25,9 @@
     &__img {
         width: 60%;
         border-radius: 25px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__description {
@@ -35,18 +38,18 @@
         font-style: normal;
         color: $c-text;
         font-size: 15px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__container {
         display: flex;
         flex-direction: column;
-
-        a,
-        p {
-            text-align: center;
-        }
+        align-items: center;
     }
 }
+
+
 
 
 @media (min-width : 1200px) {
@@ -96,9 +99,7 @@
     }
 
     li {
-        display: inline-block;
         list-style: none;
-        padding: 0;
     }
 
     .hidden {

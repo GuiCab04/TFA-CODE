@@ -143,14 +143,14 @@ li {
 
 
         &__reseau {
-            width: 15vw;
-            display: flex;
-            justify-content: space-between;
+            width: 15%;
             margin: 0;
+            padding: 0;
         }
 
         &__img {
             height: 29px;
+            margin-left: 15px;
         }
 
         &__copyright {

@@ -25,8 +25,8 @@
 </head>
 
 <body>
-
-  <header>
+  <div class="circle"></div>
+  <header class="header--sticky">
     <div class="nav--mobile">
       <a href="#"><img class="nav__logo" src="assets/images/logo-initial.svg" alt="initial de guillaume cabaraux"></a>
       <button type="button" class="menu--toggle" id="menuToggle">
@@ -36,9 +36,9 @@
       </button>
       <nav class="menu">
         <ul class="menu__list" id="menuList">
-          <li class="menu__el"><a href="#">À propos</a></li>
-          <li class="menu__el"><a href="#">Projets</a></li>
-          <li class="menu__el"><a href="#">Contact</a></li>
+          <li class="menu__el"><a href="#propos">À propos</a></li>
+          <li class="menu__el"><a href="#projets-mobile">Projets</a></li>
+          <li class="menu__el"><a href="#contact-mobile">Contact</a></li>
           <li class="menu__el"><a href="#">Annexe</a></li>
         </ul>
       </nav>
@@ -47,26 +47,31 @@
     <nav class="nav--desktop">
       <a href="#"><img class="nav__logo" src="assets/images/logo-initial.svg" alt="initial de guillaume cabaraux"></a>
       <ul class="nav__list">
-        <li class="nav__el"><a href="#">À propos</a></li>
-        <li class="nav__el"><a href="#">Projets</a></li>
-        <li class="nav__el"><a href="#">Contact</a></li>
+        <li class="nav__el"><a href="#propos">À propos</a></li>
+        <li class="nav__el"><a href="#projets-desktop">Projets</a></li>
+        <li class="nav__el"><a href="#contact-desktop">Contact</a></li>
         <li class="nav__el"><a href="#">Annexe</a></li>
       </ul>
     </nav>
   </header>
 
+  <div class="Bar">
+    <div class="progressBar"></div>
+  </div>
+
   <main>
+    <div class="scrollBottom"></div>
     <section class="home">
       <h1 class="home__title"><span class="home__title--extralight">Web Student</span><br><span
           class="home__title--extrabold">Guillaume Cabaraux</span></h1>
 
       <div class="home__text">
 
-        <p class="home__text--moi">Hello tout le monde, moi c’est Guillaume et je suis étudiant en <span
+        <p class="home__text--moi">Hello tout le monde, moi c’est Guillaume et je suis étudiant en <span
             class="home__text--cyan">web</span></p>
-        <p class="home__text--portfolio">Sur mon portfolio tu pourras y trouver mes différents projets étudiants et
+        <p class="home__text--portfolio">Sur mon portfolio tu pourras y trouver mes différents projets étudiants et
           peut-être
-          plus encore...</p>
+          plus encore…</p>
       </div>
       <div class="scroll-downs">
         <div class="mousey">
@@ -75,15 +80,17 @@
       </div>
     </section>
 
-    <section class="propos">
+    <section id="propos" class="propos">
       <div class="propos__border"></div>
       <h2 class="propos__h2">À propos</h2>
       <div class="propos__container">
-        <p class="propos__text">Comme mentionné plus haut, je m’appelle <span class="propos__text--cyan">Guillaume
-            Cabaraux</span>, j’ai <span class="propos__text--cyan">19 ans</span> et je suis
-          étudiant en <span class="propos__text--cyan">Web Design et
-            transmédia</span> à la <span class="propos__text--underlineDots">Haute-École Albert Jacquard</span> à Namur.
-          A coté de l’école, je suis <span class="propos__text--cyan">animateur responsable</span> dans une unité
+        <p class="propos__text">Comme mentionné plus haut, je m’appelle <span class="propos__text--cyan">Guillaume
+            Cabaraux</span>, j’ai <span class="propos__text--cyan">19 ans</span> et je suis
+          étudiant en <span class="propos__text--cyan">Web Design et
+            transmédia</span> à la <a class="propos__text--underlineDots" href="https://www.heaj.be/fr/">Haute-École
+            Albert
+            Jacquard</a> à Namur.
+          A coté de l’école, je suis <span class="propos__text--cyan">animateur responsable</span> dans une unité
           scouts.
         </p>
         <img class="propos__img" src="assets/images/perso2.png"
@@ -91,8 +98,7 @@
       </div>
     </section>
 
-
-    <section class="projets__mobile">
+    <section id="projets-mobile" class="projets__mobile">
       <div class="projets__border"></div>
       <h2 class="projets__h2">Projets</h2>
       <div class="projets__affiche">
@@ -102,7 +108,7 @@
         </div>
         <div class="projets__container">
           <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png" alt="image du projet rux"></a>
-          <p class="projets__description">Rethinking UX - Février 2024</p>
+          <p class="projets__description">Rethinking UX - Février 2024</p>
         </div>
         <div class="projets__container">
           <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png" alt="image du projet dataplay"></a>
@@ -111,40 +117,41 @@
       </div>
     </section>
 
-    <section class="projets__desktop">
+    <section id="projets-desktop" class="projets__desktop">
       <div class="projets__border"></div>
       <h2 class="projets__h2">Projets</h2>
       <nav>
         <ul class="projets__linktab">
-          <li><a href="#projets01" class="linktab linktab--active">Décembre</a></li>
-          <li><a href="#projets02" class="linktab">RUX</a></li>
-          <li><a href="#projets03" class="linktab">Dataplay</a></li>
+          <li><button type="button" class="linktab linktab--active" data-target="#projets01">Décembre</button></li>
+          <li><button type="button" class="linktab" data-target="#projets02">RUX</button></li>
+          <li><button type="button" class="linktab" data-target="#projets03">Dataplay</button></li>
         </ul>
+
+        <div class="content">
+          <section id="projets01">
+            <div class="projets__container">
+              <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png"
+                  alt="image du projet décembre"></a>
+              <p class="projets__description">Décembre - Janvier 2024</p>
+            </div>
+          </section>
+          <section class="hidden" id="projets02">
+            <div class="projets__container">
+              <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png" alt="image du projet rux"></a>
+              <p class="projets__description">Rethinking UX - Février 2024</p>
+            </div>
+          </section>
+          <section class="hidden" id="projets03">
+            <div class="projets__container">
+              <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png"
+                  alt="image du projet dataplay"></a>
+              <p class="projets__description">Dataplay - Mars 2024</p>
+            </div>
+          </section>
+        </div>
       </nav>
-      <div class="content">
-        <section id="projets01">
-          <div class="projets__container">
-            <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png"
-                alt="image du projet décembre"></a>
-            <p class="projets__description">Décembre - Janvier 2024</p>
-          </div>
-        </section>
-        <section class="hidden" id="projets02">
-          <div class="projets__container">
-            <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png" alt="image du projet rux"></a>
-            <p class="projets__description">Rethinking UX - Février 2024</p>
-          </div>
-        </section>
-        <section class="hidden" id="projets03">
-          <div class="projets__container">
-            <a href="#"><img class="projets__img" src="assets/images/img-dataplay.png"
-                alt="image du projet dataplay"></a>
-            <p class="projets__description">Dataplay - Mars 2024</p>
-          </div>
-        </section>
-      </div>
     </section>
-    <footer class="contact-mobile">
+    <footer id="contact-mobile" class="contact-mobile">
       <div class="contact__border"></div>
       <h2 class="contact__h2">Contacts</h2>
       <ul class="contact__list">
@@ -154,11 +161,15 @@
         <li class="contact__adresse">Namur, Belgique</li>
         <li>
           <ul class="contact__reseau">
-            <li><a href="#"><img class="contact__img" src="assets/images/github.svg" alt="logo de github"></a></li>
-            <li><a href="#"><img class="contact__img" src="assets/images/dribbble.svg" alt="logo de dribbble"></a>
+            <li><a href="https://github.com/GuiCab04"><img class="contact__img" src="assets/images/github.svg"
+                  alt="logo de github"></a></li>
+            <li><a href="https://dribbble.com/GuiCab04"><img class="contact__img" src="assets/images/dribbble.svg"
+                  alt="logo de dribbble"></a>
             </li>
-            <li><a href="#"><img class="contact__img" src="assets/images/behance.svg" alt="logo de behance"></a></li>
-            <li><a href="#"><img class="contact__img" src="assets/images/instagram.svg" alt="logo de instagram"></a>
+            <li><a href="https://www.behance.net/guillaucabarau1"><img class="contact__img"
+                  src="assets/images/behance.svg" alt="logo de behance"></a></li>
+            <li><a href="https://www.instagram.com/guicab_dwt/"><img class="contact__img"
+                  src="assets/images/instagram.svg" alt="logo de instagram"></a>
             </li>
           </ul>
         </li>
@@ -166,7 +177,7 @@
       </ul>
     </footer>
 
-    <footer class="contact-desktop">
+    <footer id="contact-desktop" class="contact-desktop">
       <div class="contact__border"></div>
       <h2 class="contact__h2">Contacts</h2>
 
@@ -185,10 +196,14 @@
         <li class="contact__copyright"><a href="#">Crédits</a> © 2024</li>
         <li>
           <ul class="contact__reseau">
-            <li><a href="#"><img class="contact__img" src="assets/images/github.svg" alt="logo de github"></a></li>
-            <li><a href="#"><img class="contact__img" src="assets/images/dribbble.svg" alt="logo de dribbble"></a></li>
-            <li><a href="#"><img class="contact__img" src="assets/images/behance.svg" alt="logo de behance"></a></li>
-            <li><a href="#"><img class="contact__img" src="assets/images/instagram.svg" alt="logo de instagram"></a>
+            <li><a href="https://github.com/GuiCab04"><img class="contact__img" src="assets/images/github.svg"
+                  alt="logo de github"></a></li>
+            <li><a href="https://dribbble.com/GuiCab04"><img class="contact__img" src="assets/images/dribbble.svg"
+                  alt="logo de dribbble"></a></li>
+            <li><a href="https://www.behance.net/guillaucabarau1"><img class="contact__img"
+                  src="assets/images/behance.svg" alt="logo de behance"></a></li>
+            <li><a href="https://www.instagram.com/guicab_dwt/"><img class="contact__img"
+                  src="assets/images/instagram.svg" alt="logo de instagram"></a>
             </li>
           </ul>
         </li>

@@ -1,11 +1,8 @@
 .projets {
-    &__mobile {
-        display: block;
-    }
 
-    &__desktop {
-        display: none;
-    }
+
+    margin-bottom: 35vh;
+
 
     &__border {
         width: 100%;
@@ -18,21 +15,21 @@
         font-family: "Orbitron", sans-serif;
         font-style: normal;
         color: $c-text;
-        margin-top: 20px;
-        margin-bottom: 84px;
+        margin-top: 36px;
+        margin-bottom: 63px;
     }
 
     &__img {
-        width: 60%;
+        width: 70vw;
         border-radius: 25px;
         display: flex;
-        margin-left: auto;
-        margin-right: auto;
+        justify-content: center;
     }
 
     &__description {
+        color: #ffffff;
         margin-top: 20px;
-        margin-bottom: 84px;
+        margin-bottom: 0;
         font-family: "Viga", sans-serif;
         font-weight: 400;
         font-style: normal;
@@ -40,16 +37,21 @@
         font-size: 15px;
         margin-left: auto;
         margin-right: auto;
+        display: flex;
+        justify-content: center;
     }
 
-    &__container {
+    &__content {
+        margin-left: 50px;
+
+    }
+
+    &__slider {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: start;
+
     }
 }
-
-
 
 
 @media (min-width : 1200px) {
@@ -58,14 +60,11 @@
     .projets {
 
 
-        &__mobile {
-            display: none;
-        }
 
-        &__desktop {
-            display: block;
-            margin-bottom: 30vh;
-        }
+
+
+        margin-bottom: 40vh;
+
 
         &__border {
             width: 33%;
@@ -77,77 +76,29 @@
             font-size: 39px;
         }
 
+        &__description {
+            color: #ffffff;
+            font-size: 22px;
+            margin-top: 22px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+
+
+        &__content {
+            margin-left: 50px;
+        }
+
+        &__slider {
+            width: 200%;
+            display: flex;
+            justify-content: center;
+        }
 
         &__img {
-            width: 20vw;
-        }
-
-        &__description {
-            margin-top: 22px;
-            font-size: 22px;
-        }
-
-        &__linktab {
-
-            padding: 0;
-            max-width: 30%;
-            display: flex;
-            justify-content: space-between;
-            margin: auto;
-            margin-bottom: 29px;
-        }
-    }
-
-    li {
-        list-style: none;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .linktab {
-        font-family: "Manrope", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 22px;
-        color: $c-text;
-        text-decoration: none;
-        border: none;
-        font-weight: 600;
-        background: none;
-        padding: 0;
-
-        &::before {
-            margin-left: auto;
-        }
-
-        &--active {
-            content: '';
-            width: 100%;
-            height: 2px;
-            background: $c-cyan;
-            display: block;
-            transition: width 0.5s;
-            //border-top: solid 2px $c-cyan;
-            //border-bottom: solid 2px $c-cyan;
-            //color: $c-text;
-            //pointer-events: none; // Empêche le hover sur le bouton actif
-        }
-
-        &::after,
-        &::before {
-            content: '';
-            width: 0%;
-            height: 2px;
-            background: $c-cyan;
-            display: block;
-            transition: width 0.5s;
-        }
-
-        &:hover:not(.linktab--active)::after,
-        &:hover:not(.linktab--active)::before {
-            width: 100%;
+            max-width: 100%;
+            width: 35vw;
         }
     }
 

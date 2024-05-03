@@ -7,6 +7,10 @@ body {
 
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
 
 
 
@@ -31,7 +35,7 @@ main {
   background-color: $c-text;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   main {
     padding-left: 69px;
     padding-right: 69px;
@@ -47,6 +51,9 @@ main {
     cursor: none;
   }
 
+}
+
+@media (min-width: 1200px) {
   .circle {
     z-index: 1001;
     --circle-size: 40px;
@@ -65,5 +72,4 @@ main {
   .circle.hover {
     --circle-size: 60px;
   }
-
 }

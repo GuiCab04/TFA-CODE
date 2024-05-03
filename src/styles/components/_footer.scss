@@ -10,8 +10,8 @@
         font-family: "Orbitron", sans-serif;
         font-style: normal;
         color: $c-text;
-        margin-top: 20px;
-        margin-bottom: 84px;
+        margin-top: 36px;
+        margin-bottom: 63px;
     }
 
     &__list {
@@ -80,7 +80,7 @@ li {
     list-style: none;
 }
 
-@media (min-width : 1200px) {
+@media (min-width : 1000px) {
     .contact {
         &-mobile {
             display: none;

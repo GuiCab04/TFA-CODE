@@ -1,36 +1,36 @@
 "use strict";
 
+// IMPORT GSAP & SCROLLTRIGGER
+
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger)
 
 
-// BOUTON BURGER
+//BURGER MENU
+
+
 const buttonToggle = document.querySelector('.menu--toggle');
+const menu = document.querySelector('.menu');
+const body = document.body;
+const html = document.documentElement;
+
 buttonToggle.addEventListener('click', menuOpen);
 
 function menuOpen() {
-    document.body.classList.toggle("menu--open");
-}
-
-// BURGER MENU
-const menuToggle = document.getElementById('menuToggle');
-const menu = document.querySelector('.menu');
-const body = document.body;
-
-menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+    menu.classList.toggle("active");
+    buttonToggle.classList.toggle("active");
 
     if (menu.classList.contains('active')) {
-        body.classList.add('overflow-hidden');
+        body.classList.add('menu--open');
+        html.classList.add('menu--open');
     } else {
-        body.classList.remove('overflow-hidden');
+        body.classList.remove('menu--open');
+        html.classList.remove('menu--open');
     }
-});
+}
 
-// SCROLL MENU BUTTON
 const linkScrollMenu = document.querySelectorAll('a[href^="#"]');
 
 linkScrollMenu.forEach(link => {
@@ -51,50 +51,16 @@ linkScrollMenu.forEach(link => {
     });
 });
 
-
-
-// RESET BURGER MENU CLICK BUTTON
 const menuLinks = document.querySelectorAll('.menu__el a');
 
 menuLinks.forEach(link => {
     link.addEventListener('click', () => {
         menu.classList.remove('active');
-        menuToggle.classList.remove('active');
-        body.classList.remove('overflow-hidden');
-        document.body.classList.remove("menu--open");
+        buttonToggle.classList.remove('active');
+        body.classList.remove('menu--open');
+        html.classList.remove('menu--open');
     });
 });
-
-
-
-//TAB
-
-const buttonTab = document.querySelectorAll(".linktab");
-buttonTab.forEach(button => {
-    button.addEventListener("click", function (event) {
-        event.preventDefault();
-
-        const list = event.currentTarget.closest("ul");
-        const activeButtons = list.querySelectorAll(".linktab--active");
-        activeButtons.forEach(activeButton => {
-            activeButton.classList.remove("linktab--active");
-        });
-
-        button.classList.add("linktab--active");
-
-        const buttonsTabs = list.querySelectorAll(".linktab");
-        buttonsTabs.forEach(buttonTab => {
-            const tabId = buttonTab.dataset.target;
-            const tabElement = document.querySelector(tabId);
-            tabElement.classList.add("hidden");
-        });
-        const contentId = button.dataset.target;
-        const content = document.querySelector(contentId);
-        content.classList.remove("hidden");
-    });
-});
-
-
 
 //PROGRESS BAR
 
@@ -180,3 +146,38 @@ const tick = () => {
     window.requestAnimationFrame(tick);
 }
 tick();
+
+
+
+
+
+//SLIDER GSAP
+
+
+const slider = gsap.utils.toArray(".projets__content");
+tween = gsap.to(slider, {
+    xPercent: -95 * (slider.length - 0),
+    scrollTrigger: {
+        trigger: ".projets__slider",
+        start: "top 20%",
+        pin: true,
+        scrub: 1,
+
+    },
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

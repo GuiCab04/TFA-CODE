@@ -10,7 +10,7 @@ header {
         width: 100%;
         transition: top 0.3s;
         z-index: 1000;
-        border-bottom: solid 1px #fff;
+        border-bottom: solid 2px #fff;
         width: 100vw;
 
         &.visible {
@@ -151,7 +151,6 @@ html.menu--open {
         height: 96px;
         background-color: $c-bg;
 
-
         &--desktop {
             display: flex;
             align-items: center;
@@ -172,7 +171,7 @@ html.menu--open {
 
         &__el {
             font-family: "Zen Dots", sans-serif;
-            font-weight: 400;
+            font-weight: 200;
             font-style: normal;
             font-size: 22px;
             color: $c-text;

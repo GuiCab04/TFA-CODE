@@ -48,7 +48,7 @@
       <a href="#"><img class="nav__logo" src="assets/images/logo-initial.svg" alt="initial de guillaume cabaraux"></a>
       <ul class="nav__list">
         <li class="nav__el"><a href="#propos">À propos</a></li>
-        <li class="nav__el"><a href="#projets-desktop">Projets</a></li>
+        <li class="nav__el"><a href="#projets">Projets</a></li>
         <li class="nav__el"><a href="#contact-desktop">Contact</a></li>
         <li class="nav__el"><a href="#">Annexe</a></li>
       </ul>
@@ -61,12 +61,11 @@
 
   <main>
     <div class="scrollBottom"></div>
+
     <section class="home">
-      <h1 class="home__title"><span class="home__title--extralight">Web Student</span><br><span
-          class="home__title--extrabold">Guillaume Cabaraux</span></h1>
-
+      <h1 class="home__title"><span class="home__title--extrabold">Guillaume Cabaraux</span><br><span
+          class="home__title--extralight">Web Student</span></h1>
       <div class="home__text">
-
         <p class="home__text--moi">Hello tout le monde, moi c’est Guillaume et je suis étudiant en <span
             class="home__text--cyan">web</span></p>
         <p class="home__text--portfolio">Sur mon portfolio tu pourras y trouver mes différents projets étudiants et
@@ -101,33 +100,209 @@
     <section id="projets" class="projets">
       <div class="projets__border"></div>
       <h2 class="projets__h2">Projets</h2>
+
       <div class="projets__slider">
-        <div class="projets__content">
-          <a href="https://guillaume-cabaraux.be/projets/decembre"><img class="projets__img"
-              src="assets/images/img-dataplay.png" alt="image du projet décembre"></a>
-          <p class="projets__description">Décembre - Janvier 2024</p>
+        <div class="projets__content" data-modal="modal1">
+          <a href="#">
+            <img class="projets__img" src="assets/images/img-dataplay.png" alt="image du projet décembre">
+            <p class="projets__description">Décembre - Janvier 2024</p>
+          </a>
         </div>
-        <div class="projets__content">
-          <a href="https://guillaume-cabaraux.be/projets/rethinking-ux"><img class="projets__img"
-              src="assets/images/img-dataplay.png" alt="image du projet rux"></a>
-          <p class="projets__description">Rethinking UX - Février 2024</p>
+
+        <div class="projets__content" data-modal="modal2">
+          <a href="#">
+            <img class="projets__img" src="assets/images/mockup-RUX.png" alt="image du projet rux">
+            <p class="projets__description">Rethinking UX - Février 2024</p>
+          </a>
         </div>
-        <div class="projets__content">
-          <a href="https://guillaume-cabaraux.be/projets/dataplay"><img class="projets__img"
-              src="assets/images/img-dataplay.png" alt="image du projet dataplay"></a>
-          <p class="projets__description">Dataplay - Mars 2024</p>
+
+        <div class="projets__content" data-modal="modal3">
+          <a href="#">
+            <img class="projets__img" src="assets/images/img-dataplay.png" alt="image du projet dataplay">
+            <p class="projets__description">Dataplay - Mars 2024</p>
+          </a>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+      <div id="modal1" class="modal modal--mobile">
+        <div class="modal-content">
+          <button class="close"><img src="assets/images/croix.svg" alt="croix pour refermer la modal"></button>
+          <h2 class="modal__h2"><span class="modal__h2--extrabold">Projets Dataplay</span><br><span
+              class="modal__h2--extralight">Mars 2024</span></h2>
+
+          <div class="modal__contenu">
+            <div class="modal__contenant">
+              <div class="modal--left">
+                <p class="modal__paragraph modal__paraImg">Le projet vise à concevoir une expérimentation basée sur
+                  un jeu de
+                  données et à
+                  élaborer son
+                  identité graphique. </p>
+
+                <div class="modal__projet">
+                  <img class="modal__img" src="assets/images/img-dataplay.png" alt="Affiche du projets dataplay">
+                </div>
+                <ul class="modal__listUtils">
+                  <li class="modal__el">HTML</li>
+                  <li class="modal__el">SCSS</li>
+                  <li class="modal__el">JavaScript</li>
+                  <li class="modal__el">JSON</li>
+                </ul>
+
+              </div>
+              <div class="modal--right">
+                <p class="modal__paragraph">Notre équipe de cinq étudiants, avons choisi d’exploiter les retards
+                  des
+                  trains
+                  de la SNCB comme
+                  base de
+                  données pour ce projet. </p>
+                <div class="modal__pucePara"></div>
+                <p class="modal__paragraph">Nous avons calculé la moyenne des retards par ligne et estimé le temps
+                  d’attente
+                  moyen sur une
+                  semaine, un
+                  mois et un an. </p>
+                <div class="modal__pucePara"></div>
+                <p class="modal__paragraph">Pour ma part, je me suis occupé de la réalisation du Snake ainsi que la
+                  réalisation d’illustrations et de la réalisation de la vidéo de présentation du projets. </p>
+              </div>
+            </div>
+            <video class="modal__video" src=""></video>
+            <p class="modal__group">Guillaume Cabaraux - Maxime Baldan - Faysall Bidari - Alice Derriks - Jules
+              Vanhuysse
+            </p>
+
+            <ul class="modal__listButton">
+              <li class="modal__elButton">
+                <a href="https://guillaume-cabaraux.be/projets/dataplay">Site Dataplay</a>
+              </li>
+              <li class="modal__elButton">
+                <a href="https://guillaume-cabaraux.be/projets/dataplay/presentation">Site de présentation
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <!--<div id="modal1" class="modal modal--desktop">
+        <div class="modal-content">
+          <h2 class="modal__h2"><span class="modal__h2--extrabold">Projets Dataplay</span><br><span
+              class="modal__h2--extralight">Mars 2024</span></h2>
+          <button class="close"><img src="assets/images/croix.svg" alt="croix pour refermer la modal"></button>
+          <div class="modal__contenu">
+            <div class="modal__contenu--left">
+              <img class="modal__img" src="assets/images/img-dataplay.png" alt="Affiche du projets dataplay">
+              <ul class="modal__listUtils">
+                <li class="modal__el">HTML</li>
+                <li class="modal__el">SCSS</li>
+                <li class="modal__el">JavaScript</li>
+                <li class="modal__el">JSON</li>
+              </ul>
+            </div>
+            <div class="modal__contenu--right">
+              <p class="modal__paragraph">Le projet Dataplay vise à concevoir une expérimentation basée sur un jeu de
+                données et à
+                élaborer son
+                identité graphique. </p>
+              <p class="modal__paragraph">Notre équipe de cinq étudiants, avons choisi d’exploiter les retards des
+                trains
+                de la SNCB comme
+                base de
+                données pour ce projet. </p>
+              <p class="modal__paragraph">Nous avons calculé la moyenne des retards par ligne et estimé le temps
+                d’attente
+                moyen sur une
+                semaine, un
+                mois et un an. </p>
+            </div>
+          </div>
+          <ul class="modal__listButton">
+            <li class="modal__elButton">
+              <a href="https://guillaume-cabaraux.be/projets/dataplay">Site Dataplay<img class="modal__buttonImg"
+                  src="assets/images/button_site_goTo.svg"
+                  alt="svg du boutton pour se diriger vers une autres pas internet"></a>
+            </li>
+            <li class="modal__elButton">
+              <a href="">Site de présentation<img class="modal__buttonImg" src="assets/images/button_site_goTo.svg"
+                  alt="svg du boutton pour se diriger vers une autres pas internet">
+              </a>
+            </li>
+          </ul>
+
+          <video class="modal__video" src=""></video>
+          <p class="modal__group">Guillaume Cabaraux - Maxime Baldan - Faysall Bidari - Alice Derriks - Jules
+            Vanhuysse
+          </p>
+        </div>
+      </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <span class="close">×</span>
+          <!-- Contenu de la modal pour le deuxième projet -->
+        </div>
+      </div>
+
+      <div id="modal3" class="modal">
+        <div class="modal-content">
+          <span class="close">×</span>
+          <!-- Contenu de la modal pour le troisième projet -->
+        </div>
+      </div>
+
     </section>
 
     <footer id="contact-mobile" class="contact-mobile">
       <div class="contact__border"></div>
       <h2 class="contact__h2">Contacts</h2>
       <ul class="contact__list">
-        <li class="contact__mail">cabaraux.guillaume@gmail.com</li>
-        <li class="contact__phone">+32 472 33 08 26</li>
+        <li class="contact__mail"><a href="mailto:cabaraux.guillaume@gmail.com">cabaraux.guillaume@gmail.com</a></li>
+        <li class="contact__phone"><a href="tel:+32472330826">+32 472 33 08 26</a></li>
         <li class="contact__name">Guillaume Cabaraux</li>
-        <li class="contact__adresse">Namur, Belgique</li>
+        <li class="contact__adresse"><a href="https://www.google.com/maps/search/?api=1&query=Namur%2C+Belgique">Namur,
+            Belgique</a></li>
+
         <li>
           <ul class="contact__reseau">
             <li><a href="https://github.com/GuiCab04"><img class="contact__img" src="assets/images/github.svg"
@@ -151,15 +326,17 @@
       <h2 class="contact__h2">Contacts</h2>
 
       <ul class="contact__list contact__list--top">
-        <li class="contact__mail">cabaraux.guillaume@gmail.com</li>
-        <li class="contact__phone">+32 472 33 08 26</li>
+        <li class="contact__mail"><a href="mailto:cabaraux.guillaume@gmail.com">cabaraux.guillaume@gmail.com</a></li>
+        <li class="contact__phone"><a href="tel:+32472330826">+32 472 33 08 26</a></li>
       </ul>
 
       <ul class="contact__list--bottom">
         <li>
           <ul class="contact__list">
             <li class="contact__name">Guillaume Cabaraux</li>
-            <li class="contact__adresse">Namur, Belgique</li>
+            <li class="contact__adresse"><a
+                href="https://www.google.com/maps/search/?api=1&query=Namur%2C+Belgique">Namur,
+                Belgique</a></li>
           </ul>
         </li>
         <li class="contact__copyright"><a href="#">Crédits</a> © 2024</li>

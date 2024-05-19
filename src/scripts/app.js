@@ -46,6 +46,7 @@ linkScrollMenu.forEach(link => {
             }
             window.scrollTo({
                 top: offsetTop,
+                behavior: "smooth",
             });
         }
     });
@@ -151,33 +152,51 @@ tick();
 
 
 
-//SLIDER GSAP
+// SLIDER GSAP
 
+document.addEventListener('DOMContentLoaded', function () {
+    const slider = gsap.utils.toArray(".projets__content");
+    let tween = gsap.to(slider, {
+        xPercent: -95 * (slider.length - 0),
+        scrollTrigger: {
+            trigger: ".projets__slider",
+            start: "top 20%",
+            pin: true,
+            scrub: 1,
+        },
+    });
 
-const slider = gsap.utils.toArray(".projets__content");
-tween = gsap.to(slider, {
-    xPercent: -95 * (slider.length - 0),
-    scrollTrigger: {
-        trigger: ".projets__slider",
-        start: "top 20%",
-        pin: true,
-        scrub: 1,
+    // MODAL
 
-    },
+    var modals = document.querySelectorAll('.modal');
+    var links = document.querySelectorAll('.projets__content');
+
+    links.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            var modalId = link.getAttribute('data-modal');
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+            html.classList.add('modal--open');
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    modals.forEach(function (modal) {
+        var closeButton = modal.querySelector('.close');
+        closeButton.addEventListener('click', function () {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+            html.classList.remove('modal--open');
+        });
+
+        modal.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+
+            }
+        });
+    });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

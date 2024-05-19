@@ -386,13 +386,13 @@
         }
 
         &--left {
-            max-width: 50vw;
+            max-width: 100%;
             margin: 0 auto;
 
         }
 
         &--right {
-            max-width: 30vw;
+            max-width: 100%;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -431,11 +431,12 @@
             font-size: 22px;
             margin-top: 0;
             margin-bottom: 0;
+            max-width: 80%;
         }
 
         &__paraImg {
-            font-size: 22px;
-            max-width: 70%;
+            font-size: 24px;
+            max-width: 80%;
             margin: 0 auto;
         }
 
@@ -444,6 +445,7 @@
             padding: 0;
             margin-top: 52px;
             display: flex;
+            justify-content: center;
         }
 
         &__elButton {
@@ -477,10 +479,11 @@
 
         &__video {
             margin-top: 52px;
-            margin-bottom: 7px;
-            width: 100%;
+            margin-bottom: 11px;
+            width: 70%;
             display: flex;
             justify-content: center;
+            margin: 0 auto;
         }
 
         &__group {
@@ -492,6 +495,7 @@
 
         &-content {
             padding: 5%;
+            padding-top: 52px;
         }
 
         &--open {

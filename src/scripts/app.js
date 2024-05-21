@@ -200,3 +200,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//PRE LOAD IMG
+
+function checkImagesLoaded() {
+    const images = document.querySelectorAll("#imageSection img");
+
+    images.forEach((img, index) => {
+        if (img.complete) {
+            console.log(`Image ${index + 1} is already loaded: ${img.src}`);
+        } else {
+            img.addEventListener('load', () => {
+                console.log(`Image ${index + 1} loaded: ${img.src}`);
+            });
+        }
+    });
+}
+
+function showImages() {
+    const imageSection = document.getElementById("imageSection");
+    imageSection.classList.remove("hidden");
+    checkImagesLoaded();
+}
+
+// Initial check for images that might already be loaded
+checkImagesLoaded();

@@ -15,7 +15,7 @@
         font-family: "Orbitron", sans-serif;
         font-style: normal;
         color: $c-text;
-        margin-top: 36px;
+        margin-top: 8px;
         margin-bottom: 63px;
     }
 
@@ -44,6 +44,9 @@
     &__content {
         margin-left: 50px;
 
+        a {
+            text-decoration: none;
+        }
     }
 
     &__slider {
@@ -53,18 +56,39 @@
     }
 }
 
+@media (min-width : 750px) {
+    .projets {
+        margin-bottom: 35vh;
+
+        &__border {
+            height: 3px;
+        }
+
+        &__h2 {
+            margin-top: 84px;
+            margin-bottom: 63px;
+            font-size: 36px;
+        }
+
+        &__img {
+            width: 60vw;
+        }
+
+        &__description {
+            font-size: 22px;
+        }
+
+        &__content {
+            margin-left: 63px;
+        }
+    }
+}
 
 @media (min-width : 1200px) {
 
 
     .projets {
-
-
-
-
-
         margin-bottom: 40vh;
-
 
         &__border {
             width: 33%;

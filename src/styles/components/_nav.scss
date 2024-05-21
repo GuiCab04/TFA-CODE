@@ -133,10 +133,45 @@ html.menu--open {
     transform: translateY(-9px) rotate(-45deg);
 }
 
+@media (min-width:750px) {
 
 
+    .header {
+        &--sticky {
+            border-bottom: solid 3px #fff;
+        }
+    }
 
-@media (min-width: 1000px) {
+    .menu {
+
+        &--toggle {
+            right: 36px;
+        }
+
+        &__el {
+            font-size: 36px;
+        }
+    }
+
+    .nav {
+        &__logo {
+            width: 36px;
+            margin-top: 27px;
+            margin-left: 27px;
+            margin-bottom: 27px;
+
+        }
+    }
+
+    .bar {
+        width: 36px;
+        height: 4px;
+
+    }
+}
+
+
+@media (min-width: 1200px) {
     header {
         width: 100%;
         height: 96px;

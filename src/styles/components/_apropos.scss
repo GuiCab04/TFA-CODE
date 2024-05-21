@@ -12,7 +12,7 @@
         font-family: "Orbitron", sans-serif;
         font-style: normal;
         color: $c-text;
-        margin-top: 36px;
+        margin-top: 84px;
         margin-bottom: 63px;
         font-size: 27px;
     }
@@ -38,7 +38,7 @@
     &__img {
         display: flex;
         justify-content: center;
-        width: 50%;
+        width: 70%;
         margin: auto;
         margin-top: 20px;
     }
@@ -51,7 +51,35 @@
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 750px) {
+    .propos {
+        margin-bottom: 35vh;
+
+        &__border {
+
+            height: 3px;
+        }
+
+        &__h2 {
+            margin-top: 84px;
+            margin-bottom: 63px;
+            font-size: 36px;
+        }
+
+        &__text {
+            font-size: 27px;
+        }
+
+        &__img {
+
+            width: 60%;
+            margin: auto;
+            margin-top: 20px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
     .propos {
         margin-bottom: 30vh;
 

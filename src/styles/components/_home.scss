@@ -5,7 +5,7 @@
         font-family: "Manrope", sans-serif;
         font-style: normal;
         margin: 0;
-        margin-top: 152px;
+        padding-top: 152px;
         margin-bottom: 112px;
         color: $c-text;
 
@@ -47,11 +47,44 @@
     }
 }
 
+@media (min-width : 750px) {
+    .home {
+        margin-bottom: 40vh;
+
+        &__title {
+            padding-top: 165px;
+            margin-bottom: 123px;
+
+            &--extralight {
+                font-size: 52px;
+            }
+
+            &--extrabold {
+                font-size: 69px;
+            }
+
+        }
+
+        &__text {
+            font-size: 29px;
+            width: 100%;
+
+            &--moi {
+                margin-bottom: 29px;
+            }
+        }
+    }
+}
+
 @media (min-width : 1200px) {
     .home {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+
         &__title {
-            margin-top: 165px;
             margin-bottom: 69px;
+            position: relative;
 
             &--extralight {
                 font-size: 69px;
@@ -65,7 +98,7 @@
 
         &__text {
             font-size: 29px;
-            float: right;
+            align-self: end;
             width: 45%;
 
             &--moi {
@@ -75,14 +108,13 @@
     }
 
     .scroll-downs {
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        margin-top: 350px;
+        position: absolute;
+        bottom: 1%;
+        left: 50%;
         width: 34px;
         height: 55px;
+        transform: translateX(-50%);
+        transform: translateY(-50%);
     }
 
     .mousey {
@@ -119,23 +151,5 @@
             transform: translateY(15px);
             opacity: 0;
         }
-    }
-}
-
-@media (min-height: 1000px) {
-    .home {
-        &__title {
-            margin-top: 196px;
-            margin-bottom: 145px;
-
-        }
-
-        &__text {
-            width: 45%;
-        }
-    }
-
-    .scroll-downs {
-        margin-top: 375px;
     }
 }

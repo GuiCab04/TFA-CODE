@@ -10,7 +10,7 @@
         font-family: "Orbitron", sans-serif;
         font-style: normal;
         color: $c-text;
-        margin-top: 36px;
+        margin-top: 84px;
         margin-bottom: 63px;
     }
 
@@ -90,7 +90,51 @@ li {
     list-style: none;
 }
 
-@media (min-width : 1000px) {
+@media (min-width : 750px) {
+    .contact {
+        &__border {
+            height: 3px;
+        }
+
+        &__h2 {
+            margin-top: 84px;
+            margin-bottom: 63px;
+            font-size: 36px;
+        }
+
+        &__mail,
+        &__phone {
+            font-size: 20px;
+        }
+
+
+
+        &__adresse,
+        &__name {
+            font-size: 20px;
+        }
+
+        &__adresse {
+            margin-bottom: 36px;
+        }
+
+        &__reseau {
+            max-width: 30%;
+        }
+
+        &__img {
+            height: 27px;
+        }
+
+        &__copyright {
+            font-size: 20px;
+        }
+
+    }
+
+}
+
+@media (min-width : 1200px) {
     .contact {
         &-mobile {
             display: none;

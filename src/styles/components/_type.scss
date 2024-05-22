@@ -12,7 +12,9 @@ body {
   overflow-x: hidden;
 }
 
-
+p {
+  line-height: 140%;
+}
 
 main {
   margin: 0;
@@ -37,10 +39,17 @@ main {
 
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 750px) {
   main {
-    padding-left: 69px;
-    padding-right: 69px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    padding-left: 93px;
+    padding-right: 93px;
   }
 
   html {

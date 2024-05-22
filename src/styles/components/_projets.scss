@@ -15,8 +15,9 @@
         font-family: "Orbitron", sans-serif;
         font-style: normal;
         color: $c-text;
-        margin-top: 8px;
+        margin-top: 84px;
         margin-bottom: 63px;
+        font-size: 27px;
     }
 
     &__img {
@@ -95,9 +96,9 @@
         }
 
         &__h2 {
-            margin-top: 39px;
+            margin-top: 123px;
             margin-bottom: 93px;
-            font-size: 39px;
+            font-size: 52px;
         }
 
         &__description {
@@ -122,8 +123,7 @@
 
         &__img {
             max-width: 100%;
-            width: 35vw;
+            width: 30vw;
         }
     }
-
 }

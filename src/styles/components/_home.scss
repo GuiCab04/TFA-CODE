@@ -152,4 +152,30 @@
             opacity: 0;
         }
     }
+
+    @media (max-height : 800px) {
+        .home {
+
+            &__title {
+                &--extralight {
+                    font-size: 52px;
+                }
+
+                &--extrabold {
+                    font-size: 69px;
+                }
+
+            }
+
+            &__text {
+                font-size: 27px;
+                align-self: end;
+                width: 45%;
+
+                &--moi {
+                    margin-bottom: 29px;
+                }
+            }
+        }
+    }
 }

@@ -107,6 +107,9 @@
             margin-bottom: 20px;
         }
 
+        &:nth-child(2) a {
+            background-position: 93%;
+        }
 
 
         a {
@@ -115,15 +118,15 @@
             background-image: url(../assets/images/button_site_goTo.svg);
             background-size: 15px;
             background-repeat: no-repeat;
-            background-position: 92%;
+            background-position: 90%;
             padding: 11px;
-            padding-top: 8px;
-            padding-right: 35px;
+            padding-top: 9px;
+            padding-right: 40px;
 
-            &:nth-child(2) {
-                background-position: 95%;
-            }
+
         }
+
+
     }
 
     &__pucePara {
@@ -259,7 +262,7 @@
         }
 
         &__paraImg {
-            font-size: 22px;
+            font-size: 24px;
         }
 
         &__listButton {
@@ -279,20 +282,20 @@
                 margin-bottom: 22px;
             }
 
+            &:nth-child(2) a {
+                background-position: 97%;
+            }
+
             a {
                 color: #fff;
                 text-decoration: none;
                 background-image: url(../assets/images/button_site_goTo.svg);
-                background-size: 15px;
+                background-size: 20px;
                 background-repeat: no-repeat;
-                background-position: 92%;
-                padding: 11px;
+                background-position: 95%;
+                padding: 7px;
                 padding-top: 8px;
                 padding-right: 46px;
-
-                &:nth-child(2) {
-                    background-position: 95%;
-                }
             }
         }
 
@@ -339,7 +342,6 @@
         }
     }
 
-
     .close {
         top: 39px;
         right: 39px;
@@ -361,7 +363,7 @@
     .modal {
 
         &__h2 {
-            margin-bottom: 5%;
+            margin-bottom: 10%;
 
             &--extralight {
                 font-size: 52px;
@@ -399,8 +401,9 @@
         }
 
         &__img {
-            width: 50%;
-            margin-top: 39px;
+            width: 80%;
+            margin: 0;
+            margin-top: 78px;
         }
 
         &__projet {
@@ -408,18 +411,27 @@
             justify-content: center;
         }
 
+        &__pucePara {
+            width: 30px;
+            height: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background-image: url(../assets/images/puce.svg);
+            background-size: 20px;
+        }
+
         &__listUtils {
-            max-width: 60%;
+            max-width: 80%;
             margin: 0 auto;
-            margin-top: 22px;
+            margin-top: 29px;
             margin-bottom: 52px;
         }
 
         &__el {
-            border: solid 2px #fff;
-            border-radius: 5px;
-            font-size: 17px;
-            padding: 6px;
+            border-top: solid 2px #fff;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 7px;
         }
 
         &__paragraph {
@@ -433,7 +445,7 @@
         }
 
         &__paraImg {
-            font-size: 24px;
+            font-size: 27px;
             max-width: 80%;
             margin: 0 auto;
         }
@@ -458,20 +470,20 @@
                 margin-bottom: 0px;
             }
 
+            &:nth-child(2) a {
+                background-position: 96%;
+            }
+
             a {
                 color: #fff;
                 text-decoration: none;
                 background-image: url(../assets/images/button_site_goTo.svg);
-                background-size: 15px;
+                background-size: 20px;
                 background-repeat: no-repeat;
-                background-position: 92%;
+                background-position: 94%;
                 padding: 11px;
                 padding-top: 8px;
                 padding-right: 46px;
-
-                &:nth-child(2) {
-                    background-position: 95%;
-                }
             }
         }
 

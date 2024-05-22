@@ -88,36 +88,19 @@
         }
 
         &__h2 {
-
-            margin-top: 39px;
+            margin-top: 123px;
             margin-bottom: 93px;
-            font-size: 39px;
+            font-size: 52px;
         }
 
         &__text {
             font-size: 29px;
-        }
-
-        &__img {
             width: 50%;
         }
 
-        &__container {
-            display: flex;
-            flex-direction: column;
-        }
-    }
-}
-
-@media (min-width: 1200px) {
-    .propos {
-
         &__img {
-            width: 30%;
-        }
+            width: 40%;
 
-        &__text {
-            max-width: 60%;
         }
 
         &__container {

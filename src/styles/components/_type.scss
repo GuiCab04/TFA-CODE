@@ -1,10 +1,16 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0;
   padding: 0;
   top: 0;
   left: 0;
   background-color: $c-bg;
-
+  overflow-y: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 html,
@@ -68,7 +74,7 @@ main {
     position: fixed;
     height: var(--circle-size);
     width: var(--circle-size);
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 100%;
     top: calc(var(--circle-size) / 2 * -1);
     left: calc(var(--circle-size) / 2 * -1);

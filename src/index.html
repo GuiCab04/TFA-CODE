@@ -62,7 +62,6 @@
 
   <main>
 
-    <div class="scrollBottom"></div>
 
     <section class="home">
       <h1 class="home__title"><span class="home__title--extrabold">Guillaume Cabaraux</span><br><span
@@ -73,6 +72,7 @@
         <p class="home__text--portfolio">Ici, tu pourras retrouver mes différents projets étudiants et peut-être plus
           encore…</p>
       </div>
+
       <div class="scroll-downs">
         <div class="mousey">
           <div class="scroller"></div>
@@ -81,16 +81,22 @@
     </section>
 
     <section id="propos" class="propos">
-      <div class="propos__border"></div>
-      <h2 class="propos__h2">À propos</h2>
-      <div class="propos__container">
-        <p class="propos__text">Comme mentionné plus haut, je m’appelle <span class="propos__text--cyan">Guillaume
+      <div class="animated-block">
+        <div class="propos__border"></div>
+        <h2 class="propos__h2">À propos</h2>
+        <div class="propos__container ">
+          <p class="propos__text animated-block__text">Comme mentionné plus haut, je m’appelle Guillaume Cabaraux, j’ai
+            19
+            ans et je suis
+            étudiant en Design Web et Transmédia à Namur. En dehors de l’école, je suis animateur responsable dans une
+            unité scouts.</p>
+          <!--<p class="propos__text">Comme mentionné plus haut, je m’appelle <span class="propos__text--cyan">Guillaume
             Cabaraux</span>, j’ai <span class="propos__text--cyan">19 ans</span> et je suis étudiant en <span
-            class="propos__text--cyan">Design Web et Transmédia</span> à la <a class="propos__text--underlineDots"
-            href="https://www.heaj.be/fr/">Haute École Albert Jacquard</a> à Namur. En dehors de l’école, je suis <span
-            class="propos__text--cyan">animateur responsable</span> dans une unité scouts.</p>
-        <img class="propos__img" src="assets/images/perso2.png" srcset="assets/images/perso2@2x.png 2x"
-          alt="personnage généré avec Copilot qui port un sweat a capuche bleu ciel, des lunettes bleues et des cheveux châtain">
+            class="propos__text--cyan">Design Web et Transmédia</span> à Namur. En dehors de l’école, je suis <span
+            class="propos__text--cyan">animateur responsable</span> dans une unité scouts.</p>-->
+          <img class="propos__img" src="assets/images/perso2.png" srcset="assets/images/perso2@2x.png 2x"
+            alt="personnage généré avec Copilot qui port un sweat a capuche bleu ciel, des lunettes bleues et des cheveux châtain">
+        </div>
       </div>
     </section>
 
@@ -122,14 +128,14 @@
       </div>
       <div id="modal1" class="modal">
         <div class="modal-content">
-          <button class="close"><img src="assets/images/croix-noir.svg" alt="croix pour refermer la modal"></button>
+          <button class="close"><img src="assets/images/croix.svg" alt="croix pour refermer la modal"></button>
           <h2 class="modal__h2"><span class="modal__h2--extrabold">Projets Decembre</span><br><span
               class="modal__h2--extralight">Janvier 2023</span></h2>
           <div class="modal__contenu">
             <div class="modal__contenant">
               <div class="modal--left">
-                <p class="modal__paragraph modal__paraImg">Ce projet visait à concevoir un site de vente en ligne du
-                  film Lawrence Of Arabia sour forme matérialisé ou non matérialisé.</p>
+                <p class="modal__paragraph modal__paraImg">Ce projet visait à concevoir un site permettant l’achat, le
+                  don et la livraison d’une oeuvre choisie parmis une liste imposée.</p>
 
                 <div class="modal__projet">
                   <img class="modal__img" src="assets/images/mockup-decembre.png"
@@ -142,14 +148,15 @@
                 </ul>
               </div>
               <div class="modal--right">
-                <p class="modal__paragraph">Notre équipe, composée de cinq étudiants, a choisi d’utiliser les retards
-                  des trains de la SNCB comme base de données pour ce projet.</p>
+                <p class="modal__paragraph">Chaque étudiant devait choisir une œuvre parmi celles fournies par les
+                  professeurs, en veillant à ne pas sélectionner une œuvre déjà prise par un autre étudiant. La liste
+                  comprenait divers types d'œuvres, tels que des livres, des événements, des films, etc.</p>
                 <div class="modal__pucePara"></div>
-                <p class="modal__paragraph">Nous avons calculé la moyenne des retards par ligne et estimé le temps
-                  d’attente moyen sur une semaine, un mois et une année.</p>
+                <p class="modal__paragraph">Pour ma part, j’ai choisi le film Lawrence d’Arabie, réalisé en 1962. Ce
+                  film relate l’histoire de T.E. Lawrence, interprété par Peter O’Toole.</p>
                 <div class="modal__pucePara"></div>
-                <p class="modal__paragraph">Pour ma part, je me suis occupé de la réalisation de l’expériance
-                  intéractive, ainsi que la réalisation d’illustrations et de la vidéo de présentation du projets.</p>
+                <p class="modal__paragraph">T.E. Lawrence était un officier britannique jouant un rôle crucial dans la
+                  révolte arabe contre l’Empire ottoman durant la Première Guerre mondiale.</p>
               </div>
             </div>
             <video class="modal__video" src=""></video>
@@ -164,7 +171,7 @@
 
       <div id="modal2" class="modal">
         <div class="modal-content">
-          <button class="close"><img src="assets/images/croix-noir.svg" alt="croix pour refermer la modal"></button>
+          <button class="close"><img src="assets/images/croix.svg" alt="croix pour refermer la modal"></button>
           <h2 class="modal__h2"><span class="modal__h2--extrabold">Projets Rethinking UX</span><br><span
               class="modal__h2--extralight">Février 2024</span></h2>
 
@@ -186,14 +193,22 @@
 
               </div>
               <div class="modal--right">
-                <p class="modal__paragraph">Notre équipe de cinq étudiants, avons choisi d’exploiter les retards des
-                  trains de la SNCB comme base de données pour ce projet.</p>
+                <p class="modal__paragraph">
+                  ChatGPT
+                  Notre équipe de quatre étudiants a réalisé le projet B74 pour aider les étudiants à finaliser leurs
+                  projets web. Nous avons développé un site web accessible via un écran tactile dans le local B74 de la
+                  Haute-École Albert Jacquard. Ce site permet de vérifier, en cochant des cases, que tous les éléments
+                  nécessaires à un projet web ont été pris en compte.</p>
                 <div class="modal__pucePara"></div>
-                <p class="modal__paragraph">Nous avons calculé la moyenne des retards par ligne et estimé le temps
-                  d’attente moyen sur une semaine, un mois et un an.</p>
+                <p class="modal__paragraph">L'outil se divise en cinq sections : HTML, CSS, JS, Design et Extensions.
+                  Les quatre premières listent les éléments à vérifier, tandis que la dernière propose diverses
+                  extensions utiles pour VSCode, Figma et les navigateurs web. Nous avons eu vingt jours pour mener à
+                  bien ce projet.</p>
                 <div class="modal__pucePara"></div>
-                <p class="modal__paragraph">Pour ma part, je me suis occupé de la réalisation du Snake ainsi que
-                  la réalisation d’illustrations et de la réalisation de la vidéo de présentation du projets. </p>
+                <p class="modal__paragraph">Ce dispositif pratique et facile à utiliser aide les étudiants à s'assurer
+                  qu'ils n'ont rien oublié avant de soumettre leur travail, améliorant ainsi la qualité et l'efficacité
+                  de leurs projets.
+                </p>
               </div>
             </div>
             <video class="modal__video" src=""></video>
@@ -210,7 +225,7 @@
 
       <div id="modal3" class="modal">
         <div class="modal-content">
-          <button class="close"><img src="assets/images/croix-noir.svg" alt="croix pour refermer la modal"></button>
+          <button class="close"><img src="assets/images/croix.svg" alt="croix pour refermer la modal"></button>
           <h2 class="modal__h2"><span class="modal__h2--extrabold">Projets Dataplay</span><br><span
               class="modal__h2--extralight">Mars 2024</span></h2>
 
@@ -296,9 +311,14 @@
       <h2 class="contact__h2">Contacts</h2>
       <ul class="contact__list contact__list--top">
         <li class="contact__text">
-          <p>Je suis actuellement à la recherche d’un stage pour ma troisième année d'études. Si vous avez une
-            opportunité à me proposer ou souhaitez en savoir plus sur mon profil, n’hésitez pas à me contacter via mes
-            réseaux.</p>
+          <p>Je suis actuellement à la recherche d’un <span class="contact__text--uppercase">stage pour ma troisième
+              année d'études.</span> Si vous avez
+            une
+            <span class="contact__text--uppercase">opportunité</span> à me proposer ou souhaitez <span
+              class="contact__text--uppercase">en savoir plus sur mon profil</span>, n’hésitez
+            pas à me <span class="contact__text--uppercase">contacter</span> via mes
+            <span class="contact__text--uppercase">réseaux.</span>
+          </p>
         </li>
         <li>
           <ul class="contact__reseau">

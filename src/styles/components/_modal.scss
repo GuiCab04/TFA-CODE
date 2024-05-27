@@ -61,20 +61,20 @@
     }
 
     &__el {
-        border: solid 2px #fff;
+        border: solid 1px #fff;
         border-radius: 5px;
         font-size: 15px;
         padding: 6px;
     }
 
     &__paragraph {
-        font-family: "Viga", sans-serif;
+        font-family: "Manrope", sans-serif;
         font-style: normal;
         color: $c-text;
         font-size: 15px;
         margin-top: 0;
         margin-bottom: 0;
-
+        font-weight: 300;
 
     }
 
@@ -90,7 +90,7 @@
     }
 
     &__elButton {
-        border: solid 2px #fff;
+        border: solid 1px #fff;
         border-radius: 50px;
         color: #fff;
         font-family: "Manrope", sans-serif;
@@ -198,9 +198,6 @@
 
     img {
         width: 25px;
-        background-color: #ffffff;
-        padding: 10px;
-        border-radius: 50px;
     }
 }
 
@@ -251,12 +248,13 @@
         }
 
         &__paragraph {
-            font-family: "Viga", sans-serif;
+            font-family: "Manrope", sans-serif;
             font-style: normal;
             color: $c-text;
             font-size: 22px;
             margin-top: 0;
             margin-bottom: 0;
+            font-weight: 300;
         }
 
         &__paraImg {
@@ -433,13 +431,14 @@
         }
 
         &__paragraph {
-            font-family: "Viga", sans-serif;
+            font-family: "Manrope", sans-serif;
             font-style: normal;
             color: $c-text;
             font-size: 22px;
             margin-top: 0;
             margin-bottom: 0;
             max-width: 60%;
+            font-weight: 300;
         }
 
         &__paraImg {

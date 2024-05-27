@@ -1,5 +1,8 @@
 header {
-    background-color: $c-bg;
+    background: rgba(2, 7, 14, 0.4);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(2, 7, 14, 0.2);
     width: 100vw;
 }
 
@@ -10,7 +13,6 @@ header {
         width: 100%;
         transition: top 0.3s;
         z-index: 1000;
-        border-bottom: solid 2px #fff;
         width: 100vw;
 
         &.visible {
@@ -54,8 +56,8 @@ header {
     }
 
     &__el {
-        font-family: "Russo One", sans-serif;
-        font-weight: 400;
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
         text-transform: uppercase;
         font-size: 22px;
         color: $c-text;
@@ -136,12 +138,6 @@ html.menu--open {
 @media (min-width:750px) {
 
 
-    .header {
-        &--sticky {
-            border-bottom: solid 3px #fff;
-        }
-    }
-
     .menu {
 
         &--toggle {
@@ -149,6 +145,7 @@ html.menu--open {
         }
 
         &__el {
+            font-weight: 800;
             font-size: 36px;
             text-transform: uppercase;
         }
@@ -206,12 +203,12 @@ html.menu--open {
         }
 
         &__el {
-            font-family: "Russo One", sans-serif;
-            font-weight: 200;
+            font-family: "Manrope", sans-serif;
+            font-weight: 800;
             font-style: normal;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 18px;
+            letter-spacing: 5px;
+            font-size: 15px;
             color: $c-text;
             margin: 0;
             display: flex;

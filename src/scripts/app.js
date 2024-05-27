@@ -149,78 +149,74 @@ const tick = () => {
 tick();
 
 
+// anim text scroll gsap
 
+const blockText = document.querySelector('.animated-block__text');
+const wordList = blockText.textContent.split(' ').filter(w => w.trim().length > 0);
+const spanList = wordList.map(w => '<span>' + w + '</span>');
+blockText.innerHTML = spanList.join(' ');
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from('.animated-block span', {
+    opacity: 0.2,
+    stagger: 0.5,
+    scrollTrigger: {
+        trigger: '.animated-block',
+        start: '-10% top',
+        end: '100% top',
+        scrub: true,
+        pin: true,
+        markers: true,
+    }
+});
 
 
 // SLIDER GSAP
 
-document.addEventListener('DOMContentLoaded', function () {
-    const slider = gsap.utils.toArray(".projets__content");
-    let tween = gsap.to(slider, {
-        xPercent: -95 * (slider.length - 0),
-        scrollTrigger: {
-            trigger: ".projets__slider",
-            start: "top 20%",
-            pin: true,
-            scrub: 1,
-        },
-    });
+const slider = gsap.utils.toArray(".projets__content");
+let tween = gsap.to(slider, {
+    xPercent: -95 * (slider.length - 0),
+    scrollTrigger: {
+        trigger: ".projets__slider",
+        start: "top 20%",
+        pin: true,
+        scrub: 1,
+    },
+});
 
-    // MODAL
 
-    var modals = document.querySelectorAll('.modal');
-    var links = document.querySelectorAll('.projets__content');
+// MODAL
 
-    links.forEach(function (link) {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            var modalId = link.getAttribute('data-modal');
-            var modal = document.getElementById(modalId);
-            modal.style.display = "block";
-            html.classList.add('modal--open');
-            document.body.style.overflow = "hidden";
-        });
-    });
+var modals = document.querySelectorAll('.modal');
+var links = document.querySelectorAll('.projets__content');
 
-    modals.forEach(function (modal) {
-        var closeButton = modal.querySelector('.close');
-        closeButton.addEventListener('click', function () {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
-            html.classList.remove('modal--open');
-        });
-
-        modal.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto";
-
-            }
-        });
+links.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+        event.preventDefault();
+        var modalId = link.getAttribute('data-modal');
+        var modal = document.getElementById(modalId);
+        modal.style.display = "block";
+        html.classList.add('modal--open');
+        document.body.style.overflow = "hidden";
     });
 });
 
-//PRE LOAD IMG
+modals.forEach(function (modal) {
+    var closeButton = modal.querySelector('.close');
+    closeButton.addEventListener('click', function () {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+        html.classList.remove('modal--open');
+    });
 
-function checkImagesLoaded() {
-    const images = document.querySelectorAll("#imageSection img");
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
 
-    images.forEach((img, index) => {
-        if (img.complete) {
-            console.log(`Image ${index + 1} is already loaded: ${img.src}`);
-        } else {
-            img.addEventListener('load', () => {
-                console.log(`Image ${index + 1} loaded: ${img.src}`);
-            });
         }
     });
-}
+});
 
-function showImages() {
-    const imageSection = document.getElementById("imageSection");
-    imageSection.classList.remove("hidden");
-    checkImagesLoaded();
-}
 
-// Initial check for images that might already be loaded
-checkImagesLoaded();

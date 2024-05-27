@@ -1,12 +1,10 @@
 .projets {
 
-
     margin-bottom: 35vh;
-
 
     &__border {
         width: 100%;
-        height: 2px;
+        height: 1px;
         border-radius: 5px;
         background-color: #fff;
     }
@@ -31,8 +29,8 @@
         color: #ffffff;
         margin-top: 20px;
         margin-bottom: 0;
-        font-family: "Viga", sans-serif;
-        font-weight: 400;
+        font-family: "Manrope", sans-serif;
+        font-weight: 300;
         font-style: normal;
         color: $c-text;
         font-size: 15px;
@@ -62,7 +60,7 @@
         margin-bottom: 35vh;
 
         &__border {
-            height: 3px;
+            height: 2px;
         }
 
         &__h2 {
@@ -87,9 +85,8 @@
 
 @media (min-width : 1200px) {
 
-
     .projets {
-        margin-bottom: 40vh;
+        margin-bottom: 100vh;
 
         &__border {
             width: 33%;
@@ -110,7 +107,6 @@
             margin-bottom: 0;
         }
 
-
         &__content {
             margin-left: 50px;
         }
@@ -124,6 +120,15 @@
         &__img {
             max-width: 100%;
             width: 30vw;
+        }
+    }
+
+    @media (max-height : 800px) {
+        .projets {
+
+            &__description {
+                font-size: 17px;
+            }
         }
     }
 }

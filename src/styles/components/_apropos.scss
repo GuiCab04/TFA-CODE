@@ -3,7 +3,7 @@
 
     &__border {
         width: 100%;
-        height: 2px;
+        height: 1px;
         border-radius: 5px;
         background-color: #fff;
     }
@@ -19,8 +19,8 @@
 
     &__text {
         margin: 0;
-        font-family: "Viga", sans-serif;
-        font-weight: 400;
+        font-family: "Manrope", sans-serif;
+        font-weight: 300;
         font-style: normal;
         font-size: 20px;
         color: $c-text;
@@ -56,8 +56,7 @@
         margin-bottom: 35vh;
 
         &__border {
-
-            height: 3px;
+            height: 2px;
         }
 
         &__h2 {
@@ -81,7 +80,7 @@
 
 @media (min-width: 1200px) {
     .propos {
-        margin-bottom: 30vh;
+        margin-bottom: 100vh;
 
         &__border {
             width: 33%;
@@ -106,6 +105,15 @@
         &__container {
             display: flex;
             flex-direction: initial;
+        }
+    }
+
+    @media (max-height : 800px) {
+        .propos {
+
+            &__text {
+                font-size: 22px
+            }
         }
     }
 }

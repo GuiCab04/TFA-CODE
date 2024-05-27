@@ -1,7 +1,7 @@
 .contact {
     &__border {
         width: 100%;
-        height: 2px;
+        height: 1px;
         border-radius: 5px;
         background-color: #FFF;
     }
@@ -12,6 +12,7 @@
         color: $c-text;
         margin-top: 84px;
         margin-bottom: 63px;
+        font-size: 27px;
     }
 
     &__list {
@@ -19,21 +20,20 @@
     }
 
     &__text {
-        font-family: "Viga", sans-serif;
-        font-weight: 400;
+        font-family: "Manrope", sans-serif;
+        font-weight: 300;
         font-style: normal;
         color: $c-text;
         font-size: 15px;
-    }
-
-    &__text {
         margin-bottom: 36px;
     }
 
+
+
     &__adresse,
     &__name {
-        font-family: "Viga", sans-serif;
-        font-weight: 400;
+        font-family: "Manrope", sans-serif;
+        font-weight: 300;
         font-style: normal;
         color: $c-text;
         font-size: 15px;
@@ -71,8 +71,6 @@
         a {
             color: $c-text;
         }
-
-
     }
 
     &-desktop {
@@ -87,7 +85,7 @@ li {
 @media (min-width : 750px) {
     .contact {
         &__border {
-            height: 3px;
+            height: 2px;
         }
 
         &__h2 {

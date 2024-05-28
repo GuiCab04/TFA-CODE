@@ -40,7 +40,7 @@ linkScrollMenu.forEach(link => {
         if (target) {
             let offsetTop;
             if (window.innerWidth >= 1200) {
-                offsetTop = target.offsetTop - 100;
+                offsetTop = target.offsetTop - 220;
             } else {
                 offsetTop = target.offsetTop - 50;
             }
@@ -149,7 +149,96 @@ const tick = () => {
 tick();
 
 
-// anim text scroll gsap
+
+
+
+
+
+
+
+// ETAT ACTIF NAV
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav__el");
+
+function updateMenuActiveState(activeIndex) {
+    navLinks.forEach((item, index) => {
+        if (index === activeIndex) {
+            item.classList.add("nav__el--active");
+        } else {
+            item.classList.remove("nav__el--active");
+        }
+    });
+}
+
+sections.forEach((section, index) => {
+    const trigger = ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => {
+            updateMenuActiveState(index - 1);
+        },
+        onLeaveBack: () => {
+            updateMenuActiveState(index - 2);
+        },
+    });
+
+    const resizeObserver = new ResizeObserver(() => {
+        trigger.refresh();
+    });
+    resizeObserver.observe(section);
+});
+
+
+
+
+
+
+
+
+
+
+
+//ANIM WRITE TEXT
+
+
+function splitTextToSpans(element) {
+    const text = element.innerText;
+    element.innerHTML = "";
+    text.split("").forEach(char => {
+        const span = document.createElement("span");
+        span.innerText = char;
+        element.appendChild(span);
+    });
+}
+
+const textMoi = document.querySelector('.home__text--moi');
+const textPortfolio = document.querySelector('.home__text--portfolio');
+
+splitTextToSpans(textMoi);
+splitTextToSpans(textPortfolio);
+
+gsap.set('.home__text span', { opacity: 0 });
+
+gsap.to('.home__text--moi span', {
+    opacity: 1,
+    duration: 0.02,
+    stagger: 0.03,
+    ease: 'power1.inOut',
+    onComplete: () => {
+        gsap.to('.home__text--portfolio span', {
+            opacity: 1,
+            duration: 0.02,
+            stagger: 0.03,
+            ease: 'power1.inOut',
+        });
+    }
+});
+
+
+
+// ANIM TEXT SCROLL GSAP
 
 const blockText = document.querySelector('.animated-block__text');
 const wordList = blockText.textContent.split(' ').filter(w => w.trim().length > 0);

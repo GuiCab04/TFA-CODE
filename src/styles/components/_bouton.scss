@@ -10,26 +10,35 @@
         display: table-cell;
         position: relative;
         transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        & a:after {
+            bottom: -3px;
+            content: "";
+            height: 1px;
+            left: 50%;
+            border-radius: 5px;
+            position: absolute;
+            background: #fff;
+            transition: width 0.4s ease 0s, left 0.4s ease 0s;
+            width: 0;
+        }
+
+        & a:hover:after {
+            width: 100%;
+            left: 0;
+        }
+
+        &--active a:after {
+            width: 100%;
+            left: 0;
+        }
     }
 
-    &__el:hover {
-        transform: scale(1.1);
-    }
 
-    &__el a:after {
-        bottom: -3px;
-        content: "";
-        height: 1px;
-        left: 50%;
-        border-radius: 5px;
-        position: absolute;
-        background: #fff;
-        transition: width 0.4s ease 0s, left 0.4s ease 0s;
-        width: 0;
-    }
 
-    &__el a:hover:after {
-        width: 100%;
-        left: 0;
-    }
+
 }

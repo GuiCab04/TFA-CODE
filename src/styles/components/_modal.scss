@@ -24,9 +24,9 @@
         font-family: "Manrope", sans-serif;
         font-style: normal;
         margin: 0;
-        margin-bottom: 47px;
         color: $c-text;
-        margin-bottom: 5%;
+        margin-bottom: 10%;
+        margin-top: 5%;
 
         &--extralight {
             font-size: 27px;
@@ -35,7 +35,7 @@
         }
 
         &--extrabold {
-            font-size: 35px;
+            font-size: 36px;
             font-weight: 800;
             padding: 0;
         }

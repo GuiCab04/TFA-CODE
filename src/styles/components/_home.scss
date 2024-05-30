@@ -5,18 +5,22 @@
         font-family: "Manrope", sans-serif;
         font-style: normal;
         margin: 0;
-        padding-top: 152px;
-        margin-bottom: 112px;
+        padding-top: 112px;
+        margin-bottom: 84px;
         color: $c-text;
         font-size: 27px;
 
         &--extralight {
             font-weight: 100;
             display: block;
+            font-size: 47px;
+            line-height: 112px;
         }
 
         &--extrabold {
             font-weight: 800;
+            font-size: 63px;
+            line-height: 63px;
         }
 
     }
@@ -35,10 +39,6 @@
             margin-bottom: 20px;
         }
 
-        &--cyan {
-            color: $c-cyan;
-        }
-
         &--portfolio {
             padding: 0;
             margin: 0;
@@ -53,13 +53,21 @@
         &__title {
             padding-top: 165px;
             margin-bottom: 123px;
-            font-size: 52px;
 
+            &--extralight {
+                font-size: 93px;
+                line-height: 163px;
+            }
+
+            &--extrabold {
+                font-size: 93px;
+                line-height: 112px;
+            }
         }
 
         &__text {
             font-size: 29px;
-            width: 100%;
+            width: 70%;
 
             &--moi {
                 margin-bottom: 29px;
@@ -76,16 +84,16 @@
         margin-bottom: 30vh;
 
         &__title {
+            padding-top: 165px;
             margin-bottom: 52px;
             position: relative;
             font-size: 93px;
-
         }
 
         &__text {
             font-size: 29px;
             align-self: end;
-            width: 45%;
+            width: 40%;
 
             &--moi {
                 margin-bottom: 29px;
@@ -141,6 +149,9 @@
 
     @media (max-height : 800px) {
         .home {
+            &__title {
+                padding-top: 123px;
+            }
 
             &__text {
                 font-size: 22px;

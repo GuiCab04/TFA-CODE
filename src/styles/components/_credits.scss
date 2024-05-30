@@ -1,0 +1,80 @@
+.credits {
+    margin-bottom: 30vh;
+
+    &__title {
+        font-family: "Manrope", sans-serif;
+        font-style: normal;
+        margin: 0;
+        padding-top: 112px;
+        margin-bottom: 84px;
+        color: $c-text;
+        font-weight: 800;
+        font-size: 63px;
+        line-height: 63px;
+    }
+
+    &__sousTitle {
+        font-family: "Orbitron", sans-serif;
+        font-style: normal;
+        color: $c-text;
+        margin-top: 84px;
+        margin-bottom: 63px;
+        font-size: 27px;
+    }
+
+    &__el {
+        font-family: "Manrope", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 20px;
+        color: $c-text;
+        list-style: circle;
+        margin-bottom: 10px;
+
+
+        & a {
+            color: $c-text;
+            text-decoration: none;
+
+        }
+    }
+}
+
+@media (min-width: 750px) {
+    .credits {
+        &__title {
+            padding-top: 165px;
+            margin-bottom: 123px;
+            font-size: 93px;
+            line-height: 112px;
+        }
+
+        &__sousTitle {
+            margin-top: 84px;
+            margin-bottom: 63px;
+            font-size: 36px;
+        }
+
+        &__el {
+            font-size: 22px;
+            width: 70%;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .credits {
+
+        &__sousTitle {
+            margin-top: 123px;
+            margin-bottom: 93px;
+            font-size: 52px;
+        }
+
+        &__el {
+            & a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

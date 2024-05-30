@@ -40,7 +40,7 @@ linkScrollMenu.forEach(link => {
         if (target) {
             let offsetTop;
             if (window.innerWidth >= 1200) {
-                offsetTop = target.offsetTop - 220;
+                offsetTop = target.offsetTop - 100;
             } else {
                 offsetTop = target.offsetTop - 50;
             }
@@ -166,8 +166,8 @@ function updateMenuActiveState(activeIndex) {
 sections.forEach((section, index) => {
     const trigger = ScrollTrigger.create({
         trigger: section,
-        start: "top center",
-        end: "bottom center",
+        start: "top top",
+        end: "bottom bottom",
         onEnter: () => {
             updateMenuActiveState(index - 1);
         },

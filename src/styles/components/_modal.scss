@@ -41,6 +41,17 @@
         }
     }
 
+    &__construction {
+        font-family: "Manrope", sans-serif;
+        font-style: normal;
+        display: flex;
+        justify-content: center;
+        color: $c-text;
+        text-transform: uppercase;
+        font-size: 15px;
+        margin-top: 27px;
+    }
+
     &__img {
         width: 90vw;
         border-radius: 13px;
@@ -216,6 +227,18 @@
             }
         }
 
+        &__construction {
+            font-family: "Manrope", sans-serif;
+            font-style: normal;
+            display: flex;
+            justify-content: center;
+            color: $c-text;
+            text-transform: uppercase;
+
+            margin-top: 39px;
+            font-size: 27px;
+        }
+
         &__contenu {
             max-width: 80%;
             margin: 0 auto;
@@ -368,6 +391,16 @@
             &--extrabold {
                 font-size: 69px;
             }
+        }
+
+        &__construction {
+            font-family: "Manrope", sans-serif;
+            font-style: normal;
+            display: flex;
+            justify-content: center;
+            color: $c-text;
+            text-transform: uppercase;
+            font-size: 36px;
         }
 
         &__contenant {

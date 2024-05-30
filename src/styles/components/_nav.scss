@@ -124,6 +124,10 @@ html.menu--open {
         display: flex;
         margin-right: 20px;
 
+        & img {
+            width: 5px;
+        }
+
         a {
             color: $c-text;
             text-decoration: none;
@@ -191,6 +195,15 @@ html.menu--open {
             margin-bottom: 27px;
 
         }
+
+        &__el {
+            font-size: 15px;
+            margin-right: 40px;
+
+            & img {
+                width: 7px;
+            }
+        }
     }
 
     .bar {
@@ -245,11 +258,11 @@ html.menu--open {
             font-style: normal;
             text-transform: uppercase;
             letter-spacing: 5px;
-            font-size: 15px;
             color: $c-text;
             margin: 0;
             display: flex;
             margin-left: 69px;
+
 
             a {
                 color: $c-text;

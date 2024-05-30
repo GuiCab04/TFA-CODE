@@ -53,10 +53,10 @@
 
     &__reseau {
         display: flex;
-        margin-bottom: 84px;
         max-width: 60%;
         justify-content: space-between;
         padding: 0;
+        margin-bottom: 27px;
     }
 
     &__img {
@@ -76,7 +76,63 @@
         }
     }
 
+    &__buttonAnnexe {
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 5px;
+        z-index: 1;
+        color: white;
+        width: fit-content;
+        padding-bottom: 12px;
+        overflow: hidden;
+        margin-bottom: 84px;
+
+        &--anim {
+            padding: 10px 0;
+            font-family: "Manrope", sans-serif;
+            background: transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            font-size: 15px;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 0;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: rgb(255, 255, 255);
+            transition: all 0.3s ease;
+        }
+
+        &:hover:after {
+            top: auto;
+            bottom: 0;
+            height: 100%;
+        }
+
+        & a {
+            padding: 10px 25px;
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        &:hover a {
+            color: black;
+        }
+    }
 }
+
+
+
+
+
 
 li {
     list-style: none;
@@ -96,6 +152,7 @@ li {
 
         &__text {
             font-size: 20px;
+            max-width: 50%;
         }
 
         &__adresse,
@@ -119,6 +176,18 @@ li {
             font-size: 20px;
         }
 
+        &__buttonAnnexe {
+            padding-bottom: 17px;
+
+            &--anim {
+                padding: 15px 0;
+                font-size: 20px;
+            }
+
+            & a {
+                padding: 15px 25px;
+            }
+        }
     }
 
 }
@@ -196,6 +265,18 @@ li {
             }
         }
 
+        &__buttonAnnexe {
+            padding-bottom: 17px;
+
+            &--anim {
+                padding: 15px 0;
+                font-size: 22px;
+            }
+
+            & a {
+                padding: 15px 25px;
+            }
+        }
     }
 
 }

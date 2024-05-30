@@ -8,10 +8,15 @@ body {
   top: 0;
   left: 0;
   background-color: $c-bg;
-  overflow-y: none;
+  overflow-y: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 
 html,
 body {
@@ -73,12 +78,12 @@ main {
     z-index: 1001;
     --circle-size: 40px;
     position: fixed;
-    height: var(--circle-size);
-    width: var(--circle-size);
+    height: 40px;
+    width: 40px;
     border: 2px solid white;
     border-radius: 100%;
-    top: calc(var(--circle-size) / 2 * -1);
-    left: calc(var(--circle-size) / 2 * -1);
+    top: calc(40px / 2 * -1);
+    left: calc(40px / 2 * -1);
     pointer-events: none;
     transition: width 0.3s ease, height 0.3s ease;
     mix-blend-mode: difference;
@@ -90,6 +95,9 @@ main {
   }
 
   .circle.hover {
-    --circle-size: 60px;
+    height: 60px;
+    width: 60px;
+    top: calc(60px / 2 * -1);
+    left: calc(60px / 2 * -1);
   }
 }

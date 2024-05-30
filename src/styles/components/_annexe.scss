@@ -1,0 +1,144 @@
+.annexe {
+    margin-bottom: 40vh;
+
+    &__title {
+        font-family: "Manrope", sans-serif;
+        font-style: normal;
+        margin: 0;
+        padding-top: 112px;
+        margin-bottom: 84px;
+        color: $c-text;
+        font-weight: 800;
+        font-size: 63px;
+        line-height: 63px;
+    }
+
+    &__border {
+        width: 100%;
+        height: 1px;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    &__h2 {
+        font-family: "Orbitron", sans-serif;
+        font-style: normal;
+        color: $c-text;
+        margin-top: 84px;
+        margin-bottom: 63px;
+        font-size: 27px;
+    }
+
+    &__button {
+        width: 15vw;
+        height: 15vw;
+        background-image: url("../assets/images/play.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: transform 0.3s;
+        border: none;
+        background-color: transparent;
+    }
+
+
+    &__img {
+        border-radius: 5px;
+        width: 30vw;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(5, 15vw);
+        grid-template-rows: repeat(5, 15vw);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin: 0 auto;
+        justify-content: center;
+
+        &--1 {
+            grid-area: 1 / 1 / 3 / 3;
+        }
+
+        &--2 {
+            grid-area: 1 / 4 / 3 / 6;
+        }
+
+        &--3 {
+            grid-area: 4 / 1 / 6 / 3;
+        }
+
+        &--4 {
+            grid-area: 4 / 4 / 6 / 6;
+        }
+
+        &--5 {
+            grid-area: 3 / 3 / 3 / 3;
+        }
+    }
+
+    &__buttonImg {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+@media (min-width : 750px) {
+    .annexe {
+        &__title {
+            padding-top: 165px;
+            margin-bottom: 123px;
+            font-size: 93px;
+            line-height: 112px;
+        }
+
+        &__border {
+            height: 2px;
+        }
+
+        &__h2 {
+            margin-top: 84px;
+            margin-bottom: 63px;
+            font-size: 36px;
+        }
+    }
+}
+
+@media (min-width : 1200px) {
+    .annexe {
+        &__title {
+            padding-top: 165px;
+            margin-bottom: 52px;
+            position: relative;
+            font-size: 93px;
+        }
+
+        &__border {
+            width: 33%;
+        }
+
+        &__h2 {
+            margin-top: 123px;
+            margin-bottom: 93px;
+            font-size: 52px;
+        }
+
+        &__button {
+            width: 7vw;
+            height: 7vw;
+        }
+
+
+        &__img {
+            border-radius: 7px;
+            width: 14vw;
+        }
+
+        &__grid {
+
+            grid-template-columns: repeat(5, 7vw);
+            grid-template-rows: repeat(5, 7vw);
+        }
+    }
+}

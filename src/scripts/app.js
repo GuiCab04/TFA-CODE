@@ -338,3 +338,44 @@ const sliders = document.querySelectorAll('.slider');
 sliders.forEach((slider) => {
     initializeSlider(slider);
 });
+
+
+
+
+
+
+
+
+
+
+// ANNEXE
+
+
+const notes = "15543432212323431322";
+let currentIndex = 0;
+let currentAudio = null;
+
+const playNote = () => {
+    if (currentIndex >= notes.length) {
+        currentIndex = 0;
+    }
+
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+
+    const note = notes[currentIndex];
+    currentAudio = new Audio(`assets/${note}.mp3`);
+    currentAudio.play();
+    currentIndex++;
+}
+
+const button = document.querySelector('.annexe__button');
+button.addEventListener('click', () => {
+    playNote();
+    button.style.transform = 'scale(1.2)';
+    setTimeout(() => {
+        button.style.transform = 'scale(1)';
+    }, 300);
+});

@@ -351,7 +351,7 @@ sliders.forEach((slider) => {
 // ANNEXE
 
 
-const notes = "15543432212323431322";
+const notes = "ahhfefeccacecefeaecc";
 let currentIndex = 0;
 let currentAudio = null;
 
@@ -366,7 +366,7 @@ const playNote = () => {
     }
 
     const note = notes[currentIndex];
-    currentAudio = new Audio(`assets/${note}.mp3`);
+    currentAudio = new Audio(`assets/son/${note}.mp3`);
     currentAudio.play();
     currentIndex++;
 }

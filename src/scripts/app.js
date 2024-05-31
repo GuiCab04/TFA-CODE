@@ -340,24 +340,95 @@ sliders.forEach((slider) => {
 });
 
 
+// JEU
 
 
+const elementAleatoire = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const loadJSON = async (url) => {
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`Failed to load JSON from ${url}`);
+    }
+    return response.json();
+};
 
+const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+};
 
-
-
-
-
-// ANNEXE
-
-
-const notes = "ahhfefeccacecefeaecc";
-let currentIndex = 0;
+let bestScore = 0;
+let correctAnswers = 0;
+let notesAndImages = [];
+let currentNoteIndex = 0;
 let currentAudio = null;
+let imgElements = [];
+
+const scorePhrases = {
+    0: "Autant abandonné... 🫠",
+    1: "Ouf, l'honneur est sauf 🙂‍↕️",
+    2: "Hehe, tout pile la moitié🥴",
+    3: "Personne n'est parfait 🤷‍♂️",
+    4: "Point faible, trop fort 😎"
+};
+
+const jeuInitialisation = () => {
+    imgElements = document.querySelectorAll('.annexe__img');
+    imgElements.forEach((img, index) => {
+        img.addEventListener('click', handleImageClick);
+    });
+
+    document.querySelector('.annexe__button').addEventListener('click', playNote);
+
+    document.getElementById('annexe__button--refresh').addEventListener('click', () => {
+        resetGame();
+    });
+};
+
+const handleImageClick = (event) => {
+    const img = event.target;
+    if (notesAndImages[0] && img.src.includes(notesAndImages[0].correctImage)) {
+        //console.log('Réponse correcte');
+        correctAnswers++;
+        //console.log('Nombre de réponses correctes:', correctAnswers);
+    } else {
+        //console.log('Réponse fausse');
+    }
+    notesAndImages.shift();
+    updateImages();
+    currentNoteIndex = 0;
+};
+
+const updateImages = () => {
+    const nextNotesAndImages = notesAndImages[0];
+    if (nextNotesAndImages) {
+        imgElements.forEach((img, index) => {
+            img.src = nextNotesAndImages.allImages[index];
+        });
+    } else {
+        //console.log("Toutes les notes ont été jouées.");
+        document.querySelector('.annexe__jeu').style.display = 'none';
+        document.querySelector('.annexe__button').removeEventListener('click', playNote);
+        document.getElementById('score-now').textContent = correctAnswers;
+        if (correctAnswers > bestScore) {
+            bestScore = correctAnswers;
+        }
+        document.getElementById('score-best').textContent = bestScore;
+        document.getElementById('phrase').textContent = scorePhrases[correctAnswers] || '';
+        document.querySelector('.annexe__result').style.display = 'block';
+    }
+};
 
 const playNote = () => {
-    if (currentIndex >= notes.length) {
-        currentIndex = 0;
+    if (notesAndImages.length === 0) {
+        return;
+    }
+
+    const { notes } = notesAndImages[0];
+    if (currentNoteIndex >= notes.length) {
+        currentNoteIndex = 0;
     }
 
     if (currentAudio) {
@@ -365,15 +436,70 @@ const playNote = () => {
         currentAudio.currentTime = 0;
     }
 
-    const note = notes[currentIndex];
+    const note = notes[currentNoteIndex];
+    //console.log(`Playing note: ${note}`);
     currentAudio = new Audio(`assets/son/${note}.mp3`);
     currentAudio.play();
-    currentIndex++;
-}
+    currentNoteIndex++;
+};
+
+const resetGame = async () => {
+    correctAnswers = 0;
+    notesAndImages = [];
+    currentNoteIndex = 0;
+
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+    }
+
+    imgElements.forEach(img => {
+        img.removeEventListener('click', handleImageClick);
+    });
+    document.querySelector('.annexe__button').removeEventListener('click', playNote);
+    document.querySelector('.annexe__result').style.display = 'none';
+    jeuInitialisation();
+    await initRandomNotesAndImages();
+    document.querySelector('.annexe__jeu').style.display = 'grid';
+};
+
+const initRandomNotesAndImages = async () => {
+    try {
+        //console.log('Loading JSON...');
+        const data = await loadJSON('assets/data/son.json');
+        //console.log('JSON loaded:', data);
+
+        while (notesAndImages.length < 4) {
+            const randomFilm = elementAleatoire(data);
+            const notes = randomFilm.Notes;
+            const correctImage = randomFilm.Images;
+            const otherFilms = data.filter(film => film !== randomFilm);
+            const otherImages = [];
+            while (otherImages.length < 3) {
+                const film = elementAleatoire(otherFilms);
+                if (!otherImages.includes(film.Images)) {
+                    otherImages.push(film.Images);
+                }
+            }
+            const allImages = [correctImage, ...otherImages];
+            shuffleArray(allImages);
+            notesAndImages.push({ notes, allImages, correctImage });
+            data.splice(data.indexOf(randomFilm), 1);
+        }
+
+        //console.log('Notes and Images:', notesAndImages);
+        updateImages();
+    } catch (error) {
+        //console.error('Error initializing notes and images:', error);
+    }
+};
+
+jeuInitialisation();
+initRandomNotesAndImages();
 
 const button = document.querySelector('.annexe__button');
 button.addEventListener('click', () => {
-    playNote();
     button.style.transform = 'scale(1.2)';
     setTimeout(() => {
         button.style.transform = 'scale(1)';

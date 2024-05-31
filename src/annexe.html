@@ -50,16 +50,21 @@
             <p></p>
             <div class="annexe__border"></div>
             <h2 class="annexe__h2">Jeu</h2>
-            <div class="annexe__grid">
-                <button class="annexe__buttonImg annexe__grid--1"><img class="annexe__img" src="assets/images/harry.jpg"
-                        alt=""></button>
-                <button class="annexe__buttonImg annexe__grid--2"><img class="annexe__img"
-                        src="assets/images/hobbit.jpg" alt=""></button>
-                <button class="annexe__buttonImg annexe__grid--3"><img class="annexe__img"
-                        src="assets/images/starwars.jpg" alt=""></button>
-                <button class="annexe__buttonImg annexe__grid--4"><img class="annexe__img"
-                        src="assets/images/pirates.jpg" alt=""></button>
+            <div class="annexe__jeu">
+                <button class="annexe__buttonImg annexe__grid--1"><img class="annexe__img"></button>
+                <button class="annexe__buttonImg annexe__grid--2"><img class="annexe__img"></button>
+                <button class="annexe__buttonImg annexe__grid--3"><img class="annexe__img"></button>
+                <button class="annexe__buttonImg annexe__grid--4"><img class="annexe__img"></button>
                 <div class="annexe__grid--5"><button class="annexe__button"></button></div>
+            </div>
+            <div class="annexe__result">
+                <p class="annexe__text" id="phrase"></p>
+                <div class="annexe__score">
+                    <p class="annexe__text annexe__scoreNow">Score :<span id="score-now"></span></p>
+                    <p class="annexe__text annexe__scoreBest">Meilleur score:<span id="score-best"></span></p>
+                </div>
+                <button id="annexe__button--refresh"
+                    class="annexe__buttonRefresh annexe__buttonRefresh--anim">Rejouer</button>
             </div>
         </section>
 

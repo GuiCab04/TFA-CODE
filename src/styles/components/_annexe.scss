@@ -1,15 +1,15 @@
 .annexe {
-    margin-bottom: 40vh;
+    margin-bottom: 20vh;
 
     &__title {
         font-family: "Manrope", sans-serif;
         font-style: normal;
         margin: 0;
-        padding-top: 112px;
+        padding-top: 84px;
         margin-bottom: 84px;
         color: $c-text;
         font-weight: 800;
-        font-size: 63px;
+        font-size: 47px;
         line-height: 63px;
     }
 
@@ -27,6 +27,10 @@
         margin-top: 84px;
         margin-bottom: 63px;
         font-size: 27px;
+
+        &--test {
+            display: none;
+        }
     }
 
     &__button {
@@ -43,16 +47,18 @@
 
     &__img {
         border-radius: 5px;
-        width: 30vw;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     &__jeu {
-        display: grid;
+        display: none;
         grid-template-columns: repeat(5, 15vw);
         grid-template-rows: repeat(5, 15vw);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
         margin: 0 auto;
+        margin-top: 10vh;
         justify-content: center;
     }
 
@@ -85,22 +91,15 @@
         background-color: transparent;
     }
 
-
-
-
-
-
-
     &__result {
         display: none;
-        text-align: center;
         margin-top: 15vh;
     }
 
     &__text {
         color: #ffffff;
         font-family: "Manrope", sans-serif;
-        font-weight: 800;
+        font-weight: 300;
         font-style: normal;
         color: $c-text;
         font-size: 15px;
@@ -109,16 +108,42 @@
 
         &:nth-child(1) {
             font-size: 20px;
+            font-weight: 800;
         }
     }
 
-    &__scoreNow {}
+    &__instructions {
+        margin-bottom: 20vh;
 
-    &__scoreBest {}
+        & .annexe__buttonNext {
+            display: flex;
+            margin: 0 auto;
+            margin-top: 63px;
+        }
+    }
 
-    &__score {}
+    &__instructionsText {
+        font-family: "Manrope", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        color: $c-text;
+        font-size: 15px;
 
-    &__buttonRefresh {
+        &--block {
+            display: block;
+            margin-top: 15px;
+        }
+    }
+
+    &__scoreBest {
+        margin-top: 20px;
+    }
+
+    &__score {
+        margin-top: 47px;
+    }
+
+    &__buttonNext {
         border: 1px solid rgb(255, 255, 255);
         border-radius: 5px;
         z-index: 1;
@@ -126,13 +151,14 @@
         width: fit-content;
         padding-bottom: 12px;
         overflow: hidden;
-        margin-bottom: 84px;
         padding: 10px 25px;
         position: relative;
         z-index: 2;
         color: white;
         text-decoration: none;
         transition: color 0.3s ease;
+        margin-top: 63px;
+
 
         &--anim {
             font-family: "Manrope", sans-serif;
@@ -167,6 +193,15 @@
     }
 }
 
+.correct-answer {
+    border: 2px solid rgb(0, 255, 0);
+}
+
+.incorrect-answer {
+    border: 2px solid red;
+}
+
+
 @media (min-width : 750px) {
     .annexe {
         &__title {
@@ -194,11 +229,44 @@
             }
         }
 
-        &__buttonRefresh {
+        &__buttonNext {
             padding: 15px 25px;
             padding-bottom: 17px;
             font-size: 20px;
+            margin-top: 69px;
         }
+
+        &__instructions {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        &__instructionsText {
+            font-size: 20px;
+            max-width: 40%;
+            letter-spacing: 1px;
+
+        }
+
+        &__jeu {
+            margin-top: 20vh;
+        }
+
+        &__scoreBest {
+            margin-top: 22px;
+        }
+
+        &__score {
+            margin-top: 52px;
+        }
+    }
+
+    .correct-answer {
+        border-width: 3px;
+    }
+
+    .incorrect-answer {
+        border-width: 3px;
     }
 }
 
@@ -213,6 +281,7 @@
         }
 
         &__border {
+            margin: 0;
             width: 33%;
         }
 
@@ -227,30 +296,45 @@
             height: 7vw;
         }
 
-
         &__img {
             border-radius: 7px;
             width: 14vw;
         }
 
         &__jeu {
-
+            margin-bottom: 123px;
             grid-template-columns: repeat(5, 7vw);
             grid-template-rows: repeat(5, 7vw);
         }
 
         &__text {
-            font-size: 39px;
+            font-size: 29px;
 
             &:nth-child(1) {
-                font-size: 52px;
+                font-size: 39px;
             }
         }
 
-        &__buttonRefresh {
+        &__scoreBest {
+            margin-top: 29px;
+        }
+
+
+        &__buttonNext {
             padding: 15px 25px;
             padding-bottom: 17px;
             font-size: 22px;
+            margin-top: 123px;
+        }
+
+        &__instructions {
+            margin-top: 123px;
+            margin-bottom: 123px;
+        }
+
+        &__instructionsText {
+            font-size: 22px;
+            width: 30%;
         }
     }
 }

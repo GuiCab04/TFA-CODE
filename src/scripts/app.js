@@ -342,8 +342,8 @@ sliders.forEach((slider) => {
 
 // JEU
 
+const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-const elementAleatoire = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const loadJSON = async (url) => {
     const response = await fetch(url);
     if (!response.ok) {
@@ -365,6 +365,9 @@ let notesAndImages = [];
 let currentNoteIndex = 0;
 let currentAudio = null;
 let imgElements = [];
+let isFirstClick = true;
+let correctAnswerClicked = false;
+let timerId = null;
 
 const scorePhrases = {
     0: "Autant abandonné... 🫠",
@@ -374,50 +377,115 @@ const scorePhrases = {
     4: "Point faible, trop fort 😎"
 };
 
-const jeuInitialisation = () => {
+const initGameElements = () => {
     imgElements = document.querySelectorAll('.annexe__img');
-    imgElements.forEach((img, index) => {
-        img.addEventListener('click', handleImageClick);
-    });
+    if (imgElements.length > 0) {
+        imgElements.forEach((img) => {
+            img.addEventListener('click', handleImageClick);
+        });
+    }
 
-    document.querySelector('.annexe__button').addEventListener('click', playNote);
+    const playButton = document.querySelector('.annexe__button');
+    if (playButton) {
+        playButton.addEventListener('click', playNote);
+    }
 
-    document.getElementById('annexe__button--refresh').addEventListener('click', () => {
-        resetGame();
-    });
+    const refreshButton = document.getElementById('annexe__button--refresh');
+    if (refreshButton) {
+        refreshButton.addEventListener('click', resetGame);
+    }
+
+    const regleButton = document.getElementById('annexe__buttonRegle');
+    if (regleButton) {
+        regleButton.addEventListener('click', showGameGrid);
+    }
 };
 
 const handleImageClick = (event) => {
+    if (timerId) return; // Ne rien faire si le timer est en cours
+
     const img = event.target;
-    if (notesAndImages[0] && img.src.includes(notesAndImages[0].correctImage)) {
-        //console.log('Réponse correcte');
-        correctAnswers++;
-        //console.log('Nombre de réponses correctes:', correctAnswers);
+    const correctImage = notesAndImages[0].correctImage;
+
+    // Réinitialiser les bordures des images
+    imgElements.forEach(image => {
+        image.classList.remove('correct-answer', 'incorrect-answer');
+    });
+
+    if (notesAndImages[0] && (img.src.includes(correctImage.src) || img.srcset.includes(correctImage.srcset))) {
+        if (isFirstClick) {
+            correctAnswers++;
+            correctAnswerClicked = true;
+        }
+        img.classList.add('correct-answer');
     } else {
-        //console.log('Réponse fausse');
+        img.classList.add('incorrect-answer');
+        imgElements.forEach(image => {
+            if (image.src.includes(correctImage.src) || image.srcset.includes(correctImage.srcset)) {
+                image.classList.add('correct-answer');
+            }
+        });
+        correctAnswerClicked = false;
     }
-    notesAndImages.shift();
-    updateImages();
-    currentNoteIndex = 0;
+
+    isFirstClick = false;
+
+    disableImageClicks();
+    timerId = setTimeout(() => {
+        timerId = null;
+        notesAndImages.shift();
+        updateImages();
+        currentNoteIndex = 0;
+        enableImageClicks();
+    }, 3000);
 };
 
 const updateImages = () => {
     const nextNotesAndImages = notesAndImages[0];
     if (nextNotesAndImages) {
         imgElements.forEach((img, index) => {
-            img.src = nextNotesAndImages.allImages[index];
+            img.classList.remove('incorrect-answer', 'correct-answer');
+            img.src = nextNotesAndImages.allImages[index].src;
+            img.srcset = nextNotesAndImages.allImages[index].srcset;
+            img.alt = nextNotesAndImages.allImages[index].alt;
         });
+        isFirstClick = true;
     } else {
-        //console.log("Toutes les notes ont été jouées.");
-        document.querySelector('.annexe__jeu').style.display = 'none';
-        document.querySelector('.annexe__button').removeEventListener('click', playNote);
-        document.getElementById('score-now').textContent = correctAnswers;
+        const jeuElement = document.querySelector('.annexe__jeu');
+        if (jeuElement) {
+            jeuElement.style.display = 'none';
+        }
+
+        const playButton = document.querySelector('.annexe__button');
+        if (playButton) {
+            playButton.removeEventListener('click', playNote);
+        }
+        const scoreNowElement = document.getElementById('score-now');
+        if (scoreNowElement) {
+            scoreNowElement.textContent = correctAnswers;
+        }
         if (correctAnswers > bestScore) {
             bestScore = correctAnswers;
         }
-        document.getElementById('score-best').textContent = bestScore;
-        document.getElementById('phrase').textContent = scorePhrases[correctAnswers] || '';
-        document.querySelector('.annexe__result').style.display = 'block';
+
+        const scoreBestElement = document.getElementById('score-best');
+        if (scoreBestElement) {
+            scoreBestElement.textContent = bestScore;
+        }
+        const phraseElement = document.getElementById('phrase');
+        if (phraseElement) {
+            phraseElement.textContent = scorePhrases[correctAnswers] || '';
+        }
+
+        const resultElement = document.querySelector('.annexe__result');
+        if (resultElement) {
+            resultElement.style.display = 'block';
+        }
+        const testElement = document.querySelector('.annexe__h2--test');
+        if (testElement) {
+            testElement.style.display = 'none';
+        }
+
     }
 };
 
@@ -437,7 +505,6 @@ const playNote = () => {
     }
 
     const note = notes[currentNoteIndex];
-    //console.log(`Playing note: ${note}`);
     currentAudio = new Audio(`assets/son/${note}.mp3`);
     currentAudio.play();
     currentNoteIndex++;
@@ -447,39 +514,60 @@ const resetGame = async () => {
     correctAnswers = 0;
     notesAndImages = [];
     currentNoteIndex = 0;
+    isFirstClick = true;
 
     if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
         currentAudio = null;
     }
-
     imgElements.forEach(img => {
         img.removeEventListener('click', handleImageClick);
     });
-    document.querySelector('.annexe__button').removeEventListener('click', playNote);
-    document.querySelector('.annexe__result').style.display = 'none';
-    jeuInitialisation();
+
+    const playButton = document.querySelector('.annexe__button');
+    if (playButton) {
+        playButton.removeEventListener('click', playNote);
+    }
+
+    const resultElement = document.querySelector('.annexe__result');
+    if (resultElement) {
+        resultElement.style.display = 'none';
+    }
+    const testElement = document.querySelector('.annexe__h2--test');
+    if (testElement) {
+        testElement.style.display = 'block';
+    }
+    initGameElements();
     await initRandomNotesAndImages();
-    document.querySelector('.annexe__jeu').style.display = 'grid';
+    const jeuElement = document.querySelector('.annexe__jeu');
+    if (jeuElement) {
+        jeuElement.style.display = 'grid';
+    }
 };
 
 const initRandomNotesAndImages = async () => {
     try {
-        //console.log('Loading JSON...');
         const data = await loadJSON('assets/data/son.json');
-        //console.log('JSON loaded:', data);
 
         while (notesAndImages.length < 4) {
-            const randomFilm = elementAleatoire(data);
+            const randomFilm = getRandomElement(data);
             const notes = randomFilm.Notes;
-            const correctImage = randomFilm.Images;
+            const correctImage = {
+                src: randomFilm.Images,
+                srcset: randomFilm.ImagesRetina,
+                alt: randomFilm.AltText
+            };
             const otherFilms = data.filter(film => film !== randomFilm);
             const otherImages = [];
             while (otherImages.length < 3) {
-                const film = elementAleatoire(otherFilms);
-                if (!otherImages.includes(film.Images)) {
-                    otherImages.push(film.Images);
+                const film = getRandomElement(otherFilms);
+                if (!otherImages.some(image => image.src === film.Images)) {
+                    otherImages.push({
+                        src: film.Images,
+                        srcset: film.ImagesRetina,
+                        alt: film.AltText
+                    });
                 }
             }
             const allImages = [correctImage, ...otherImages];
@@ -488,20 +576,63 @@ const initRandomNotesAndImages = async () => {
             data.splice(data.indexOf(randomFilm), 1);
         }
 
-        //console.log('Notes and Images:', notesAndImages);
         updateImages();
     } catch (error) {
-        //console.error('Error initializing notes and images:', error);
+        console.error('Error initializing notes and images:', error);
     }
 };
 
-jeuInitialisation();
-initRandomNotesAndImages();
+const disableImageClicks = () => {
+    imgElements.forEach(img => {
+        img.style.pointerEvents = 'none';
+    });
+};
+
+const enableImageClicks = () => {
+    imgElements.forEach(img => {
+        img.style.pointerEvents = 'auto';
+    });
+};
+
+const showGameGrid = () => {
+    const jeuElement = document.querySelector('.annexe__jeu');
+    if (jeuElement) {
+        jeuElement.style.display = 'grid';
+    }
+    const instructionsElement = document.querySelector('.annexe__instructions');
+    if (instructionsElement) {
+        instructionsElement.style.display = 'none';
+    }
+    const instructionsTitle = document.querySelector('.annexe__h2--instructions');
+    if (instructionsTitle) {
+        instructionsTitle.style.display = 'none';
+    }
+    const testTitle = document.querySelector('.annexe__h2--test');
+    if (testTitle) {
+        testTitle.style.display = 'block';
+    }
+};
+
+if (document.querySelector('.annexe__jeu')) {
+    initGameElements();
+    initRandomNotesAndImages();
+}
 
 const button = document.querySelector('.annexe__button');
-button.addEventListener('click', () => {
-    button.style.transform = 'scale(1.2)';
-    setTimeout(() => {
-        button.style.transform = 'scale(1)';
-    }, 300);
-});
+if (button) {
+    button.addEventListener('click', () => {
+        button.style.transform = 'scale(1.2)';
+        setTimeout(() => {
+            button.style.transform = 'scale(1)';
+        }, 300);
+    });
+}
+
+
+
+
+
+
+
+
+

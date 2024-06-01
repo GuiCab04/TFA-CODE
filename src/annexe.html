@@ -28,7 +28,7 @@
 
     <header class="header--sticky">
         <nav class="nav--credit">
-            <a href="credits.html"><img class="nav__logo" src="assets/images/logo-initial.svg"
+            <a href="annexe.html"><img class="nav__logo" src="assets/images/logo-initial.svg"
                     alt="initial de guillaume cabaraux"></a>
             <ul class="nav__list">
                 <li class="nav__el"><a href="index.html">Retour au portfolio <img src="assets/images/right.svg"
@@ -44,12 +44,31 @@
     <main>
 
         <section class="annexe">
-            <h1 class="annexe__title">Annexe</h1>
-            <div class="annexe__border"></div>
-            <h2 class="annexe__h2">Instructions</h2>
-            <p></p>
-            <div class="annexe__border"></div>
-            <h2 class="annexe__h2">Jeu</h2>
+            <h1 class="annexe__title">Expérience interactive</h1>
+            <h2 class="annexe__h2 annexe__h2--instructions">Instructions</h2>
+            <div class="annexe__instructions">
+                <p class="annexe__instructionsText">Les règles du jeu sont simples. Il va falloir activer le son de
+                    votre appareil.
+                    <span class="annexe__instructionsText--block">À chaque clic sur le bouton central, une note de
+                        musique
+                        résonne. Ensemble, ces notes forment une musique emblématique de film.</span>
+                    <span class="annexe__instructionsText--block">Si tu penses reconnaître le bon film parmi les quatre
+                        proposés, il te suffit de cliquer dessus.</span>
+                </p>
+                <p class="annexe__instructionsText">
+                    En cas de bonne réponse, tu avances au second tour et
+                    remportes un point.
+                    <span class="annexe__instructionsText--block">En revanche, en cas de mauvaise réponse, tu devras
+                        retenter ta
+                        chance, mais sans marquer de point pour ce tours.</span>
+                    <span class="annexe__instructionsText--block">Il y a au total 4 tours, ce qui signifie que tu peux
+                        accumuler
+                        jusqu'à quatre points en tout.</span>
+                </p>
+                <button id="annexe__buttonRegle" class="annexe__buttonNext annexe__buttonNext--anim">J'ai
+                    compris les règles</button>
+            </div>
+            <h2 class="annexe__h2 annexe__h2--test">Blind Test</h2>
             <div class="annexe__jeu">
                 <button class="annexe__buttonImg annexe__grid--1"><img class="annexe__img"></button>
                 <button class="annexe__buttonImg annexe__grid--2"><img class="annexe__img"></button>
@@ -58,13 +77,15 @@
                 <div class="annexe__grid--5"><button class="annexe__button"></button></div>
             </div>
             <div class="annexe__result">
+                <h2 class="annexe__h2 annexe__h2--result">Résultats</h2>
                 <p class="annexe__text" id="phrase"></p>
                 <div class="annexe__score">
-                    <p class="annexe__text annexe__scoreNow">Score :<span id="score-now"></span></p>
-                    <p class="annexe__text annexe__scoreBest">Meilleur score:<span id="score-best"></span></p>
+                    <p class="annexe__text annexe__scoreNow">Score : <span id="score-now"></span> points</p>
+                    <p class="annexe__text annexe__scoreBest">Meilleur score: <span id="score-best"></span> points</p>
                 </div>
-                <button id="annexe__button--refresh"
-                    class="annexe__buttonRefresh annexe__buttonRefresh--anim">Rejouer</button>
+
+                <button id="annexe__button--refresh" class="annexe__buttonNext annexe__buttonNext--anim">Rejouer
+                    une partie</button>
             </div>
         </section>
 
@@ -111,7 +132,7 @@
                                 Belgique</a></li>
                     </ul>
                 </li>
-                <li class="contact__copyright"><a href="#">Crédits</a> © 2024</li>
+                <li class="contact__copyright"><a href="credits.html">Crédits</a> © 2024</li>
 
             </ul>
         </section>

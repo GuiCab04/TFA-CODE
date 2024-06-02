@@ -34,8 +34,6 @@
     }
 
     &__button {
-        width: 15vw;
-        height: 15vw;
         background-image: url("../assets/images/play.svg");
         background-size: cover;
         background-repeat: no-repeat;
@@ -43,6 +41,10 @@
         transition: transform 0.3s;
         border: none;
         background-color: transparent;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
     }
 
     &__img {
@@ -91,27 +93,6 @@
         background-color: transparent;
     }
 
-    &__result {
-        display: none;
-        margin-top: 15vh;
-    }
-
-    &__text {
-        color: #ffffff;
-        font-family: "Manrope", sans-serif;
-        font-weight: 300;
-        font-style: normal;
-        color: $c-text;
-        font-size: 15px;
-        margin-bottom: 0;
-        margin-top: 0;
-
-        &:nth-child(1) {
-            font-size: 20px;
-            font-weight: 800;
-        }
-    }
-
     &__instructions {
         margin-bottom: 20vh;
 
@@ -122,17 +103,28 @@
         }
     }
 
-    &__instructionsText {
+    &__instructionsSubtitle {
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        color: $c-text;
+        font-size: 20px;
+    }
+
+    &__instructionsList {
         font-family: "Manrope", sans-serif;
         font-weight: 300;
         font-style: normal;
         color: $c-text;
         font-size: 15px;
+        padding: 0;
+    }
 
-        &--block {
-            display: block;
-            margin-top: 15px;
-        }
+    &__instructionsEl {
+        margin-top: 10px;
+        color: $c-text;
+        list-style: circle;
+        line-height: 140%;
     }
 
     &__scoreBest {
@@ -191,7 +183,56 @@
             color: black;
         }
     }
+
+    &__text {
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        color: $c-text;
+        font-size: 20px;
+        margin-bottom: 0;
+        margin-top: 0;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+    }
+
+    &__rechercheText {
+        font-family: "Manrope", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        color: $c-text;
+        font-size: 15px;
+        line-height: 140%;
+        letter-spacing: 1px;
+        margin-bottom: 63px;
+
+        &--block {
+            margin-top: 15px;
+            display: block;
+        }
+    }
+
+    &__scoreBest {
+        font-size: 15px;
+        margin-top: 15px;
+        font-weight: 300;
+    }
+
+    &__result {
+        display: none;
+        margin-top: 15vh;
+
+        & .annexe__buttonNext {
+            display: flex;
+            margin: 0 auto;
+            margin-top: 63px;
+        }
+    }
+
+
 }
+
 
 .correct-answer {
     border: 2px solid rgb(0, 255, 0);
@@ -221,14 +262,6 @@
             font-size: 36px;
         }
 
-        &__text {
-            font-size: 22px;
-
-            &:nth-child(1) {
-                font-size: 27px;
-            }
-        }
-
         &__buttonNext {
             padding: 15px 25px;
             padding-bottom: 17px;
@@ -237,15 +270,15 @@
         }
 
         &__instructions {
-            display: flex;
-            justify-content: space-around;
+            & .annexe__buttonNext {
+                margin-top: 69px;
+            }
         }
 
-        &__instructionsText {
-            font-size: 20px;
-            max-width: 40%;
-            letter-spacing: 1px;
-
+        &__result {
+            & .annexe__buttonNext {
+                margin-top: 69px;
+            }
         }
 
         &__jeu {
@@ -259,6 +292,40 @@
         &__score {
             margin-top: 52px;
         }
+
+        &__instructionsSubtitle {
+            font-size: 22px;
+            margin-bottom: 27px;
+        }
+
+        &__instructionsList {
+            font-size: 17px;
+        }
+
+        &__instructionsEl {
+            margin-top: 15px;
+        }
+
+        &__text {
+            font-size: 29px;
+        }
+
+
+        &__scoreBest {
+            font-size: 22px;
+            margin-top: 22px;
+        }
+
+        &__rechercheText {
+            font-size: 20px;
+            margin-bottom: 84px;
+            max-width: 80%;
+
+            &--block {
+                margin-top: 20px;
+                display: block;
+            }
+        }
     }
 
     .correct-answer {
@@ -268,6 +335,7 @@
     .incorrect-answer {
         border-width: 3px;
     }
+
 }
 
 
@@ -287,13 +355,8 @@
 
         &__h2 {
             margin-top: 123px;
-            margin-bottom: 93px;
+            margin-bottom: 20vh;
             font-size: 52px;
-        }
-
-        &__button {
-            width: 7vw;
-            height: 7vw;
         }
 
         &__img {
@@ -307,18 +370,9 @@
             grid-template-rows: repeat(5, 7vw);
         }
 
-        &__text {
-            font-size: 29px;
-
-            &:nth-child(1) {
-                font-size: 39px;
-            }
-        }
-
         &__scoreBest {
             margin-top: 29px;
         }
-
 
         &__buttonNext {
             padding: 15px 25px;
@@ -330,11 +384,52 @@
         &__instructions {
             margin-top: 123px;
             margin-bottom: 123px;
+
+            & .annexe__buttonNext {
+                margin-top: 123px;
+            }
         }
 
-        &__instructionsText {
+        &__result {
+            margin-top: 123px;
+            margin-bottom: 20vh;
+
+            & .annexe__buttonNext {
+                margin-top: 123px;
+            }
+        }
+
+        &__instructionsSubtitle {
+            font-size: 29px;
+            margin-bottom: 39px;
+        }
+
+        &__instructionsList {
             font-size: 22px;
-            width: 30%;
+        }
+
+        &__instructionsEl {
+            margin-top: 22px;
+        }
+
+        &__text {
+            font-size: 39px;
+        }
+
+        &__scoreBest {
+            font-size: 22px;
+            margin-top: 29px;
+        }
+
+        &__rechercheText {
+            font-size: 22px;
+            margin-bottom: 123px;
+            max-width: 60%;
+
+            &--block {
+                margin-top: 22px;
+                display: block;
+            }
         }
     }
 }

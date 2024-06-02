@@ -5,7 +5,7 @@
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 // BURGER MENU
 
@@ -96,8 +96,6 @@ if (headerSticky) {
     });
 }
 
-// MOUSE
-
 const circleElement = document.querySelector('.circle');
 if (circleElement) {
     const mouse = { x: 0, y: 0 };
@@ -112,9 +110,9 @@ if (circleElement) {
         mouse.y = e.y;
     });
 
-    const buttonsAndLinks = document.querySelectorAll('button, a');
+    const interactiveElements = document.querySelectorAll('.projets--cursorBig, button, a');
 
-    buttonsAndLinks.forEach(element => {
+    interactiveElements.forEach(element => {
         element.addEventListener('mouseenter', () => {
             circleElement.classList.add('hover');
         });
@@ -204,25 +202,29 @@ if (textPortfolio) {
     splitTextToSpans(textPortfolio);
 }
 
-gsap.set('.home__text span', { opacity: 0 });
+const homeTextSpan = document.querySelectorAll('.home__text span');
+if (homeTextSpan.length > 0) {
+    gsap.set(homeTextSpan, { opacity: 0 });
+}
 
-gsap.to('.home__text--moi span', {
-    opacity: 1,
-    duration: 0.01,
-    stagger: 0.01,
-    ease: 'power1.inOut',
-    onComplete: () => {
-        gsap.to('.home__text--portfolio span', {
-            opacity: 1,
-            duration: 0.01,
-            stagger: 0.01,
-            ease: 'power1.inOut',
-        });
-    }
-});
+if (textMoi && textPortfolio) {
+    gsap.to('.home__text--moi span', {
+        opacity: 1,
+        duration: 0.01,
+        stagger: 0.01,
+        ease: 'power1.inOut',
+        onComplete: () => {
+            gsap.to('.home__text--portfolio span', {
+                opacity: 1,
+                duration: 0.01,
+                stagger: 0.01,
+                ease: 'power1.inOut',
+            });
+        }
+    });
+}
 
 // ANIM TEXT SCROLL GSAP
-
 const blockText = document.querySelector('.animated-block__text');
 if (blockText) {
     const wordList = blockText.textContent.split(' ').filter(w => w.trim().length > 0);
@@ -259,16 +261,17 @@ if (slider.length > 0) {
     });
 }
 
+
 // MODAL
 
-var modals = document.querySelectorAll('.modal');
-var links = document.querySelectorAll('.projets__content');
+const modals = document.querySelectorAll('.modal');
+const links = document.querySelectorAll('.projets__content');
 
-links.forEach(function (link) {
-    link.addEventListener('click', function (event) {
+links.forEach(link => {
+    link.addEventListener('click', event => {
         event.preventDefault();
-        var modalId = link.getAttribute('data-modal');
-        var modal = document.getElementById(modalId);
+        const modalId = link.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
         if (modal) {
             modal.style.display = "block";
             html.classList.add('modal--open');
@@ -277,17 +280,17 @@ links.forEach(function (link) {
     });
 });
 
-modals.forEach(function (modal) {
-    var closeButton = modal.querySelector('.close');
+modals.forEach(modal => {
+    const closeButton = modal.querySelector('.close');
     if (closeButton) {
-        closeButton.addEventListener('click', function () {
+        closeButton.addEventListener('click', () => {
             modal.style.display = "none";
             document.body.style.overflow = "auto";
             html.classList.remove('modal--open');
         });
     }
 
-    modal.addEventListener('click', function (event) {
+    modal.addEventListener('click', event => {
         if (event.target === modal) {
             modal.style.display = "none";
             document.body.style.overflow = "auto";
@@ -298,7 +301,7 @@ modals.forEach(function (modal) {
 
 // SLIDER
 
-const initializeSlider = (slider) => {
+const initializeSlider = slider => {
     const sliderList = slider.querySelector('.slider__list');
     const sliderElements = slider.querySelectorAll('.slider__el');
     const prevButton = slider.querySelector('.slider__prev');
@@ -307,7 +310,7 @@ const initializeSlider = (slider) => {
     let currentIndex = 0;
     const totalSlides = sliderElements.length;
 
-    const goToSlide = (index) => {
+    const goToSlide = index => {
         sliderList.style.transform = `translateX(-${index * 100}%)`;
         currentIndex = index;
     };
@@ -315,19 +318,23 @@ const initializeSlider = (slider) => {
     const nextSlide = () => {
         currentIndex = (currentIndex + 1) % totalSlides;
         goToSlide(currentIndex);
+        clearInterval(sliderInterval);
+        sliderInterval = setInterval(nextSlide, 5000);
     };
 
     const prevSlide = () => {
         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
         goToSlide(currentIndex);
+        clearInterval(sliderInterval);
+        sliderInterval = setInterval(nextSlide, 5000);
     };
+
+    let sliderInterval = setInterval(nextSlide, 5000);
 
     if (nextButton && prevButton) {
         nextButton.addEventListener('click', nextSlide);
         prevButton.addEventListener('click', prevSlide);
     }
-
-    setInterval(nextSlide, 5000);
 
     window.addEventListener('resize', () => {
         goToSlide(currentIndex);
@@ -335,7 +342,7 @@ const initializeSlider = (slider) => {
 };
 
 const sliders = document.querySelectorAll('.slider');
-sliders.forEach((slider) => {
+sliders.forEach(slider => {
     initializeSlider(slider);
 });
 
@@ -372,10 +379,83 @@ let timerId = null;
 const scorePhrases = {
     0: "Autant abandonné... 🫠",
     1: "Ouf, l'honneur est sauf 🙂‍↕️",
-    2: "Hehe, tout pile la moitié🥴",
+    2: "Hehe, tout pile la moitié 🥴",
     3: "Personne n'est parfait 🤷‍♂️",
     4: "Point faible, trop fort 😎"
 };
+
+const resetGameElements = () => {
+    correctAnswers = 0;
+    notesAndImages = [];
+    currentNoteIndex = 0;
+    isFirstClick = true;
+
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+    }
+    imgElements.forEach(img => {
+        img.removeEventListener('click', handleImageClick);
+    });
+
+    const playButton = document.querySelector('.annexe__button');
+    if (playButton) {
+        playButton.removeEventListener('click', playNote);
+    }
+
+    const resultElement = document.querySelector('.annexe__result');
+    if (resultElement) {
+        resultElement.style.display = 'none';
+    }
+    const testElement = document.querySelector('.annexe__h2--test');
+    if (testElement) {
+        testElement.style.display = 'block';
+    }
+    initGameElements();
+    initRandomNotesAndImages();
+    const jeuElement = document.querySelector('.annexe__jeu');
+    if (jeuElement) {
+        jeuElement.style.display = 'grid';
+    }
+};
+
+const resetGameAnimation = () => {
+    const jeuElement = document.querySelector('.annexe__jeu');
+    const resultElement = document.querySelector('.annexe__result');
+    const testTitle = document.querySelector('.annexe__h2--test');
+
+    if (jeuElement && resultElement && testTitle) {
+        gsap.to([resultElement], {
+            duration: 0.5,
+            opacity: 0,
+            y: -20,
+            onComplete: () => {
+                resultElement.style.display = 'none';
+
+                testTitle.style.display = 'block';
+                gsap.set(testTitle, {
+                    opacity: 0,
+                    y: 20
+                });
+                gsap.set(jeuElement, {
+                    display: 'grid',
+                    opacity: 0,
+                    y: 20,
+                    onComplete: () => {
+                        resetGameElements();
+                        gsap.to([jeuElement, testTitle], {
+                            duration: 0.5,
+                            opacity: 1,
+                            y: 0
+
+                        });
+                    }
+                })
+            }
+        })
+    }
+}
 
 const initGameElements = () => {
     imgElements = document.querySelectorAll('.annexe__img');
@@ -392,22 +472,21 @@ const initGameElements = () => {
 
     const refreshButton = document.getElementById('annexe__button--refresh');
     if (refreshButton) {
-        refreshButton.addEventListener('click', resetGame);
+        refreshButton.addEventListener('click', resetGameAnimation);
     }
 
     const regleButton = document.getElementById('annexe__buttonRegle');
     if (regleButton) {
-        regleButton.addEventListener('click', showGameGrid);
+        regleButton.addEventListener('click', animateGameGrid);
     }
 };
 
 const handleImageClick = (event) => {
-    if (timerId) return; // Ne rien faire si le timer est en cours
+    if (timerId) return;
 
     const img = event.target;
     const correctImage = notesAndImages[0].correctImage;
 
-    // Réinitialiser les bordures des images
     imgElements.forEach(image => {
         image.classList.remove('correct-answer', 'incorrect-answer');
     });
@@ -451,15 +530,8 @@ const updateImages = () => {
         });
         isFirstClick = true;
     } else {
-        const jeuElement = document.querySelector('.annexe__jeu');
-        if (jeuElement) {
-            jeuElement.style.display = 'none';
-        }
+        showResultGrid();
 
-        const playButton = document.querySelector('.annexe__button');
-        if (playButton) {
-            playButton.removeEventListener('click', playNote);
-        }
         const scoreNowElement = document.getElementById('score-now');
         if (scoreNowElement) {
             scoreNowElement.textContent = correctAnswers;
@@ -476,16 +548,6 @@ const updateImages = () => {
         if (phraseElement) {
             phraseElement.textContent = scorePhrases[correctAnswers] || '';
         }
-
-        const resultElement = document.querySelector('.annexe__result');
-        if (resultElement) {
-            resultElement.style.display = 'block';
-        }
-        const testElement = document.querySelector('.annexe__h2--test');
-        if (testElement) {
-            testElement.style.display = 'none';
-        }
-
     }
 };
 
@@ -508,42 +570,6 @@ const playNote = () => {
     currentAudio = new Audio(`assets/son/${note}.mp3`);
     currentAudio.play();
     currentNoteIndex++;
-};
-
-const resetGame = async () => {
-    correctAnswers = 0;
-    notesAndImages = [];
-    currentNoteIndex = 0;
-    isFirstClick = true;
-
-    if (currentAudio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-        currentAudio = null;
-    }
-    imgElements.forEach(img => {
-        img.removeEventListener('click', handleImageClick);
-    });
-
-    const playButton = document.querySelector('.annexe__button');
-    if (playButton) {
-        playButton.removeEventListener('click', playNote);
-    }
-
-    const resultElement = document.querySelector('.annexe__result');
-    if (resultElement) {
-        resultElement.style.display = 'none';
-    }
-    const testElement = document.querySelector('.annexe__h2--test');
-    if (testElement) {
-        testElement.style.display = 'block';
-    }
-    initGameElements();
-    await initRandomNotesAndImages();
-    const jeuElement = document.querySelector('.annexe__jeu');
-    if (jeuElement) {
-        jeuElement.style.display = 'grid';
-    }
 };
 
 const initRandomNotesAndImages = async () => {
@@ -575,7 +601,6 @@ const initRandomNotesAndImages = async () => {
             notesAndImages.push({ notes, allImages, correctImage });
             data.splice(data.indexOf(randomFilm), 1);
         }
-
         updateImages();
     } catch (error) {
         console.error('Error initializing notes and images:', error);
@@ -594,25 +619,69 @@ const enableImageClicks = () => {
     });
 };
 
-const showGameGrid = () => {
+const animateGameGrid = () => {
     const jeuElement = document.querySelector('.annexe__jeu');
-    if (jeuElement) {
-        jeuElement.style.display = 'grid';
-    }
     const instructionsElement = document.querySelector('.annexe__instructions');
-    if (instructionsElement) {
-        instructionsElement.style.display = 'none';
-    }
     const instructionsTitle = document.querySelector('.annexe__h2--instructions');
-    if (instructionsTitle) {
-        instructionsTitle.style.display = 'none';
-    }
+    const researchText = document.querySelector('.annexe__rechercheText');
     const testTitle = document.querySelector('.annexe__h2--test');
-    if (testTitle) {
-        testTitle.style.display = 'block';
+    if (jeuElement && instructionsElement && instructionsTitle && testTitle && researchText) {
+        gsap.to([instructionsElement, instructionsTitle, researchText], {
+            duration: 0.5,
+            opacity: 0,
+            y: -20,
+            onComplete: () => {
+                instructionsElement.style.display = 'none';
+                instructionsTitle.style.display = 'none';
+                researchText.style.display = 'none'
+                testTitle.style.display = 'block';
+                gsap.set(testTitle, {
+                    opacity: 0,
+                    y: 20
+                });
+                gsap.set(jeuElement, {
+                    display: 'grid',
+                    opacity: 0,
+                    y: 20
+                });
+
+                gsap.to([jeuElement, testTitle], {
+                    duration: 0.5,
+                    opacity: 1,
+                    y: 0
+                });
+            }
+        });
     }
 };
+const showResultGrid = () => {
+    const jeuElement = document.querySelector('.annexe__jeu');
+    const resultElement = document.querySelector('.annexe__result');
+    const testTitle = document.querySelector('.annexe__h2--test');
 
+    if (jeuElement && resultElement && testTitle) {
+        gsap.to([jeuElement, testTitle], {
+            duration: 0.5,
+            opacity: 0,
+            y: -20,
+            onComplete: () => {
+                jeuElement.style.display = 'none';
+                testTitle.style.display = 'none';
+
+                gsap.set(resultElement, {
+                    display: 'block',
+                    opacity: 0,
+                    y: 20
+                });
+                gsap.to([resultElement,], {
+                    duration: 0.5,
+                    opacity: 1,
+                    y: 0
+                });
+            }
+        });
+    }
+};
 if (document.querySelector('.annexe__jeu')) {
     initGameElements();
     initRandomNotesAndImages();
@@ -628,11 +697,29 @@ if (button) {
     });
 }
 
+// transition
+const linksTransition = document.querySelectorAll('[id^="link-transition"]');
+linksTransition.forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        const targetUrl = link.getAttribute('href');
 
+        gsap.to('body', {
+            duration: 0.5,
+            opacity: 0,
+            onComplete: () => {
+                window.location.href = targetUrl;
+            }
+        });
+    });
+});
 
+function transitionPage() {
+    gsap.to('body', {
+        duration: 0.5,
+        opacity: 1,
+        delay: 0.5
+    });
+}
 
-
-
-
-
-
+transitionPage();

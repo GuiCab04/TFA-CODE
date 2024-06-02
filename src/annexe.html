@@ -31,8 +31,8 @@
             <a href="annexe.html"><img class="nav__logo" src="assets/images/logo-initial.svg"
                     alt="initial de guillaume cabaraux"></a>
             <ul class="nav__list">
-                <li class="nav__el"><a href="index.html">Retour au portfolio <img src="assets/images/right.svg"
-                            alt="flèche qui va vers la droite"></a></li>
+                <li class="nav__el"><a id="link-transition" href="index.html">Retour au portfolio <img
+                            src="assets/images/right.svg" alt="flèche qui va vers la droite"></a></li>
             </ul>
         </nav>
     </header>
@@ -44,44 +44,47 @@
     <main>
 
         <section class="annexe">
-            <h1 class="annexe__title">Expérience interactive</h1>
-            <h2 class="annexe__h2 annexe__h2--instructions">Instructions</h2>
+            <h1 class="annexe__title">Recherche de Stage</h1>
+            <h2 class="annexe__h2 annexe__h2--instructions">Ma recherche</h2>
+            <p class="annexe__rechercheText">Je suis actuellement à la recherche d'un stage pour ma 3ème
+                année de Bac en
+                Design Web et Transmédia à la Haute École Albert Jacquard.<span
+                    class="annexe__rechercheText--block">Pour le stage je cherche quelque chose
+                    qui
+                    serait plus axé sur le code que le design, c'est pourquoi je propose ci-dessous une petite
+                    expérience interactive.</span></p>
             <div class="annexe__instructions">
-                <p class="annexe__instructionsText">Les règles du jeu sont simples. Il va falloir activer le son de
-                    votre appareil.
-                    <span class="annexe__instructionsText--block">À chaque clic sur le bouton central, une note de
-                        musique
-                        résonne. Ensemble, ces notes forment une musique emblématique de film.</span>
-                    <span class="annexe__instructionsText--block">Si tu penses reconnaître le bon film parmi les quatre
-                        proposés, il te suffit de cliquer dessus.</span>
-                </p>
-                <p class="annexe__instructionsText">
-                    En cas de bonne réponse, tu avances au second tour et
-                    remportes un point.
-                    <span class="annexe__instructionsText--block">En revanche, en cas de mauvaise réponse, tu devras
-                        retenter ta
-                        chance, mais sans marquer de point pour ce tours.</span>
-                    <span class="annexe__instructionsText--block">Il y a au total 4 tours, ce qui signifie que tu peux
-                        accumuler
-                        jusqu'à quatre points en tout.</span>
-                </p>
-                <button id="annexe__buttonRegle" class="annexe__buttonNext annexe__buttonNext--anim">J'ai
-                    compris les règles</button>
+                <p class="annexe__instructionsSubtitle">Règles du jeu :</p>
+                <ul class="annexe__instructionsList">
+                    <li class="annexe__instructionsEl">Activez le son de votre appareil&#8239;;</li>
+                    <li class="annexe__instructionsEl">À chaque clic sur le bouton central, une note de musique
+                        retentit&#8239;;</li>
+                    <li class="annexe__instructionsEl">Ces notes forment ensemble une musique de film célèbre&#8239;;
+                    </li>
+                    <li class="annexe__instructionsEl"> Cliquez sur le film correct parmi les quatre choix proposés pour
+                        marquer un point&#8239;;</li>
+                    <li class="annexe__instructionsEl">Un mauvais choix ne donne aucun point et passe à la manche
+                        suivante&#8239;;</li>
+                    <li class="annexe__instructionsEl">Le jeu comporte 4 tours, permettant de cumuler jusqu'à 4
+                        points&#8239;.</li>
+                </ul>
+                <button id="annexe__buttonRegle" class="annexe__buttonNext annexe__buttonNext--anim">Commencer à
+                    jouer</button>
             </div>
             <h2 class="annexe__h2 annexe__h2--test">Blind Test</h2>
             <div class="annexe__jeu">
-                <button class="annexe__buttonImg annexe__grid--1"><img class="annexe__img"></button>
-                <button class="annexe__buttonImg annexe__grid--2"><img class="annexe__img"></button>
-                <button class="annexe__buttonImg annexe__grid--3"><img class="annexe__img"></button>
-                <button class="annexe__buttonImg annexe__grid--4"><img class="annexe__img"></button>
+                <button class="annexe__buttonImg annexe__grid--1"><img class="annexe__img" src="#" alt=" "></button>
+                <button class="annexe__buttonImg annexe__grid--2"><img class="annexe__img" src="#" alt=" "></button>
+                <button class="annexe__buttonImg annexe__grid--3"><img class="annexe__img" src="#" alt=" "></button>
+                <button class="annexe__buttonImg annexe__grid--4"><img class="annexe__img" src="#" alt=" "></button>
                 <div class="annexe__grid--5"><button class="annexe__button"></button></div>
             </div>
             <div class="annexe__result">
                 <h2 class="annexe__h2 annexe__h2--result">Résultats</h2>
                 <p class="annexe__text" id="phrase"></p>
                 <div class="annexe__score">
-                    <p class="annexe__text annexe__scoreNow">Score : <span id="score-now"></span> points</p>
-                    <p class="annexe__text annexe__scoreBest">Meilleur score: <span id="score-best"></span> points</p>
+                    <p class="annexe__text annexe__scoreNow">Score : <span id="score-now"></span> points</p>
+                    <p class="annexe__text annexe__scoreBest">Meilleur score : <span id="score-best"></span> points</p>
                 </div>
 
                 <button id="annexe__button--refresh" class="annexe__buttonNext annexe__buttonNext--anim">Rejouer
@@ -132,7 +135,7 @@
                                 Belgique</a></li>
                     </ul>
                 </li>
-                <li class="contact__copyright"><a href="credits.html">Crédits</a> © 2024</li>
+                <li class="contact__copyright"><a id="link-transition" href="credits.html">Crédits</a> © 2024</li>
 
             </ul>
         </section>

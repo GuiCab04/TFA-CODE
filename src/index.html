@@ -38,7 +38,7 @@
           <li class="menu__el"><a href="#propos">À propos</a></li>
           <li class="menu__el"><a href="#projets">Projets</a></li>
           <li class="menu__el"><a href="#contact-desktop">Contact</a></li>
-          <li class="menu__el"><a href="annexe.html">Expérience Interactive</a></li>
+          <li class="menu__el"><a id="link-transition" href="annexe.html">Recherche de Stage</a></li>
         </ul>
       </nav>
     </div>
@@ -48,7 +48,7 @@
         <li class="nav__el"><a href="#propos">À propos</a></li>
         <li class="nav__el"><a href="#projets">Projets</a></li>
         <li class="nav__el"><a href="#contact-desktop">Contact</a></li>
-        <li class="nav__el nav__el--button"><a href="annexe.html">Expérience Interactive</a></li>
+        <li class="nav__el nav__el--button"><a id="link-transition" href="annexe.html">Recherche de Stage</a></li>
       </ul>
     </nav>
   </header>
@@ -102,25 +102,25 @@
       <h2 class="projets__h2">Projets</h2>
       <div class="projets__slider">
         <div class="projets__content" data-modal="modal1">
-          <a href="#">
+          <div class="projets--cursorBig">
             <img class="projets__img" src="assets/images/mockup-decembre.png"
               srcset="assets/images/mockup-decembre@2x.png 2x" alt="image du projet décembre">
             <p class="projets__description">Projet Décembre — Janvier 2024</p>
-          </a>
+          </div>
         </div>
         <div class="projets__content" data-modal="modal2">
-          <a href="#">
+          <div class="projets--cursorBig">
             <img class="projets__img" src="assets/images/mockup-RUX.png" srcset="assets/images/mockup-RUX@2x.png 2x"
               alt="image du projet rux">
             <p class="projets__description">Projet Rethinking UX — Février 2024</p>
-          </a>
+          </div>
         </div>
         <div class="projets__content" data-modal="modal3">
-          <a href="#">
+          <div class="projets--cursorBig">
             <img class="projets__img" src="assets/images/mockup-dataplay.png"
               srcset="assets/images/mockup-dataplay@2x.png 2x" alt="image du projet dataplay">
             <p class="projets__description">Projet Dataplay — Mars 2024</p>
-          </a>
+          </div>
         </div>
       </div>
       <div id="modal1" class="modal">
@@ -156,7 +156,7 @@
                   révolte arabe contre l’Empire ottoman durant la Première Guerre mondiale.</p>
               </div>
             </div>
-            <h2 class="modal__construction">Site encore en construction...</h2>
+            <h2 class="modal__construction">Site encore en construction…</h2>
           </div>
         </div>
       </div>
@@ -172,7 +172,7 @@
                 <p class="modal__paragraph modal__paraImg">Le projet vise à concevoir une expérimentation basée sur
                   un jeu de données et à élaborer son identité graphique. </p>
                 <div class="modal__projet">
-                  <img class="modal__img" src="assets/images/mockup-RUX.png" srcset="assets/images/mockup-RUX.png 2x"
+                  <img class="modal__img" src="assets/images/mockup-RUX.png" srcset="assets/images/mockup-RUX@2x.png 2x"
                     alt="Affiche du projets dataplay">
                 </div>
                 <ul class="modal__listUtils">
@@ -297,14 +297,15 @@
       <h2 class="contact__h2">Contacts</h2>
       <ul class="contact__list contact__list--top">
         <li class="contact__text">
-          <p>Je suis actuellement à la recherche d’un <span class="contact__text--uppercase">stage pour ma troisième
-              année d'études.</span> Si vous avez
+          <p>Je suis actuellement à la recherche d’un stage pour ma troisième
+            année d'études. Si vous avez
             une
-            <span class="contact__text--uppercase">opportunité</span> à me proposer ou souhaitez <span
-              class="contact__text--uppercase">en savoir plus sur mon profil</span>, n’hésitez
-            pas à me <span class="contact__text--uppercase">contacter</span> via mes
-            <span class="contact__text--uppercase">réseaux.</span>
+            opportunité à me proposer ou souhaitez en savoir plus sur mon profil, n’hésitez
+            pas à me contacter via mes réseaux.
           </p>
+        </li>
+        <li class="contact__buttonAnnexe contact__buttonAnnexe--anim"><a id="link-transition"
+            href="annexe.html">Recherche de Stage</a>
         </li>
         <li>
           <ul class="contact__reseau">
@@ -322,8 +323,7 @@
             </li>
           </ul>
         </li>
-        <li class="contact__buttonAnnexe contact__buttonAnnexe--anim"><a href="annexe.html">Expérience Interactive</a>
-        </li>
+
       </ul>
       <ul class="contact__list--bottom">
         <li>
@@ -334,7 +334,7 @@
                 Belgique</a></li>
           </ul>
         </li>
-        <li class="contact__copyright"><a href="credits.html">Crédits</a> © 2024</li>
+        <li class="contact__copyright"><a id="link-transition" href="credits.html">Crédits</a> © 2024</li>
 
       </ul>
     </section>

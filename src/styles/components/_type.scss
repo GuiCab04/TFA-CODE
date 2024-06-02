@@ -7,6 +7,7 @@ body {
   padding: 0;
   top: 0;
   left: 0;
+  opacity: 0;
   background-color: $c-bg;
   overflow-y: hidden;
   -ms-overflow-style: none;
@@ -67,13 +68,6 @@ main {
     cursor: none;
   }
 
-
-}
-
-
-
-@media (min-width: 1200px) {
-
   .circle {
     z-index: 1001;
     --circle-size: 40px;
@@ -94,10 +88,12 @@ main {
     cursor: none;
   }
 
+
   .circle.hover {
     height: 60px;
     width: 60px;
     top: calc(60px / 2 * -1);
     left: calc(60px / 2 * -1);
   }
+
 }

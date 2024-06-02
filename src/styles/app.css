@@ -43,10 +43,10 @@
 }
 .contact__reseau {
   display: flex;
-  margin-bottom: 84px;
   max-width: 60%;
   justify-content: space-between;
   padding: 0;
+  margin-bottom: 27px;
 }
 .contact__img {
   height: 20px;
@@ -61,6 +61,53 @@
 }
 .contact__copyright a {
   color: #FFFFFF;
+}
+.contact__buttonAnnexe {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  z-index: 1;
+  color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-bottom: 12px;
+  overflow: hidden;
+  margin-bottom: 84px;
+}
+.contact__buttonAnnexe--anim {
+  padding: 10px 0;
+  font-family: "Manrope", sans-serif;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  font-size: 15px;
+}
+.contact__buttonAnnexe:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+}
+.contact__buttonAnnexe:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+.contact__buttonAnnexe a {
+  padding: 10px 25px;
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.contact__buttonAnnexe:hover a {
+  color: black;
 }
 
 li {
@@ -78,6 +125,7 @@ li {
   }
   .contact__text {
     font-size: 20px;
+    max-width: 50%;
   }
   .contact__adresse, .contact__name {
     font-size: 20px;
@@ -93,6 +141,16 @@ li {
   }
   .contact__copyright {
     font-size: 20px;
+  }
+  .contact__buttonAnnexe {
+    padding-bottom: 17px;
+  }
+  .contact__buttonAnnexe--anim {
+    padding: 15px 0;
+    font-size: 20px;
+  }
+  .contact__buttonAnnexe a {
+    padding: 15px 25px;
   }
 }
 @media (min-width: 1200px) {
@@ -151,6 +209,13 @@ li {
   }
   .contact__copyright a {
     color: #FFFFFF;
+  }
+  .contact__buttonAnnexe {
+    padding-bottom: 17px;
+  }
+  .contact__buttonAnnexe--anim {
+    padding: 15px 0;
+    font-size: 22px;
   }
 }
 header {
@@ -736,6 +801,7 @@ body {
   padding: 0;
   top: 0;
   left: 0;
+  opacity: 0;
   background-color: #02070E;
   overflow-y: hidden;
   -ms-overflow-style: none;
@@ -791,8 +857,6 @@ main {
   html {
     cursor: none;
   }
-}
-@media (min-width: 1200px) {
   .circle {
     z-index: 1001;
     --circle-size: 40px;
@@ -885,6 +949,16 @@ main {
   font-weight: 800;
   padding: 0;
 }
+.modal__construction {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-top: 27px;
+}
 .modal__img {
   width: 90vw;
   border-radius: 13px;
@@ -939,6 +1013,10 @@ main {
   max-width: -moz-max-content;
   max-width: max-content;
   font-weight: 600;
+  transition: transform 0.3s ease;
+}
+.modal__elButton:hover {
+  transform: scale(1.1);
 }
 .modal__elButton:nth-child(1) {
   margin-bottom: 20px;
@@ -1029,6 +1107,16 @@ main {
   }
   .modal__h2--extrabold {
     font-size: 69px;
+  }
+  .modal__construction {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin-top: 39px;
+    font-size: 27px;
   }
   .modal__contenu {
     max-width: 80%;
@@ -1151,6 +1239,15 @@ main {
   }
   .modal__h2--extrabold {
     font-size: 69px;
+  }
+  .modal__construction {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 36px;
   }
   .modal__contenant {
     display: flex;
@@ -1434,5 +1531,355 @@ main {
   }
   .credits__el a:hover {
     text-decoration: underline;
+  }
+}
+.annexe {
+  margin-bottom: 20vh;
+}
+.annexe__title {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding-top: 84px;
+  margin-bottom: 84px;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 47px;
+  line-height: 63px;
+}
+.annexe__border {
+  width: 100%;
+  height: 1px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.annexe__h2 {
+  font-family: "Orbitron", sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  margin-top: 84px;
+  margin-bottom: 63px;
+  font-size: 27px;
+}
+.annexe__h2--test {
+  display: none;
+}
+.annexe__button {
+  background-image: url("../assets/images/play.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.annexe__img {
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.annexe__jeu {
+  display: none;
+  grid-template-columns: repeat(5, 15vw);
+  grid-template-rows: repeat(5, 15vw);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: 0 auto;
+  margin-top: 10vh;
+  justify-content: center;
+}
+.annexe__grid--1 {
+  grid-area: 1/1/3/3;
+}
+.annexe__grid--2 {
+  grid-area: 1/4/3/6;
+}
+.annexe__grid--3 {
+  grid-area: 4/1/6/3;
+}
+.annexe__grid--4 {
+  grid-area: 4/4/6/6;
+}
+.annexe__grid--5 {
+  grid-area: 3/3/3/3;
+}
+.annexe__buttonImg {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+.annexe__instructions {
+  margin-bottom: 20vh;
+}
+.annexe__instructions .annexe__buttonNext {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 63px;
+}
+.annexe__instructionsSubtitle {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+.annexe__instructionsList {
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #FFFFFF;
+  font-size: 15px;
+  padding: 0;
+}
+.annexe__instructionsEl {
+  margin-top: 10px;
+  color: #FFFFFF;
+  list-style: circle;
+  line-height: 140%;
+}
+.annexe__scoreBest {
+  margin-top: 20px;
+}
+.annexe__score {
+  margin-top: 47px;
+}
+.annexe__buttonNext {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  z-index: 1;
+  color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-bottom: 12px;
+  overflow: hidden;
+  padding: 10px 25px;
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-top: 63px;
+}
+.annexe__buttonNext--anim {
+  font-family: "Manrope", sans-serif;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  font-size: 15px;
+}
+.annexe__buttonNext:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+}
+.annexe__buttonNext:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+.annexe__buttonNext:hover {
+  color: black;
+}
+.annexe__text {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #FFFFFF;
+  font-size: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+.annexe__rechercheText {
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #FFFFFF;
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: 1px;
+  margin-bottom: 63px;
+}
+.annexe__rechercheText--block {
+  margin-top: 15px;
+  display: block;
+}
+.annexe__scoreBest {
+  font-size: 15px;
+  margin-top: 15px;
+  font-weight: 300;
+}
+.annexe__result {
+  display: none;
+  margin-top: 15vh;
+}
+.annexe__result .annexe__buttonNext {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 63px;
+}
+
+.correct-answer {
+  border: 2px solid rgb(0, 255, 0);
+}
+
+.incorrect-answer {
+  border: 2px solid red;
+}
+
+@media (min-width: 750px) {
+  .annexe__title {
+    padding-top: 165px;
+    margin-bottom: 123px;
+    font-size: 93px;
+    line-height: 112px;
+  }
+  .annexe__border {
+    height: 2px;
+  }
+  .annexe__h2 {
+    margin-top: 84px;
+    margin-bottom: 63px;
+    font-size: 36px;
+  }
+  .annexe__buttonNext {
+    padding: 15px 25px;
+    padding-bottom: 17px;
+    font-size: 20px;
+    margin-top: 69px;
+  }
+  .annexe__instructions .annexe__buttonNext {
+    margin-top: 69px;
+  }
+  .annexe__result .annexe__buttonNext {
+    margin-top: 69px;
+  }
+  .annexe__jeu {
+    margin-top: 20vh;
+  }
+  .annexe__scoreBest {
+    margin-top: 22px;
+  }
+  .annexe__score {
+    margin-top: 52px;
+  }
+  .annexe__instructionsSubtitle {
+    font-size: 22px;
+    margin-bottom: 27px;
+  }
+  .annexe__instructionsList {
+    font-size: 17px;
+  }
+  .annexe__instructionsEl {
+    margin-top: 15px;
+  }
+  .annexe__text {
+    font-size: 29px;
+  }
+  .annexe__scoreBest {
+    font-size: 22px;
+    margin-top: 22px;
+  }
+  .annexe__rechercheText {
+    font-size: 20px;
+    margin-bottom: 84px;
+    max-width: 80%;
+  }
+  .annexe__rechercheText--block {
+    margin-top: 20px;
+    display: block;
+  }
+  .correct-answer {
+    border-width: 3px;
+  }
+  .incorrect-answer {
+    border-width: 3px;
+  }
+}
+@media (min-width: 1200px) {
+  .annexe__title {
+    padding-top: 165px;
+    margin-bottom: 52px;
+    position: relative;
+    font-size: 93px;
+  }
+  .annexe__border {
+    margin: 0;
+    width: 33%;
+  }
+  .annexe__h2 {
+    margin-top: 123px;
+    margin-bottom: 20vh;
+    font-size: 52px;
+  }
+  .annexe__img {
+    border-radius: 7px;
+    width: 14vw;
+  }
+  .annexe__jeu {
+    margin-bottom: 123px;
+    grid-template-columns: repeat(5, 7vw);
+    grid-template-rows: repeat(5, 7vw);
+  }
+  .annexe__scoreBest {
+    margin-top: 29px;
+  }
+  .annexe__buttonNext {
+    padding: 15px 25px;
+    padding-bottom: 17px;
+    font-size: 22px;
+    margin-top: 123px;
+  }
+  .annexe__instructions {
+    margin-top: 123px;
+    margin-bottom: 123px;
+  }
+  .annexe__instructions .annexe__buttonNext {
+    margin-top: 123px;
+  }
+  .annexe__result {
+    margin-top: 123px;
+    margin-bottom: 20vh;
+  }
+  .annexe__result .annexe__buttonNext {
+    margin-top: 123px;
+  }
+  .annexe__instructionsSubtitle {
+    font-size: 29px;
+    margin-bottom: 39px;
+  }
+  .annexe__instructionsList {
+    font-size: 22px;
+  }
+  .annexe__instructionsEl {
+    margin-top: 22px;
+  }
+  .annexe__text {
+    font-size: 39px;
+  }
+  .annexe__scoreBest {
+    font-size: 22px;
+    margin-top: 29px;
+  }
+  .annexe__rechercheText {
+    font-size: 22px;
+    margin-bottom: 123px;
+    max-width: 60%;
+  }
+  .annexe__rechercheText--block {
+    margin-top: 22px;
+    display: block;
   }
 }/*# sourceMappingURL=app.css.map */

@@ -84,7 +84,7 @@
         width: fit-content;
         padding-bottom: 12px;
         overflow: hidden;
-        margin-bottom: 84px;
+        margin-bottom: 47px;
 
         &--anim {
             padding: 10px 0;
@@ -152,7 +152,7 @@ li {
 
         &__text {
             font-size: 20px;
-            max-width: 50%;
+            max-width: 90%;
         }
 
         &__adresse,
@@ -206,7 +206,6 @@ li {
             &--top {
                 margin: 0;
                 padding: 0;
-                margin-bottom: 69px;
             }
 
             &--bottom {
@@ -237,6 +236,11 @@ li {
         &__text {
             font-size: 22px;
             width: 50%;
+
+            & p {
+                margin-top: 0;
+
+            }
         }
 
         &__adresse,

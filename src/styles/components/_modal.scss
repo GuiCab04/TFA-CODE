@@ -98,6 +98,12 @@
         margin: 0;
         padding: 0;
         margin-top: 47px;
+        display: flex;
+        justify-content: center;
+
+        &--block {
+            display: block;
+        }
     }
 
     &__elButton {
@@ -114,6 +120,7 @@
         max-width: max-content;
         font-weight: 600;
         transition: transform 0.3s ease;
+
 
         &:hover {
             transform: scale(1.1);
@@ -302,7 +309,6 @@
             padding: 11px;
             padding-top: 9px;
 
-
             &:nth-child(1) {
                 margin-bottom: 22px;
             }
@@ -321,6 +327,7 @@
                 padding: 7px;
                 padding-top: 8px;
                 padding-right: 46px;
+
             }
         }
 
@@ -412,7 +419,7 @@
         &__contenant {
             display: flex;
             justify-content: space-between;
-            max-width: 100vw;
+            max-width: 100%;
         }
 
         &__contenu {
@@ -421,13 +428,12 @@
         }
 
         &--left {
-            max-width: 100%;
+            max-width: 50%;
             margin: 0 auto;
-
         }
 
         &--right {
-            max-width: 100%;
+            max-width: 50%;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -483,7 +489,6 @@
         &__paraImg {
             font-size: 27px;
             max-width: 80%;
-            margin: 0 auto;
         }
 
         &__listButton {
@@ -561,7 +566,6 @@
         }
     }
 
-
     .close {
         top: 69px;
         right: 69px;
@@ -569,7 +573,6 @@
         border: none;
         margin: 0;
         padding: 0;
-        position: fixed;
 
         img {
             width: 39px;

@@ -249,6 +249,12 @@ if (blockText) {
 // SLIDER GSAP
 
 const slider = gsap.utils.toArray(".projets__content");
+window.onload = function () {
+    for (let i = 0; i < slider.length; i++) {
+        let img = new Image();
+        img.src = slider[i].querySelector(".projets__img").src;
+    }
+};
 if (slider.length > 0) {
     let tween = gsap.to(slider, {
         xPercent: -95 * (slider.length - 0),
@@ -257,9 +263,17 @@ if (slider.length > 0) {
             start: "top 20%",
             pin: true,
             scrub: 1,
+            onUpdate: function () {
+                gsap.to(slider.map(item => item.querySelector('.projets__img')), {
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: "power2.inOut"
+                });
+            }
         },
     });
 }
+
 
 
 // MODAL
@@ -276,6 +290,12 @@ links.forEach(link => {
             modal.style.display = "block";
             html.classList.add('modal--open');
             document.body.style.overflow = "hidden";
+            gsap.set(modal, { y: '100%' });
+            gsap.to(modal, {
+                duration: 0.5,
+                y: 0,
+                ease: 'power4.out'
+            });
         }
     });
 });
@@ -284,7 +304,14 @@ modals.forEach(modal => {
     const closeButton = modal.querySelector('.close');
     if (closeButton) {
         closeButton.addEventListener('click', () => {
-            modal.style.display = "none";
+            gsap.to(modal, {
+                duration: 0.5,
+                y: '100%',
+                ease: 'power4.in',
+                onComplete: () => {
+                    modal.style.display = "none";
+                }
+            });
             document.body.style.overflow = "auto";
             html.classList.remove('modal--open');
         });
@@ -292,7 +319,14 @@ modals.forEach(modal => {
 
     modal.addEventListener('click', event => {
         if (event.target === modal) {
-            modal.style.display = "none";
+            gsap.to(modal, {
+                duration: 0.5,
+                y: '100%',
+                ease: 'power4.in',
+                onComplete: () => {
+                    modal.style.display = "none";
+                }
+            });
             document.body.style.overflow = "auto";
             html.classList.remove('modal--open');
         }
@@ -377,7 +411,7 @@ let correctAnswerClicked = false;
 let timerId = null;
 
 const scorePhrases = {
-    0: "Autant abandonné... 🫠",
+    0: "Autant abandonner... 🫠",
     1: "Ouf, l'honneur est sauf 🙂‍↕️",
     2: "Hehe, tout pile la moitié 🥴",
     3: "Personne n'est parfait 🤷‍♂️",
@@ -412,20 +446,27 @@ const resetGameElements = () => {
     if (testElement) {
         testElement.style.display = 'block';
     }
+
+
     initGameElements();
     initRandomNotesAndImages();
     const jeuElement = document.querySelector('.annexe__jeu');
     if (jeuElement) {
         jeuElement.style.display = 'grid';
     }
+
+    currentManche = 0;
+
 };
+
 
 const resetGameAnimation = () => {
     const jeuElement = document.querySelector('.annexe__jeu');
     const resultElement = document.querySelector('.annexe__result');
     const testTitle = document.querySelector('.annexe__h2--test');
+    const compteurElement = document.querySelector('.annexe__compteur');
 
-    if (jeuElement && resultElement && testTitle) {
+    if (jeuElement && resultElement && testTitle && compteurElement) {
         gsap.to([resultElement], {
             duration: 0.5,
             opacity: 0,
@@ -438,13 +479,18 @@ const resetGameAnimation = () => {
                     opacity: 0,
                     y: 20
                 });
+                compteurElement.style.display = 'block';
+                gsap.set(compteurElement, {
+                    opacity: 0,
+                    y: 20
+                });
                 gsap.set(jeuElement, {
                     display: 'grid',
                     opacity: 0,
                     y: 20,
                     onComplete: () => {
                         resetGameElements();
-                        gsap.to([jeuElement, testTitle], {
+                        gsap.to([jeuElement, testTitle, compteurElement], {
                             duration: 0.5,
                             opacity: 1,
                             y: 0
@@ -456,6 +502,12 @@ const resetGameAnimation = () => {
         })
     }
 }
+const updateMancheCounter = () => {
+    const compteurElement = document.querySelector('.annexe__compteur--chiffre');
+    if (compteurElement) {
+        compteurElement.textContent = currentManche;
+    }
+};
 
 const initGameElements = () => {
     imgElements = document.querySelectorAll('.annexe__img');
@@ -479,6 +531,7 @@ const initGameElements = () => {
     if (regleButton) {
         regleButton.addEventListener('click', animateGameGrid);
     }
+
 };
 
 const handleImageClick = (event) => {
@@ -519,6 +572,8 @@ const handleImageClick = (event) => {
     }, 3000);
 };
 
+let currentManche = 0;
+
 const updateImages = () => {
     const nextNotesAndImages = notesAndImages[0];
     if (nextNotesAndImages) {
@@ -529,6 +584,7 @@ const updateImages = () => {
             img.alt = nextNotesAndImages.allImages[index].alt;
         });
         isFirstClick = true;
+        currentManche++;
     } else {
         showResultGrid();
 
@@ -549,7 +605,9 @@ const updateImages = () => {
             phraseElement.textContent = scorePhrases[correctAnswers] || '';
         }
     }
+    updateMancheCounter();
 };
+
 
 const playNote = () => {
     if (notesAndImages.length === 0) {
@@ -625,7 +683,9 @@ const animateGameGrid = () => {
     const instructionsTitle = document.querySelector('.annexe__h2--instructions');
     const researchText = document.querySelector('.annexe__rechercheText');
     const testTitle = document.querySelector('.annexe__h2--test');
-    if (jeuElement && instructionsElement && instructionsTitle && testTitle && researchText) {
+    const compteurElement = document.querySelector('.annexe__compteur');
+
+    if (jeuElement && instructionsElement && instructionsTitle && testTitle && researchText && compteurElement) {
         gsap.to([instructionsElement, instructionsTitle, researchText], {
             duration: 0.5,
             opacity: 0,
@@ -644,8 +704,12 @@ const animateGameGrid = () => {
                     opacity: 0,
                     y: 20
                 });
-
-                gsap.to([jeuElement, testTitle], {
+                gsap.set(compteurElement, {
+                    display: 'flex',
+                    opacity: 0,
+                    y: 20
+                });
+                gsap.to([jeuElement, testTitle, compteurElement], {
                     duration: 0.5,
                     opacity: 1,
                     y: 0
@@ -658,16 +722,17 @@ const showResultGrid = () => {
     const jeuElement = document.querySelector('.annexe__jeu');
     const resultElement = document.querySelector('.annexe__result');
     const testTitle = document.querySelector('.annexe__h2--test');
+    const compteurElement = document.querySelector('.annexe__compteur');
 
-    if (jeuElement && resultElement && testTitle) {
-        gsap.to([jeuElement, testTitle], {
+    if (jeuElement && resultElement && testTitle && compteurElement) {
+        gsap.to([jeuElement, testTitle, compteurElement], {
             duration: 0.5,
             opacity: 0,
             y: -20,
             onComplete: () => {
                 jeuElement.style.display = 'none';
                 testTitle.style.display = 'none';
-
+                compteurElement.style.display = 'none';
                 gsap.set(resultElement, {
                     display: 'block',
                     opacity: 0,
@@ -698,7 +763,7 @@ if (button) {
 }
 
 // transition
-const linksTransition = document.querySelectorAll('[id^="link-transition"]');
+const linksTransition = document.querySelectorAll("link-transition");
 linksTransition.forEach(link => {
     link.addEventListener('click', event => {
         event.preventDefault();

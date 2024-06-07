@@ -58,10 +58,18 @@ header {
     &__el {
         font-family: "Manrope", sans-serif;
         font-weight: 800;
+        font-style: normal;
         text-transform: uppercase;
-        font-size: 22px;
+        font-size: 15px;
         color: $c-text;
         padding: 46.5px;
+        letter-spacing: 5px;
+
+        & img {
+            padding-left: 7px;
+            width: 7px;
+            align-items: center;
+        }
 
         a {
             color: $c-text;
@@ -126,6 +134,7 @@ html.menu--open {
 
         & img {
             width: 5px;
+            padding-left: 5px;
         }
 
         a {
@@ -160,7 +169,7 @@ html.menu--open {
 }
 
 .menu--toggle.active .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
 }
 
 .menu--toggle.active .bar:nth-child(2) {
@@ -173,7 +182,6 @@ html.menu--open {
 
 @media (min-width:750px) {
 
-
     .menu {
 
         &--toggle {
@@ -182,9 +190,22 @@ html.menu--open {
 
         &__el {
             font-weight: 800;
-            font-size: 36px;
             text-transform: uppercase;
+            font-size: 27px;
+            color: $c-text;
+            padding: 46.5px;
+            letter-spacing: 5px;
+
+            & img {
+                padding-left: 10px;
+                width: 12px;
+                align-items: center;
+            }
         }
+    }
+
+    .menu--toggle.active .bar:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
     }
 
     .nav {
@@ -193,7 +214,6 @@ html.menu--open {
             margin-top: 27px;
             margin-left: 27px;
             margin-bottom: 27px;
-
         }
 
         &__el {
@@ -202,6 +222,7 @@ html.menu--open {
 
             & img {
                 width: 7px;
+                padding-left: 7px;
             }
         }
     }
@@ -209,7 +230,6 @@ html.menu--open {
     .bar {
         width: 36px;
         height: 4px;
-
     }
 }
 
@@ -259,10 +279,15 @@ html.menu--open {
             text-transform: uppercase;
             letter-spacing: 5px;
             color: $c-text;
-            margin: 0;
+            margin: auto 0;
             display: flex;
+            align-items: center;
             margin-left: 69px;
 
+            & img {
+                padding-left: 7px;
+                width: 7px;
+            }
 
             a {
                 color: $c-text;

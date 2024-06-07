@@ -120,7 +120,13 @@
         &__img {
             max-width: 100%;
             width: 30vw;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: translateY(-10px);
+            }
         }
+
     }
 
     @media (max-height : 800px) {

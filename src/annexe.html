@@ -31,7 +31,7 @@
             <a href="annexe.html"><img class="nav__logo" src="assets/images/logo-initial.svg"
                     alt="initial de guillaume cabaraux"></a>
             <ul class="nav__list">
-                <li class="nav__el"><a id="link-transition" href="index.html">Retour au portfolio <img
+                <li class="nav__el"><a class="link-transition" href="index.html">Retour au portfolio <img
                             src="assets/images/right.svg" alt="flèche qui va vers la droite"></a></li>
             </ul>
         </nav>
@@ -44,34 +44,41 @@
     <main>
 
         <section class="annexe">
-            <h1 class="annexe__title">Recherche de Stage</h1>
-            <h2 class="annexe__h2 annexe__h2--instructions">Ma recherche</h2>
-            <p class="annexe__rechercheText">Je suis actuellement à la recherche d'un stage pour ma 3ème
-                année de Bac en
-                Design Web et Transmédia à la Haute École Albert Jacquard.<span
-                    class="annexe__rechercheText--block">Pour le stage je cherche quelque chose
+            <h1 class="annexe__title">Recherche de&nbsp;Stage</h1>
+            <h2 class="annexe__h2 annexe__h2--instructions">Mes&nbsp;motivations</h2>
+            <p class="annexe__rechercheText">Je&nbsp;suis actuellement à la&nbsp;recherche d'un&nbsp;stage pour
+                ma&nbsp;3ème&nbsp;année de Bac en&nbsp;Design&nbsp;Web et&nbsp;Transmédia à la&nbsp;Haute&nbsp;École
+                Albert&nbsp;Jacquard.<span class="annexe__rechercheText--block">Pour&nbsp;le&nbsp;stage je&nbsp;cherche
+                    une&nbsp;expérience
                     qui
-                    serait plus axé sur le code que le design, c'est pourquoi je propose ci-dessous une petite
-                    expérience interactive.</span></p>
+                    serait plus axé sur le&nbsp;code que le&nbsp;design, c'est&nbsp;pourquoi je&nbsp;propose ci-dessous
+                    une&nbsp;petite
+                    expérience&nbsp;interactive.</span></p>
             <div class="annexe__instructions">
-                <p class="annexe__instructionsSubtitle">Règles du jeu :</p>
+                <p class="annexe__instructionsSubtitle">Fonctionnement&nbsp;du&nbsp;jeu&#8239;:</p>
                 <ul class="annexe__instructionsList">
-                    <li class="annexe__instructionsEl">Activez le son de votre appareil&#8239;;</li>
-                    <li class="annexe__instructionsEl">À chaque clic sur le bouton central, une note de musique
-                        retentit&#8239;;</li>
-                    <li class="annexe__instructionsEl">Ces notes forment ensemble une musique de film célèbre&#8239;;
+                    <li class="annexe__instructionsEl">Activez&nbsp;le&nbsp;son de votre&nbsp;appareil&#8239;;</li>
+                    <li class="annexe__instructionsEl">À&nbsp;chaque clic sur le&nbsp;bouton central, une&nbsp;note de
+                        musique&nbsp;retentit&#8239;;</li>
+                    <li class="annexe__instructionsEl">Ces&nbsp;notes forment ensemble une&nbsp;musique de
+                        film&nbsp;célèbre&#8239;;
                     </li>
-                    <li class="annexe__instructionsEl"> Cliquez sur le film correct parmi les quatre choix proposés pour
-                        marquer un point&#8239;;</li>
-                    <li class="annexe__instructionsEl">Un mauvais choix ne donne aucun point et passe à la manche
-                        suivante&#8239;;</li>
-                    <li class="annexe__instructionsEl">Le jeu comporte 4 tours, permettant de cumuler jusqu'à 4
-                        points&#8239;.</li>
+                    <li class="annexe__instructionsEl">Cliquez&nbsp;sur le&nbsp;film correct parmi les&nbsp;quatre choix
+                        proposés pour
+                        marquer un&nbsp;point&#8239;;</li>
+                    <li class="annexe__instructionsEl">Un&nbsp;mauvais choix ne donne aucun point et passe à
+                        la&nbsp;manche&nbsp;suivante&#8239;;</li>
+                    <li class="annexe__instructionsEl">Le&nbsp;jeu comporte 4 tours, permettant de cumuler jusqu'à
+                        4&nbsp;points&#8239;.</li>
                 </ul>
-                <button id="annexe__buttonRegle" class="annexe__buttonNext annexe__buttonNext--anim">Commencer à
-                    jouer</button>
+                <button id="annexe__buttonRegle"
+                    class="annexe__buttonNext annexe__buttonNext--anim">Commencer&nbsp;à&nbsp;jouer</button>
             </div>
-            <h2 class="annexe__h2 annexe__h2--test">Blind Test</h2>
+            <h2 class="annexe__h2 annexe__h2--test">Blind&nbsp;Test</h2>
+            <div class="annexe__compteur">
+                <p class="annexe__compteurPara">Manche&#8239;:&nbsp;<span class="annexe__compteur--chiffre"></span>/4
+                </p>
+            </div>
             <div class="annexe__jeu">
                 <button class="annexe__buttonImg annexe__grid--1"><img class="annexe__img" src="#" alt=" "></button>
                 <button class="annexe__buttonImg annexe__grid--2"><img class="annexe__img" src="#" alt=" "></button>
@@ -79,16 +86,18 @@
                 <button class="annexe__buttonImg annexe__grid--4"><img class="annexe__img" src="#" alt=" "></button>
                 <div class="annexe__grid--5"><button class="annexe__button"></button></div>
             </div>
+
             <div class="annexe__result">
                 <h2 class="annexe__h2 annexe__h2--result">Résultats</h2>
                 <p class="annexe__text" id="phrase"></p>
                 <div class="annexe__score">
-                    <p class="annexe__text annexe__scoreNow">Score : <span id="score-now"></span> points</p>
-                    <p class="annexe__text annexe__scoreBest">Meilleur score : <span id="score-best"></span> points</p>
+                    <p class="annexe__text annexe__scoreNow">Score&#8239;: <span id="score-now"></span> points</p>
+                    <p class="annexe__text annexe__scoreBest">Meilleur&nbsp;score&#8239;: <span
+                            id="score-best"></span> points</p>
                 </div>
 
-                <button id="annexe__button--refresh" class="annexe__buttonNext annexe__buttonNext--anim">Rejouer
-                    une partie</button>
+                <button id="annexe__button--refresh"
+                    class="annexe__buttonNext annexe__buttonNext--anim">Rejouer&nbsp;une&nbsp;partie</button>
             </div>
         </section>
 
@@ -99,13 +108,13 @@
             <h2 class="contact__h2">Contacts</h2>
             <ul class="contact__list contact__list--top">
                 <li class="contact__text">
-                    <p>Je suis actuellement à la recherche d’un <span class="contact__text--uppercase">stage pour
-                            ma troisième
+                    <p>Je&nbsp;suis actuellement à la&nbsp;recherche d’un <span class="contact__text--uppercase">stage
+                            pour
+                            ma&nbsp;troisième
                             année d’études.</span> Si vous avez
-                        une
-                        <span class="contact__text--uppercase">opportunité</span> à me proposer ou souhaitez <span
-                            class="contact__text--uppercase">en savoir plus sur mon profil</span>, n’hésitez
-                        pas à me <span class="contact__text--uppercase">contacter</span> via mes
+                        une&nbsp;<span class="contact__text--uppercase">opportunité</span> à me proposer ou souhaitez
+                        <span class="contact__text--uppercase">en savoir plus sur mon profil</span>, n’hésitez
+                        pas à me <span class="contact__text--uppercase">contacter</span> via mes&nbsp;
                         <span class="contact__text--uppercase">réseaux.</span>
                     </p>
                 </li>
@@ -129,14 +138,14 @@
             <ul class="contact__list--bottom">
                 <li>
                     <ul class="contact__list">
-                        <li class="contact__name">Guillaume Cabaraux</li>
+                        <li class="contact__name">Guillaume&nbsp;Cabaraux</li>
                         <li class="contact__adresse"><a
-                                href="https://www.google.com/maps/search/?api=1&query=Namur%2C+Belgique">Namur,
-                                Belgique</a></li>
+                                href="https://www.google.com/maps/search/?api=1&query=Namur%2C+Belgique">Namur,&nbsp;Belgique</a>
+                        </li>
                     </ul>
                 </li>
-                <li class="contact__copyright"><a id="link-transition" href="credits.html">Crédits</a> © 2024</li>
-
+                <li class="contact__copyright"><a class="link-transition"
+                        href="credits.html">Crédits</a>&nbsp;©&nbsp;2024</li>
             </ul>
         </section>
 

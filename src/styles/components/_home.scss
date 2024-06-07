@@ -19,7 +19,7 @@
 
         &--extrabold {
             font-weight: 800;
-            font-size: 63px;
+            font-size: 47px;
             line-height: 63px;
         }
     }
@@ -40,6 +40,16 @@
         &--portfolio {
             padding: 0;
             margin: 0;
+        }
+    }
+}
+
+@media (min-width : 360px) {
+    .home {
+        &__title {
+            &--extrabold {
+                font-size: 63px;
+            }
         }
     }
 }

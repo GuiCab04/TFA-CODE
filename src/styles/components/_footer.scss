@@ -79,7 +79,6 @@
     &__buttonAnnexe {
         border: 1px solid rgb(255, 255, 255);
         border-radius: 5px;
-        z-index: 1;
         color: white;
         width: fit-content;
         padding-bottom: 12px;
@@ -260,6 +259,11 @@ li {
 
             a {
                 color: $c-white;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
 

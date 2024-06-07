@@ -1,7 +1,7 @@
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100vw;
@@ -179,7 +179,7 @@
 
     &-content {
         background-color: $c-bg;
-        padding: 5%;
+        padding: 20px;
         width: 100vw;
         min-height: 100vh;
         box-sizing: border-box;
@@ -212,6 +212,46 @@
 
         img {
             width: 25px;
+        }
+    }
+
+    &__suggestionTitle {
+        font-family: "Orbitron", sans-serif;
+        font-style: normal;
+        color: $c-white;
+        margin-top: 84px;
+        margin-bottom: 63px;
+        font-size: 27px;
+    }
+
+    &__suggestionImage {
+        display: flex;
+        justify-content: space-around;
+
+        &--1 {
+            display: block;
+            margin: 0 auto;
+        }
+
+        &--2 {
+            display: block;
+            margin: 0 auto;
+        }
+
+        & img {
+            width: 40vw;
+            border-radius: 8px;
+        }
+
+        & p {
+            margin: 0;
+            font-family: "Manrope", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 11px;
+            color: $c-white;
+            display: flex;
+            justify-content: center;
         }
     }
 }
@@ -374,7 +414,28 @@
                 width: 30px;
             }
         }
+
+        &__suggestionTitle {
+            margin-top: 84px;
+            margin-bottom: 63px;
+            font-size: 36px;
+        }
+
+        &__suggestionImage {
+
+            & img {
+                width: 30vw;
+            }
+
+            & p {
+                font-size: 20px;
+            }
+        }
     }
+
+
+
+
 }
 
 @media (min-width : 1200px) {
@@ -560,6 +621,39 @@
 
             img {
                 width: 39px;
+            }
+        }
+
+        &__suggestionTitle {
+            margin-top: 123px;
+            margin-bottom: 93px;
+            font-size: 52px;
+        }
+
+        &__suggestionImage {
+            &--1 {
+                padding-left: 10%;
+            }
+
+            &--2 {
+                padding-right: 10%;
+            }
+
+            & img {
+                width: 25vw;
+                transition: transform 0.3s ease-in-out;
+
+                &:hover {
+                    transform: translateY(-10px);
+                }
+            }
+
+            & a {
+                text-decoration: none;
+            }
+
+            & p {
+                font-size: 22px;
             }
         }
     }

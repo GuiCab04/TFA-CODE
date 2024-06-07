@@ -332,6 +332,40 @@ modals.forEach(modal => {
         }
     });
 });
+const suggestionLinks = document.querySelectorAll('.modal__suggestionImage a');
+
+suggestionLinks.forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        const currentModal = link.closest('.modal');
+        gsap.to(currentModal, {
+            duration: 0.5,
+            y: '100%',
+            ease: 'power4.in',
+            onComplete: () => {
+                currentModal.style.display = "none";
+
+                const targetModalId = link.getAttribute('href').trim();
+                const targetModal = document.getElementById(targetModalId);
+                if (targetModal && targetModal.classList.contains('modal')) {
+                    targetModal.style.display = "block";
+                    html.classList.add('modal--open');
+                    document.body.style.overflow = "hidden";
+                    gsap.set(targetModal, { y: '100%' });
+                    gsap.to(targetModal, {
+                        duration: 0.5,
+                        y: 0,
+                        ease: 'power4.out'
+                    });
+                }
+            }
+        });
+        document.body.style.overflow = "auto";
+        html.classList.remove('modal--open');
+    });
+});
+
+
 
 // SLIDER
 
@@ -379,7 +413,6 @@ const sliders = document.querySelectorAll('.slider');
 sliders.forEach(slider => {
     initializeSlider(slider);
 });
-
 
 // JEU
 

@@ -65,7 +65,6 @@
 .contact__buttonAnnexe {
   border: 1px solid rgb(255, 255, 255);
   border-radius: 5px;
-  z-index: 1;
   color: white;
   width: -moz-fit-content;
   width: fit-content;
@@ -211,6 +210,10 @@ li {
   }
   .contact__copyright a {
     color: #FFFFFF;
+    text-decoration: none;
+  }
+  .contact__copyright a:hover {
+    text-decoration: underline;
   }
   .contact__buttonAnnexe {
     padding-bottom: 17px;
@@ -489,7 +492,7 @@ html.menu--open {
 }
 .home__title--extrabold {
   font-weight: 800;
-  font-size: 63px;
+  font-size: 47px;
   line-height: 63px;
 }
 .home__text {
@@ -509,6 +512,11 @@ html.menu--open {
   margin: 0;
 }
 
+@media (min-width: 360px) {
+  .home__title--extrabold {
+    font-size: 63px;
+  }
+}
 @media (min-width: 750px) {
   .home {
     margin-bottom: 40vh;
@@ -629,10 +637,6 @@ html.menu--open {
   font-weight: 300;
   font-style: normal;
   font-size: 20px;
-  color: #FFFFFF;
-}
-.propos__text--underlineDots {
-  text-decoration: underline;
   color: #FFFFFF;
 }
 .propos__img {
@@ -937,7 +941,7 @@ main {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100vw;
@@ -1091,7 +1095,7 @@ main {
 }
 .modal-content {
   background-color: #02070E;
-  padding: 5%;
+  padding: 20px;
   width: 100vw;
   min-height: 100vh;
   box-sizing: border-box;
@@ -1119,6 +1123,40 @@ main {
 }
 .modal__close img {
   width: 25px;
+}
+.modal__suggestionTitle {
+  font-family: "Orbitron", sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  margin-top: 84px;
+  margin-bottom: 63px;
+  font-size: 27px;
+}
+.modal__suggestionImage {
+  display: flex;
+  justify-content: space-around;
+}
+.modal__suggestionImage--1 {
+  display: block;
+  margin: 0 auto;
+}
+.modal__suggestionImage--2 {
+  display: block;
+  margin: 0 auto;
+}
+.modal__suggestionImage img {
+  width: 40vw;
+  border-radius: 8px;
+}
+.modal__suggestionImage p {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 11px;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 750px) {
@@ -1251,6 +1289,17 @@ main {
   }
   .modal__close img {
     width: 30px;
+  }
+  .modal__suggestionTitle {
+    margin-top: 84px;
+    margin-bottom: 63px;
+    font-size: 36px;
+  }
+  .modal__suggestionImage img {
+    width: 30vw;
+  }
+  .modal__suggestionImage p {
+    font-size: 20px;
   }
 }
 @media (min-width: 1200px) {
@@ -1407,6 +1456,30 @@ main {
   .modal__close img {
     width: 39px;
   }
+  .modal__suggestionTitle {
+    margin-top: 123px;
+    margin-bottom: 93px;
+    font-size: 52px;
+  }
+  .modal__suggestionImage--1 {
+    padding-left: 10%;
+  }
+  .modal__suggestionImage--2 {
+    padding-right: 10%;
+  }
+  .modal__suggestionImage img {
+    width: 25vw;
+    transition: transform 0.3s ease-in-out;
+  }
+  .modal__suggestionImage img:hover {
+    transform: translateY(-10px);
+  }
+  .modal__suggestionImage a {
+    text-decoration: none;
+  }
+  .modal__suggestionImage p {
+    font-size: 22px;
+  }
 }
 .slider {
   position: relative;
@@ -1538,6 +1611,9 @@ main {
     margin-top: 84px;
     margin-bottom: 63px;
     font-size: 36px;
+  }
+  .credits__list {
+    padding: 0px;
   }
   .credits__el {
     font-size: 22px;

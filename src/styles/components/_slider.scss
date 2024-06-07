@@ -32,7 +32,6 @@
         transform: translateY(-50%);
         background: none;
         border: none;
-
     }
 
     &__prev {
@@ -48,8 +47,6 @@
         width: 20px;
     }
 }
-
-
 
 @media (min-width : 1200px) {
     .slider {
@@ -101,6 +98,4 @@
             width: 20px;
         }
     }
-
-
 }

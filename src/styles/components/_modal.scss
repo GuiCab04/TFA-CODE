@@ -16,15 +16,13 @@
                 display: block;
             }
         }
-
     }
-
 
     &__h2 {
         font-family: "Manrope", sans-serif;
         font-style: normal;
         margin: 0;
-        color: $c-text;
+        color: $c-white;
         margin-bottom: 10%;
         margin-top: 5%;
 
@@ -46,7 +44,7 @@
         font-style: normal;
         display: flex;
         justify-content: center;
-        color: $c-text;
+        color: $c-white;
         text-transform: uppercase;
         font-size: 15px;
         margin-top: 27px;
@@ -64,7 +62,7 @@
         font-weight: 800;
         padding: 0;
         margin: 0;
-        color: $c-text;
+        color: $c-white;
         display: flex;
         justify-content: space-around;
         margin-top: 22px;
@@ -72,7 +70,7 @@
     }
 
     &__el {
-        border: solid 1px #fff;
+        border: solid 1px $c-white;
         border-radius: 5px;
         font-size: 15px;
         padding: 6px;
@@ -81,17 +79,15 @@
     &__paragraph {
         font-family: "Manrope", sans-serif;
         font-style: normal;
-        color: $c-text;
+        color: $c-white;
         font-size: 15px;
         margin-top: 0;
         margin-bottom: 0;
         font-weight: 300;
-
     }
 
     &__paraImg {
         font-size: 20px;
-
     }
 
     &__listButton {
@@ -107,9 +103,9 @@
     }
 
     &__elButton {
-        border: solid 1px #fff;
+        border: solid 1px $c-white;
         border-radius: 50px;
-        color: #fff;
+        color: $c-white;
         font-family: "Manrope", sans-serif;
         font-style: normal;
         font-size: 16px;
@@ -120,7 +116,6 @@
         max-width: max-content;
         font-weight: 600;
         transition: transform 0.3s ease;
-
 
         &:hover {
             transform: scale(1.1);
@@ -136,7 +131,7 @@
 
 
         a {
-            color: #fff;
+            color: $c-white;
             text-decoration: none;
             background-image: url(../assets/images/button_site_goTo.svg);
             background-size: 15px;
@@ -145,10 +140,7 @@
             padding: 11px;
             padding-top: 9px;
             padding-right: 40px;
-
-
         }
-
     }
 
     &__pucePara {
@@ -162,7 +154,6 @@
         background-size: 15px;
         background-repeat: no-repeat;
         background-position: center;
-
     }
 
     &__buttonImg {
@@ -176,7 +167,7 @@
     }
 
     &__group {
-        color: #fff;
+        color: $c-white;
         font-family: "Manrope", sans-serif;
         font-style: normal;
         font-size: 11px;
@@ -201,7 +192,7 @@
             display: none;
         }
 
-        .Bar {
+        .bar {
             display: none;
         }
 
@@ -209,20 +200,19 @@
             overflow: scroll;
         }
     }
-}
 
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        margin: 0;
+        padding: 0;
 
-.close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    margin: 0;
-    padding: 0;
-
-    img {
-        width: 25px;
+        img {
+            width: 25px;
+        }
     }
 }
 
@@ -246,7 +236,7 @@
             font-style: normal;
             display: flex;
             justify-content: center;
-            color: $c-text;
+            color: $c-white;
             text-transform: uppercase;
             margin-top: 39px;
             font-size: 27px;
@@ -277,7 +267,7 @@
         }
 
         &__el {
-            border: solid 2px #fff;
+            border: solid 2px $c-white;
             border-radius: 5px;
             font-size: 17px;
             padding: 6px;
@@ -286,7 +276,7 @@
         &__paragraph {
             font-family: "Manrope", sans-serif;
             font-style: normal;
-            color: $c-text;
+            color: $c-white;
             font-size: 22px;
             margin-top: 0;
             margin-bottom: 0;
@@ -318,7 +308,7 @@
             }
 
             a {
-                color: #fff;
+                color: $c-white;
                 text-decoration: none;
                 background-image: url(../assets/images/button_site_goTo.svg);
                 background-size: 20px;
@@ -327,7 +317,6 @@
                 padding: 7px;
                 padding-top: 8px;
                 padding-right: 46px;
-
             }
         }
 
@@ -354,7 +343,6 @@
 
         &-content {
             padding: 5%;
-
         }
 
         &--open {
@@ -364,7 +352,7 @@
                 display: none;
             }
 
-            .Bar {
+            .bar {
                 display: none;
             }
 
@@ -372,22 +360,21 @@
                 overflow: scroll;
             }
         }
-    }
 
-    .close {
-        top: 39px;
-        right: 39px;
-        background: none;
-        border: none;
-        margin: 0;
-        padding: 0;
-        position: fixed;
+        &__close {
+            top: 39px;
+            right: 39px;
+            background: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+            position: fixed;
 
-        img {
-            width: 30px;
+            img {
+                width: 30px;
+            }
         }
     }
-
 }
 
 @media (min-width : 1200px) {
@@ -411,7 +398,7 @@
             font-style: normal;
             display: flex;
             justify-content: center;
-            color: $c-text;
+            color: $c-white;
             text-transform: uppercase;
             font-size: 36px;
         }
@@ -424,7 +411,6 @@
 
         &__contenu {
             max-width: 100%;
-
         }
 
         &--left {
@@ -469,7 +455,7 @@
         }
 
         &__el {
-            border-top: solid 2px #fff;
+            border-top: solid 2px $c-white;
             border-radius: 10px;
             font-size: 20px;
             padding: 7px;
@@ -478,7 +464,7 @@
         &__paragraph {
             font-family: "Manrope", sans-serif;
             font-style: normal;
-            color: $c-text;
+            color: $c-white;
             font-size: 22px;
             margin-top: 0;
             margin-bottom: 0;
@@ -505,7 +491,6 @@
             padding: 11px;
             padding-top: 9px;
 
-
             &:nth-child(1) {
                 margin-right: 22px;
                 margin-bottom: 0px;
@@ -516,7 +501,7 @@
             }
 
             a {
-                color: #fff;
+                color: $c-white;
                 text-decoration: none;
                 background-image: url(../assets/images/button_site_goTo.svg);
                 background-size: 20px;
@@ -556,7 +541,7 @@
                 display: none;
             }
 
-            .Bar {
+            .bar {
                 display: none;
             }
 
@@ -564,18 +549,18 @@
                 overflow: scroll;
             }
         }
-    }
 
-    .close {
-        top: 69px;
-        right: 69px;
-        background: none;
-        border: none;
-        margin: 0;
-        padding: 0;
+        &__close {
+            top: 69px;
+            right: 69px;
+            background: none;
+            border: none;
+            margin: 0;
+            padding: 0;
 
-        img {
-            width: 39px;
+            img {
+                width: 39px;
+            }
         }
     }
 }

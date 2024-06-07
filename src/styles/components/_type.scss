@@ -18,7 +18,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-
 html,
 body {
   overflow-x: hidden;
@@ -35,20 +34,19 @@ main {
   padding-right: 20px;
 }
 
-.Bar {
+.bar {
   position: fixed;
   height: 2px;
   background-color: rgba(0, 0, 0, 1);
   width: 100%;
   bottom: 0;
   z-index: 50;
-}
 
-.progressBar {
-  width: 0%;
-  height: 2px;
-  background-color: $c-text;
-
+  &--progress {
+    width: 0%;
+    height: 2px;
+    background-color: $c-white;
+  }
 }
 
 @media (min-width: 750px) {

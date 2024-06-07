@@ -7,7 +7,7 @@
         margin: 0;
         padding-top: 84px;
         margin-bottom: 84px;
-        color: $c-text;
+        color: $c-white;
         font-weight: 800;
         font-size: 47px;
         line-height: 63px;
@@ -17,13 +17,13 @@
         width: 100%;
         height: 1px;
         border-radius: 5px;
-        background-color: #fff;
+        background-color: $c-white;
     }
 
     &__h2 {
         font-family: "Orbitron", sans-serif;
         font-style: normal;
-        color: $c-text;
+        color: $c-white;
         margin-top: 84px;
         margin-bottom: 63px;
         font-size: 27px;
@@ -110,7 +110,7 @@
         font-family: "Manrope", sans-serif;
         font-weight: 800;
         font-style: normal;
-        color: $c-text;
+        color: $c-white;
         font-size: 20px;
     }
 
@@ -118,14 +118,14 @@
         font-family: "Manrope", sans-serif;
         font-weight: 300;
         font-style: normal;
-        color: $c-text;
+        color: $c-white;
         font-size: 15px;
         padding-left: 20px;
     }
 
     &__instructionsEl {
         margin-top: 10px;
-        color: $c-text;
+        color: $c-white;
         list-style: circle;
         line-height: 140%;
     }
@@ -153,7 +153,6 @@
         text-decoration: none;
         transition: color 0.3s ease;
         margin-top: 63px;
-
 
         &--anim {
             font-family: "Manrope", sans-serif;
@@ -191,7 +190,7 @@
         font-family: "Manrope", sans-serif;
         font-weight: 800;
         font-style: normal;
-        color: $c-text;
+        color: $c-white;
         font-size: 20px;
         margin-bottom: 0;
         margin-top: 0;
@@ -204,7 +203,7 @@
         font-family: "Manrope", sans-serif;
         font-weight: 300;
         font-style: normal;
-        color: $c-text;
+        color: $c-white;
         font-size: 15px;
         line-height: 140%;
         letter-spacing: 1px;
@@ -241,23 +240,22 @@
         font-family: "Manrope", sans-serif;
         font-weight: 800;
         font-style: normal;
-        color: $c-text;
+        color: $c-white;
         font-size: 20px;
         line-height: 140%;
         letter-spacing: 1px;
         display: flex;
         margin: 0 auto;
     }
-}
 
-.correct-answer {
-    border: 2px solid rgb(0, 255, 0);
-}
+    &__answer--correct {
+        border: 2px solid rgb(0, 255, 0);
+    }
 
-.incorrect-answer {
-    border: 2px solid red;
+    &__answer--incorrect {
+        border: 2px solid red;
+    }
 }
-
 
 @media (min-width : 750px) {
     .annexe {
@@ -333,7 +331,6 @@
             font-size: 29px;
         }
 
-
         &__scoreBest {
             font-size: 22px;
             margin-top: 22px;
@@ -353,18 +350,16 @@
         &__compteurPara {
             font-size: 27px;
         }
-    }
 
-    .correct-answer {
-        border-width: 3px;
-    }
+        &__answer--correct {
+            border-width: 3px;
+        }
 
-    .incorrect-answer {
-        border-width: 3px;
+        &__answer--incorrect {
+            border-width: 3px;
+        }
     }
-
 }
-
 
 @media (min-width : 1200px) {
     .annexe {

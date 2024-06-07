@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // BURGER MENU
 
-const buttonToggle = document.querySelector('.menu--toggle');
+const buttonToggle = document.querySelector('.menu__nav--toggle');
 const menu = document.querySelector('.menu');
 const body = document.body;
 const html = document.documentElement;
@@ -65,7 +65,7 @@ menuLinks.forEach(link => {
 
 // PROGRESS BAR
 
-const scrollBarProgress = document.querySelector(".progressBar");
+const scrollBarProgress = document.querySelector(".bar--progress");
 if (scrollBarProgress) {
     window.addEventListener("scroll", scrollListener);
 }
@@ -301,7 +301,7 @@ links.forEach(link => {
 });
 
 modals.forEach(modal => {
-    const closeButton = modal.querySelector('.close');
+    const closeButton = modal.querySelector('.modal__close');
     if (closeButton) {
         closeButton.addEventListener('click', () => {
             gsap.to(modal, {
@@ -541,7 +541,7 @@ const handleImageClick = (event) => {
     const correctImage = notesAndImages[0].correctImage;
 
     imgElements.forEach(image => {
-        image.classList.remove('correct-answer', 'incorrect-answer');
+        image.classList.remove('annexe__answer--correct', 'annexe__answer--incorrect');
     });
 
     if (notesAndImages[0] && (img.src.includes(correctImage.src) || img.srcset.includes(correctImage.srcset))) {
@@ -549,12 +549,12 @@ const handleImageClick = (event) => {
             correctAnswers++;
             correctAnswerClicked = true;
         }
-        img.classList.add('correct-answer');
+        img.classList.add('annexe__answer--correct');
     } else {
-        img.classList.add('incorrect-answer');
+        img.classList.add('annexe__answer--incorrect');
         imgElements.forEach(image => {
             if (image.src.includes(correctImage.src) || image.srcset.includes(correctImage.srcset)) {
-                image.classList.add('correct-answer');
+                image.classList.add('annexe__answer--correct');
             }
         });
         correctAnswerClicked = false;
@@ -578,7 +578,7 @@ const updateImages = () => {
     const nextNotesAndImages = notesAndImages[0];
     if (nextNotesAndImages) {
         imgElements.forEach((img, index) => {
-            img.classList.remove('incorrect-answer', 'correct-answer');
+            img.classList.remove('annexe__answer--incorrect', 'annexe__answer--correct');
             img.src = nextNotesAndImages.allImages[index].src;
             img.srcset = nextNotesAndImages.allImages[index].srcset;
             img.alt = nextNotesAndImages.allImages[index].alt;
@@ -763,7 +763,7 @@ if (button) {
 }
 
 // transition
-const linksTransition = document.querySelectorAll("link-transition");
+const linksTransition = document.querySelectorAll(".link-transition");
 linksTransition.forEach(link => {
     link.addEventListener('click', event => {
         event.preventDefault();

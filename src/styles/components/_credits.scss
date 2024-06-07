@@ -7,7 +7,7 @@
         margin: 0;
         padding-top: 112px;
         margin-bottom: 84px;
-        color: $c-text;
+        color: $c-white;
         font-weight: 800;
         font-size: 63px;
         line-height: 63px;
@@ -16,7 +16,7 @@
     &__sousTitle {
         font-family: "Orbitron", sans-serif;
         font-style: normal;
-        color: $c-text;
+        color: $c-white;
         margin-top: 84px;
         margin-bottom: 63px;
         font-size: 27px;
@@ -27,15 +27,13 @@
         font-weight: 300;
         font-style: normal;
         font-size: 20px;
-        color: $c-text;
+        color: $c-white;
         list-style: circle;
         margin-bottom: 10px;
 
-
         & a {
-            color: $c-text;
+            color: $c-white;
             text-decoration: none;
-
         }
     }
 }

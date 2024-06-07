@@ -22,7 +22,7 @@
             left: 50%;
             border-radius: 5px;
             position: absolute;
-            background: #fff;
+            background: $c-white;
             transition: width 0.4s ease 0s, left 0.4s ease 0s;
             width: 0;
         }

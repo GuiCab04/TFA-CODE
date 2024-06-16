@@ -407,12 +407,21 @@ const initializeSlider = slider => {
     window.addEventListener('resize', () => {
         goToSlide(currentIndex);
     });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'ArrowRight') {
+            nextSlide();
+        } else if (event.key === 'ArrowLeft') {
+            prevSlide();
+        }
+    });
 };
 
 const sliders = document.querySelectorAll('.slider');
 sliders.forEach(slider => {
     initializeSlider(slider);
 });
+
 
 // JEU
 

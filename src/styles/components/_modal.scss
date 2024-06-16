@@ -253,6 +253,10 @@
             display: flex;
             justify-content: center;
         }
+
+        & a {
+            text-decoration: none;
+        }
     }
 }
 
@@ -646,10 +650,6 @@
                 &:hover {
                     transform: translateY(-10px);
                 }
-            }
-
-            & a {
-                text-decoration: none;
             }
 
             & p {

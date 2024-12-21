@@ -2,92 +2,92 @@
   {
     "Film": "Harry Potter",
     "Notes": "x254297425413",
-    "Images": "assets/images/harry.jpg",
-    "ImagesRetina": "assets/images/harry@2x.jpg 2x",
+    "Images": "assets/images/harry.webp",
+    "ImagesRetina": "assets/images/harry@2x.webp 2x",
     "AltText": "Harry Potter qui vole sur son Balais avec sa baguette magique en mains."
   },
   {
     "Film": "Top Gun",
     "Notes": "ahhfefeccacecefeaecc",
-    "Images": "assets/images/topgun.jpg",
-    "ImagesRetina": "assets/images/topgun@2x.jpg 2x",
+    "Images": "assets/images/topgun.webp",
+    "ImagesRetina": "assets/images/topgun@2x.webp 2x",
     "AltText": "Affiche du film Top Gun ou l'on peut y voir Maverick."
   },
   {
     "Film": "Le parrain",
     "Notes": "qvyxvyvxvrtq",
-    "Images": "assets/images/parrain.jpg",
-    "ImagesRetina": "assets/images/parrain@2x.jpg 2x",
+    "Images": "assets/images/parrain.webp",
+    "ImagesRetina": "assets/images/parrain@2x.webp 2x",
     "AltText": "Affiche du film Le parrain représentant le parrain de la mafia."
   },
   {
     "Film": "Pirates des Caraïbes",
     "Notes": "vwvvvvttrqrqo",
-    "Images": "assets/images/pirates.jpg",
-    "ImagesRetina": "assets/images/pirates@2x.jpg 2x",
+    "Images": "assets/images/pirates.webp",
+    "ImagesRetina": "assets/images/pirates@2x.webp 2x",
     "AltText": "Visage en gros plan du Capitaine Jack Sparrow."
   },
   {
     "Film": "Star Wars",
     "Notes": "oootvwywootvwot0y",
-    "Images": "assets/images/starwars.jpg",
-    "ImagesRetina": "assets/images/starwars@2x.jpg 2x",
+    "Images": "assets/images/starwars.webp",
+    "ImagesRetina": "assets/images/starwars@2x.webp 2x",
     "AltText": "Affiche de la première trilogie de Star Wars avec dessu les différents personnage du film."
   },
   {
     "Film": "Le Hobbit",
     "Notes": "oqsvsqoqosvx0zvstsq",
-    "Images": "assets/images/hobbit.jpg",
-    "ImagesRetina": "assets/images/hobbit@2x.jpg 2x",
+    "Images": "assets/images/hobbit.webp",
+    "ImagesRetina": "assets/images/hobbit@2x.webp 2x",
     "AltText": "Bilbon Sacquet du film Le Hobbit avec son épée à la mains."
   },
   {
     "Film": "Gladiator",
     "Notes": "qvyomloqtmljqvyomlljhj",
-    "Images": "assets/images/gladiator.jpg",
-    "ImagesRetina": "assets/images/gladiator@2x.jpg 2x",
+    "Images": "assets/images/gladiator.webp",
+    "ImagesRetina": "assets/images/gladiator@2x.webp 2x",
     "AltText": "Affiche du film Gladiator avec dessu le personnage principal."
   },
   {
     "Film": "The Avengers",
     "Notes": "qqxvtsqqqxzvx",
-    "Images": "assets/images/avengers.jpg",
-    "ImagesRetina": "assets/images/avengers@2x.jpg 2x",
+    "Images": "assets/images/avengers.webp",
+    "ImagesRetina": "assets/images/avengers@2x.webp 2x",
     "AltText": "Affiche du film The Avengers ou on peut retrouver dessu les super héros du film dans une ville détruite."
   },
   {
     "Film": "Jurassic Park",
     "Notes": "8783187831877",
-    "Images": "assets/images/jurassic.jpg",
-    "ImagesRetina": "assets/images/jurassic@2x.jpg 2x",
+    "Images": "assets/images/jurassic.webp",
+    "ImagesRetina": "assets/images/jurassic@2x.webp 2x",
     "AltText": "Logo du park Jurassic Park."
   },
   {
     "Film": "Interstellar",
     "Notes": "v2v2x2x2y2y20202x",
-    "Images": "assets/images/interstellar.jpg",
-    "ImagesRetina": "assets/images/interstellar@2x.jpg 2x",
+    "Images": "assets/images/interstellar.webp",
+    "ImagesRetina": "assets/images/interstellar@2x.webp 2x",
     "AltText": "Affiche du film Interstellar ou on peut y voir le personnage principale en combinaison d'astronaute sur une planète eneigée."
   },
   {
     "Film": "Narnia",
     "Notes": "npqnpqusuxsp",
-    "Images": "assets/images/narnia.jpg",
-    "ImagesRetina": "assets/images/narnia@2x.jpg 2x",
+    "Images": "assets/images/narnia.webp",
+    "ImagesRetina": "assets/images/narnia@2x.webp 2x",
     "AltText": "Affiche du film narnia ou on peut y retrouver les différents personnages du film."
   },
   {
     "Film": "Titanic",
     "Notes": "tvo0yxvxyxvtstsqo",
-    "Images": "assets/images/titanic.jpg",
-    "ImagesRetina": "assets/images/titanic@2x.jpg 2x",
+    "Images": "assets/images/titanic.webp",
+    "ImagesRetina": "assets/images/titanic@2x.webp 2x",
     "AltText": "Rose et Jack du Film titanic qui sont à l'avant du bateau."
   },
   {
     "Film": "James Bond",
     "Notes": "qt10twxtslqn",
-    "Images": "assets/images/bond.jpg",
-    "ImagesRetina": "assets/images/bond@2x.jpg 2x",
+    "Images": "assets/images/bond.webp",
+    "ImagesRetina": "assets/images/bond@2x.webp 2x",
     "AltText": "James Bond en Costume."
   }
 ]
